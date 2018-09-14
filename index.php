@@ -14,7 +14,7 @@
 
 		<h1> Seu Ponto Turístico </h1>
 			
-		<p> Nosso projeto será um mapeamento de pontos turísticos. </p>
+		<p> Nosso projeto será um mapeamento de pontos turísticos.. </p>
 		<h2> Integrantes da Equipe </h2>
 		
 	<div>
