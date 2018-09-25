@@ -14,5 +14,5 @@
 	$query->bindParam(':pass', $pass);
 	$stmt = $query->execute();
 
-	header('Location: ../View/index.php');
+	header('Location: ../View/login.php');
 ?>
