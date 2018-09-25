@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<?php
-	$username = "root";
-	$password = "";
-	$conn = new PDO('mysql:host=localhost;port=3306;dbname=', $username, $password);
-	?>
+<?php
+	include "conexao.php";
 
-	<?php
 	$nome = $_POST['nome'];
 	$user = $_POST['user'];
 	$pass = $_POST['pass'];
@@ -24,7 +14,5 @@
 	$query->bindParam(':pass', $pass);
 	$stmt = $query->execute();
 
-	header('index.php');
-	?>
-</body>
-</html>
+	header('Location: ../View/index.php');
+?>

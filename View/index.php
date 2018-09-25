@@ -4,7 +4,7 @@
 	<title>Cadastro de Usuário</title>
 </head>
 <body>
-	<form method="post" action="conexao.php"> 
+	<form method="post" action="../Controller/cadastrar_usuario.php"> 
 		Nome <input type="text" name="nome" placeholder="Nome"></br>
 		Usuário <input type="text" name="user" placeholder="Usuário"></br>
 		Senha <input type="text" name="pass" placeholder="Senha"></br>
