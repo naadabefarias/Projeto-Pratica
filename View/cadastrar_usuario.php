@@ -17,9 +17,9 @@
 
 	    <!-- Login do Formulario -->
 	    <form action="../Controller/cadastrar_usuario.php" method="POST">
-	      <input type="text" id="nome" class="fadeIn second" name="nome" placeholder="Nome">
-	      <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Usuario">
-	      <input type="text" id="password" class="fadeIn third" name="senha" placeholder="Senha">
+	      <input type="text" id="nome" class="fadeIn second" name="nome" required="" placeholder="Nome">
+	      <input type="text" id="usuario" class="fadeIn second" name="user" required="" placeholder="Usuario">
+	      <input type="text" id="password" class="fadeIn third" name="pass" required="" placeholder="Senha">
 	      <input type="submit" class="fadeIn fourth" value="Cadastrar">
 	    </form>
   </div>

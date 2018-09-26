@@ -23,12 +23,16 @@
     <form action="../Controller/auth.php" method="POST">
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
       <input type="text" id="password" class="fadeIn third" name="senha" placeholder="Senha">
-      <input type="submit" class="fadeIn fourth" value="Entrar">
+      <input type="submit" class="fadeIn fourth" value="Entrar"><br>
+      <?php 
+      if (isset($_GET['error'])){
+        echo "<strong>Login ou senha inválidos!</strong>";
+      } ?>
     </form>
 
     <!-- Lembrar Senha -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Cadastre-se</a>
+      <a class="underlineHover" href="cadastrar_usuario.php">Cadastre-se</a>
     </div>
 
   </div>
