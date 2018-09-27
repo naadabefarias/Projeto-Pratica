@@ -1,10 +1,16 @@
+<?php 
+	require_once('../Controller/conexao.php');
+
+	// $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
+	$consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos;"); 
+ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 
 		<title>Seu Ponto turistico</title>
 
-		
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
 <link rel="stylesheet" type="text/css" href="estilos/index-style.css">
 <div class="barra"><!-- Barra superior -->
 <nav class="main">
@@ -51,7 +57,26 @@
 
 	</head>
 	<body>
+		<h1> Pontos Cadastrados </h1>
+		<table class="ui celled table">
+			<tr>
+				<th> Nome do Ponto </th>
+				<th> Logradouro </th>
+				<th> Bairro </th>
+			</tr>
+			
+			<?php 
 
-					
+				while($linha = $consulta -> fetch(PDO::FETCH_ASSOC)){
+					echo "<tr>";
+						echo "<td>{$linha['nome_ponto']}</td>";
+						echo "<td>{$linha['logradouro']}</td>";
+						echo "<td>{$linha['bairro']}</td>";
+					echo "</tr>";
+				}
+
+			 ?>
+
+		</table>		
 	</body>
 </html>

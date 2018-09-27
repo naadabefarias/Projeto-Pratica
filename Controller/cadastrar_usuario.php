@@ -6,7 +6,7 @@
 	$pass = $_POST['pass'];
 
 	$sql = "INSERT INTO Users(name, user, password)
-		VALUES('$nome', '$user', '$pass')";
+		VALUES(:nome, :user, :pass)";
 	$query = $conn->prepare($sql);
 	var_dump($query);
 	$query->bindParam(':nome', $nome);

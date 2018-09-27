@@ -11,15 +11,15 @@
 
 
 		$sql = "INSERT INTO pontos_turisticos (nome_ponto, logradouro, bairro, numero_ponto) 
-						VALUES('$nome', '$logradouro', '$bairro', '$numero')";
+						VALUES(:nome, :logradouro, :bairro, :numero)";
 
 
 		$query = $conn->prepare($sql);
 
-		$query->bindParam(':nome', $nome);
-		$query->bindParam(':logradouro', $logradouro);
-		$query->bindParam(':bairro', $bairro);
-		$query->bindParam(':numero', $numero);
+		$query->bindParam(":nome", $nome);
+		$query->bindParam(":logradouro", $logradouro);
+		$query->bindParam(":bairro", $bairro);
+		$query->bindParam(":numero", $numero);
 
 		$stmt = $query->execute();
 		header('Location: ../View/index.php');
