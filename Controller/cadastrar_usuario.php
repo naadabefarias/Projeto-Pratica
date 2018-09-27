@@ -8,30 +8,35 @@
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
 
-		$checking = "SELECT * FROM Users WHERE user = '".$user."'";
-		$queryOne = $conn->prepare($checking);
-	 	$stmt = $queryOne->execute();
-			var_dump($stmt);
-		if ($stmt->rowCount() > 1) {
-			"<script> 
-				alert('Este usuário já exite');
-			</script>"; 
-			exit();
-		}
+		$checking=("SELECT * FROM users WHERE user = ? ");
 
-		else {
+		$queryOne = $conn->prepare($checking);
+		$queryOne->bindParam(1,$user);
+		$queryOne -> execute();
+
+		$stmt = $queryOne -> fetchAll();
+
+		if ($queryOne->rowCount() >= 1){
+
+?>
+		<script type="text/javascript">
+			alert("Este usuário já existe");
+		</script>
+
+<?php 
+
+
+		} else {
 			
-			$sql = "INSERT INTO Users(name, user, password)
-				//VALUES(:nome, :user, :pass)";
+			$sql = "INSERT INTO Users(name, user, password) VALUES(:nome, :user, :pass)";
 			$query = $conn->prepare($sql);
 			$query->bindParam(':nome', $nome);
 			$query->bindParam(':user', $user);
 			$query->bindParam(':pass', $pass);
 			$stmt = $query->execute();
 
-			header('Location: login.php');
+			header('Location: ../View/login.php');
 		}
-		 
 		
 	}
 
