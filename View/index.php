@@ -3,6 +3,7 @@ require_once('../Controller/conexao.php');
 
 	// $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos;"); 
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,10 +35,24 @@ $consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro FROM pontos_tu
 				</li>
 				<li id="nav" class="menu-item">
 					<a href="cadastrar_pontos.php" class="menu-item4">Cadastrar Pontos</a>
-				</li>
-				<li id="" class="menu-item4">
-					<a href="login.php" class="btn-login">Login </a>
-				</li>
+				<?php 
+					if (isset($_SESSION['user'])){
+				?>
+						<li id="" class="menu-item4">
+							<a href="../Controller/logout.php" class="btn-login">
+								Logout
+							</a>
+						</li>									
+				<?php
+					 }else{
+				 ?>
+
+						<li id="" class="menu-item4">
+							<a href="login.php" class="btn-login">
+								Login 
+							</a>
+						</li>
+				<?php } ?>
 			</ul>			
 		</nav>
 	</div>

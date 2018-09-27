@@ -11,7 +11,7 @@
 	
 	if ($consulta->rowCount() >= 1){
 		session_start();
-		$_SESSION['user'] = $user;
+		$_SESSION['user'] = $login;
 		header('Location: ../View/index.php');
 
 	}
