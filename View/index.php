@@ -60,7 +60,7 @@ session_start();
 </head>
 <body>
 		<h1> Pontos Cadastrados </h1>
-		<table class="ui celled table">
+		<table class="ui celled table" id="tabela">
 			<tr>
 				<th> Nome do Ponto </th>
 				<th> Logradouro </th>

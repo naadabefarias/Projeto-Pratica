@@ -2,7 +2,8 @@ CREATE TABLE Users (
     id int auto_increment,
     name varchar(255) NOT NULL,
     user varchar(255) NOT NULL,
-    password varchar(255) NOT NULL
+    password varchar(255) NOT NULL,
+    constraint pkusers primary key (id)
 );
 
 CREATE TABLE pontos_turisticos(
