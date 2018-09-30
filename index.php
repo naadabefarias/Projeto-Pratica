@@ -11,10 +11,11 @@ session_start();
 	<title>Seu Ponto turistico</title>
 	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
-	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<div class="barra">
 		<!-- Barra superior -->
 		<nav class="main">
@@ -51,33 +52,48 @@ session_start();
 				 ?>
 
 						<li id="" class="menu-item4">
-							<a href="#" data-toggle="modal" data-target="#login-modal" class="btn-login">
-								Login 
-							</a>
+							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Login</button>
 						</li>
 				<?php } ?>
 			</ul>			
 		</nav>
 	</div>
 	<!-- MODAL DE LOGIN -->
-	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				  </form>
-					
-				  <div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
-				  </div>
-				</div>
-			</div>
-		  </div>
 </head>
 <body>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+	    <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h2>Login</h2>
+	        </div>
+	        <div class="modal-body">
+	        	<form action="Controller/auth.php" method="POST">
+	  				<div class="form-group">
+	    				<label for="login">Usuário:</label>
+	    				<input type="text" class="form-control" id="login" name="login">
+	  				</div>
+					<div class="form-group">
+						<label for="pwd">Senha:</label>
+					    <input type="password" class="form-control" id="pwd" name="senha">
+					</div>
+					<div class="checkbox">
+	    				<label><input type="checkbox"> Lembrar de mim</label>
+	  				</div>
+	  				<button type="submit" class="btn btn-primary btn-block">Entrar</button>
+				</form>
+	        </div>
+	        <div class="modal-footer">
+	          <label>Não tem conta?</label>
+	          <a href="cadastrar_usuario.php">Cadastre-se!</a>
+	        </div>
+	    </div>
+	      
+	</div>
+  </div>
 		<h1> Pontos Cadastrados </h1>
 		<table class="ui celled table" id="tabela">
 			<tr>

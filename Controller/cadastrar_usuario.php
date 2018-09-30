@@ -35,7 +35,7 @@
 			$query->bindParam(':pass', $pass);
 			$stmt = $query->execute();
 
-			header('Location: ../login.php');
+			header('Location: ../index.php');
 		}
 		
 	}
