@@ -22,7 +22,7 @@
 		$query->bindParam(":numero", $numero);
 
 		$stmt = $query->execute();
-		header('Location: ../View/index.php');
+		header('Location: ../index.php');
 		
 	} else {
 

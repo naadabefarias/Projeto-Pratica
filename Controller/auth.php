@@ -12,11 +12,10 @@
 	if ($consulta->rowCount() >= 1){
 		session_start();
 		$_SESSION['user'] = $login;
-		header('Location: ../View/index.php');
+		header('Location: ../index.php');
 
-	}
-	else{
-		header('Location: ../View/login.php?error');
+	} else {
+		header('Location: ../login.php?error');
 	}
 
 
