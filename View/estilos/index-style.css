@@ -25,8 +25,7 @@ box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
 ul.menu{
-           
-
+    
 display: block;
 list-style-type: none;
 width: 700px;
@@ -39,7 +38,7 @@ position: fixed;
 }
 
 ul.menu li{
-
+	
    margin: 6px;
    padding: 0px;
 }
@@ -54,7 +53,6 @@ padding: 4px 0px;
 display: inline;
 color:black;
 text-decoration:none;
-
 text-align: center;
 }
 a:hover {
@@ -71,9 +69,15 @@ margin-right: 3px;
   height:32px;
   width:260px;
    border-radius:19px;
+position:relative;
+
 }
+
 #divBusca:hover{
  background-color: #affacb;
+}
+#divBusca #link_pesquisa:hover{
+border-color: transparent;
 }
 
 #divBusca{
@@ -82,7 +86,15 @@ margin-top:18px;
   border:solid 0px;
   border-radius:5px;
   width:300px;  
-
+}
+.itens{
+margin-top:28px;
+  background-color:#DCDCDC; 
+  border:solid 0px;
+  border-radius:5px;
+  width:300px;
+margin-left:360px;
+margin-right:px;
 }
 .btn-login{
   background-color: #affacb;
@@ -92,5 +104,16 @@ animation-iteration-count: 2px;
 
 .pesquisar-index:hover{
  border:solid 0px;
+}
 
+.itens{
+position:fixed;
+background:black;
+
+}
+.lista{
+
+  list-style-type: none;
+  padding:10px;
+  
 }
