@@ -35,6 +35,8 @@ if (!isset($_SESSION['user'])) {
 			<input type="text" name="bairro" placeholder="Bairro" required=""><br><br>
 			<label> <h3>Número </h3></label>
 			<input type="text" name="numero" placeholder="Número" ><br><br>
+			<label> <h3>Imagem </h3></label>
+			<input type="file" name="imagem" placeholder="Imagem" ><br><br>
 			<input type="submit" value="Cadastrar" class="ui primary button">
 		</form>
 	</div>
