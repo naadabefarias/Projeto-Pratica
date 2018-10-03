@@ -13,14 +13,13 @@
 		$imagem = $_FILES['imagem']; //arquivo enviado
 		if(isset($imagem)){
 			$extensao  =  strtolower(substr($imagem['name'], -4));//pega as 4 ultimas letras do nome
-			$novo_nome =  "imagem_".md5(time()).".$txtensao";//nome do arquivo salvo
+			$novo_nome =  "imagem_".md5(time()).".$extensao";//nome do arquivo salvo
 			$diretorio =  "upload/";//onde ele será salvo
 			move_uploaded_file($imagem['tmp_name'], $diretorio.$novo_nome);//mover o arquivo para o diretorio
 		}		
 
 
-		$sql = "INSERT INTO pontos_turisticos (nome_ponto, logradouro, bairro, numero_ponto, imagem) 
-						VALUES(:nome, :logradouro, :bairro, :numero, :imagem)";
+		$sql = "INSERT INTO pontos_turisticos (nome_ponto, logradouro, bairro, numero_ponto, imagem) VALUES(:nome, :logradouro, :bairro, :numero, :imagem)";
 
 
 		$query = $conn->prepare($sql);

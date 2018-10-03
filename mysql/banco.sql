@@ -14,6 +14,5 @@ CREATE TABLE pontos_turisticos(
 	bairro varchar(200) not null,
 	numero_ponto varchar(50),
 	imagem varchar(200) not null,
-	constraint pkpontos primary key (id)
-        
+	constraint pkpontos primary key (id)       
 );
