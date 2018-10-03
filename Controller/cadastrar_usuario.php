@@ -6,7 +6,7 @@
 
 		$nome = $_POST['nome'];
 		$user = $_POST['user'];
-		$pass = $_POST['pass'];
+		$pass = sha1($_POST['pass']);
 
 		$checking=("SELECT * FROM users WHERE user = ? ");
 
@@ -14,7 +14,7 @@
 		$queryOne->bindParam(1,$user);
 		$queryOne -> execute();
 
-		$stmt = $queryOne -> fetchAll();
+		$stmt = $queryOne->fetchAll();
 
 		if ($queryOne->rowCount() >= 1){
 

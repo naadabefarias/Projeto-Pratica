@@ -8,12 +8,12 @@ CREATE TABLE Users (
 
 CREATE TABLE pontos_turisticos(
 
-	id int not null auto_increment,
+	id_ponto int not null auto_increment,
 	nome_ponto varchar(200) not null,
 	logradouro varchar(200) not null,
 	bairro varchar(200) not null,
 	numero_ponto varchar(50),
 	imagem varchar(200) not null,
-		constraint pkpontos primary key (id)
+	constraint pkpontos primary key (id)
         
 );
