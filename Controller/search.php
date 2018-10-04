@@ -13,7 +13,7 @@ if (isset($_POST["query"])){
 	{
 
 while ($row = mysqli_fetch_array($result)){
-	$output .= '<li>'. $row["nome_ponto"]. '☣</li>';
+	$output .= '<li>'. $row["nome_ponto"]. '</li>';
  }
 }
 else {

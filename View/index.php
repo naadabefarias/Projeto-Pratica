@@ -9,6 +9,7 @@ session_start();
 <html>
 
 <head>
+<meta charset="utf-8">
 	<title>Seu Ponto turistico</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -19,7 +20,7 @@ session_start();
 		<!-- Barra superior -->
 		<nav class="main">
 			<div id="divBusca">
-				<input  style="text-align:right;" type="text"  name="txtBusca" id="txtBusca" placeholder="☣Pesquisa ai fera☣" />
+				<input  style="text-align:right;" type="text"  name="txtBusca" id="txtBusca" placeholder="Pesquisar..." />
 					<div id="locais" class="locais"></div>	
 					<a href="" id="link_pesquisa" onclick="function(consulte);;"><img src="images/search3.png" id="btnBusca" alt="Buscar"/> </a>
 			</div>
