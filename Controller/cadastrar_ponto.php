@@ -27,7 +27,7 @@
 		$query->bindParam(':numero', $numero);
 		$query->bindParam(':imagem', $novo_nome);
  		$stmt = $query->execute();
-		header('Location:../index.php');
+		header('Location: ../index.php');
 		
 	} else {
  		echo "Erro!!";

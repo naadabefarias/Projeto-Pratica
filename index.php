@@ -16,63 +16,86 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<div class="barra">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+
+
+
 	
 		<!-- Barra superior -->
-		<nav class="main">
-			<div id="divBusca">
-				<div id="locais" class="locais"></div>	
-				<input  style="text-align:right;" type="text"  name="txtBusca" id="txtBusca" placeholder="Pesquisar..." />
-			
-					<a href="" id="link_pesquisa" onclick="function(consulte);;"><img src="images/search3.png" id="btnBusca" alt="Buscar"/> </a>
 
-
-			</div>
-			</div>
-			
-			<!-- Liks da barra superior-->
-			<div class="itens">
-			<ul id="menu-main" class="menu">
-				<li id="nav" class="menu-item">
-					<a href="#" class="menu-item0">Home</a>
-				</li>
-				<li id="" class="menu-item">
-					<a href="#" class="menu-item1">Contatos </a>
-				</li>
-				<li id="" class="menu-item">
-					<a href="#" class="menu-item2">Prefeituras </a>
-				</li>
-				<li id=" " class="menu-item">
-					<a href="#" class="menu-item3">Cidades</a>
-				</li>
-				<li id="nav" class="menu-item">
-					<a href="cadastrar_pontos.php" class="menu-item4">Cadastrar Pontos</a>
-				<?php 
-					if (isset($_SESSION['user'])){
-				?>
-						<li id="" class="menu-item4">
-							<a href="Controller/logout.php" class="btn-login">
-								Logout
-							</a>
-						</li>									
-				<?php
-					 }else{
-				 ?>
-
-						<li id="" class="menu-item4">
-							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Login</button>
-						</li>
-				<?php } ?>
-			</ul>			
-		</nav>
-	</div>
-	</div>
-	<!-- MODAL DE LOGIN -->
 </head>
 <body>
+	<nav class="navbar navbar-default navbar-fixed">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php">Pontos Turísticos</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Sobre</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Quem Somos Nós</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group" >
+          <input type="text"  class="form-control" placeholder="Pesquise um ponto">
+        </div>
+        <button type="submit" class="btn btn-default">Pesquisa</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+
+      <?php 
+      	if (!isset($_SESSION['user'])){
+      ?>
+        <li id="" class="menu-item4">
+							<button type="button" id='login' class="btn btn-info" data-toggle="modal" data-target="#myModal">Sign In <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
+				</li>
+
+			<?php  
+				}else{
+			?>			
+
+				<ul class="nav navbar-nav">
+        	<li><a href="cadastrar_pontos.php">Cadastrar Pontos</a></li>
+      	</ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Adiministrar contas</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="Controller/logout.php">Logout</a></li>
+          </ul>
+        </li>
+      <?php 
+      	} 
+
+      ?>  
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<!-- MODAL DE LOGIN -->
+	<?php  
+		if (isset($_GET['error'])){
+	?>
+		<div class="alert alert-danger" role="alert">Login ou senha inválido!</div>		
+	<?php  }
+
+	?>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -106,7 +129,7 @@ session_start();
 	      
 	</div>
   </div>
-<h1> Pontos Cadastrados </h1>
+	<h1> Pontos Cadastrados </h1>
 		<table class="ui celled table" id="tabela">
 			<tr>
 				<th> Nome do Ponto </th>
@@ -127,6 +150,18 @@ session_start();
 				}
 			 ?>
 		</table>		
+		<!-- Footer -->
+		<div id="foot"></div>
+		<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <strong>IFPE</strong>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>
 
