@@ -2,7 +2,7 @@
 require_once('Controller/conexao.php');
 
 	// $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
-$consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos;"); 
+$consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;"); 
 session_start();
 ?>
 <!DOCTYPE html>
@@ -17,13 +17,24 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<div class="barra">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+	
 		<!-- Barra superior -->
 		<nav class="main">
 			<div id="divBusca">
-				<input  style="text-align:right;" type="text" id="txtBusca" placeholder="" />
-				<img src="images/search3.png" id="btnBusca" alt="Buscar"/>
+				<div id="locais" class="locais"></div>	
+				<input  style="text-align:right;" type="text"  name="txtBusca" id="txtBusca" placeholder="Pesquisar..." />
+			
+					<a href="" id="link_pesquisa" onclick="function(consulte);;"><img src="images/search3.png" id="btnBusca" alt="Buscar"/> </a>
+
+
 			</div>
+			</div>
+			
 			<!-- Liks da barra superior-->
+			<div class="itens">
 			<ul id="menu-main" class="menu">
 				<li id="nav" class="menu-item">
 					<a href="#" class="menu-item0">Home</a>
@@ -57,6 +68,7 @@ session_start();
 				<?php } ?>
 			</ul>			
 		</nav>
+	</div>
 	</div>
 	<!-- MODAL DE LOGIN -->
 </head>
@@ -94,12 +106,13 @@ session_start();
 	      
 	</div>
   </div>
-		<h1> Pontos Cadastrados </h1>
+<h1> Pontos Cadastrados </h1>
 		<table class="ui celled table" id="tabela">
 			<tr>
 				<th> Nome do Ponto </th>
 				<th> Logradouro </th>
 				<th> Bairro </th>
+				<th> imagem </th>
 			</tr>
 			
 			<?php 
@@ -108,14 +121,37 @@ session_start();
 					echo "<tr>";
 						echo "<td>{$linha['nome_ponto']}</td>";
 						echo "<td>{$linha['logradouro']}</td>";
-						echo "<td>{$linha['bairro']}</td>";
-					echo "</tr>";
+						echo "<td>{$linha['bairro']}</td>";?>
+						<td><img src= "View/upload/<?=$linha['imagem'];?>" class="img"></td>
+				<?php	echo "</tr>";
 				}
-
 			 ?>
-
 		</table>		
 </body>
 </html>
 
-
+<script >//Função de pesquisa, Auto complete Input
+$(document).ready(function(){
+$('#txtBusca').keyup(function() {
+var query = $(this).val();
+	if(query != ''){
+	
+$.ajax({
+	url:"Controller/search.php",
+	method:"POST",
+	data:{query:query},
+	success:function(data)
+	{
+$('#locais').fadeIn();
+$('#locais').html(data);
+	
+}
+   });
+	  }
+    });
+});
+    $(document).on('click', 'li', function(){
+    $('#txtBusca').val($(this) .text());
+    $('#locais') .fadeOut();
+	});
+    </script>
