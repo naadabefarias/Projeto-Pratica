@@ -12,7 +12,7 @@
 		if(isset($imagem)){
 			$extensao  =  strtolower(substr($imagem['name'], -4));//pega as 4 ultimas letras do nome
 			$novo_nome =  "imagem_".md5(time()).$extensao;//nome do arquivo salvo
-			$diretorio =  "../View/upload/";//onde ele será salvo
+			$diretorio =  "../upload/";//onde ele será salvo
 			move_uploaded_file($imagem['tmp_name'], $diretorio.$novo_nome);//mover o arquivo para o diretorio
 		}	
 
@@ -27,7 +27,7 @@
 		$query->bindParam(':numero', $numero);
 		$query->bindParam(':imagem', $novo_nome);
  		$stmt = $query->execute();
-		header('Location: ../View/index.php');
+		header('Location:../index.php');
 		
 	} else {
  		echo "Erro!!";

@@ -122,7 +122,7 @@ session_start();
 						echo "<td>{$linha['nome_ponto']}</td>";
 						echo "<td>{$linha['logradouro']}</td>";
 						echo "<td>{$linha['bairro']}</td>";?>
-						<td><img src= "View/upload/<?=$linha['imagem'];?>" class="img"></td>
+						<td><img src= "upload/<?=$linha['imagem'];?>" class="img"></td>
 				<?php	echo "</tr>";
 				}
 			 ?>
