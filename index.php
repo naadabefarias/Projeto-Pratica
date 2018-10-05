@@ -2,14 +2,14 @@
 require_once('Controller/conexao.php');
 
 	// $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
-$consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos;"); 
+$consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;"); 
 session_start();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Seu Ponto turistico</title>
-	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
+	<link rel="stylesheet" type="text/css" href="View/estilos/index-style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,12 +94,13 @@ session_start();
 	      
 	</div>
   </div>
-		<h1> Pontos Cadastrados </h1>
+<h1> Pontos Cadastrados </h1>
 		<table class="ui celled table" id="tabela">
 			<tr>
 				<th> Nome do Ponto </th>
 				<th> Logradouro </th>
 				<th> Bairro </th>
+				<th> imagem </th>
 			</tr>
 			
 			<?php 
@@ -108,12 +109,11 @@ session_start();
 					echo "<tr>";
 						echo "<td>{$linha['nome_ponto']}</td>";
 						echo "<td>{$linha['logradouro']}</td>";
-						echo "<td>{$linha['bairro']}</td>";
-					echo "</tr>";
+						echo "<td>{$linha['bairro']}</td>";?>
+						<td><img src= "View/upload/<?=$linha['imagem'];?>" class="img"></td>
+				<?php	echo "</tr>";
 				}
-
 			 ?>
-
 		</table>		
 </body>
 </html>
