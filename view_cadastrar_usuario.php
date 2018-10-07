@@ -16,7 +16,7 @@
    <h1 class="logo-caption"><span class="tweak">C</span>adastro</h1>
 
 	    <!-- Login do Formulario -->
-	    <form action="Controller/cadastrar_usuario.php" method="POST">
+	    <form action="Controller/action_cadastrar_usuario.php" method="POST">
 	      <input type="text" id="nome" class="fadeIn second" name="nome" required="" placeholder="Nome">
 	      <input type="text" id="usuario" class="fadeIn second" name="user" required="" placeholder="Usuario">
 	      <input type="password" id="password" class="fadeIn third" name="pass" required="" placeholder="Senha">

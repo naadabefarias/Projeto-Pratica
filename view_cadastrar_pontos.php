@@ -26,7 +26,7 @@ if (!isset($_SESSION['user'])) {
 <body>
 	<div class="ui container">
 		<h1> Cadastro de Pontos Turísticos </h1>
-		<form method="post" action="../Controller/cadastrar_ponto.php" class="ui form" enctype="multipart/form-data">
+		<form method="post" action="Controller/action_cadastrar_ponto.php" class="ui form" enctype="multipart/form-data">
 			<label><h3>Nome do Ponto Turístico </h3></label>
 			<input type="text" name="nome_ponto" placeholder="Nome do Ponto Turístico" required=""><br><br>
 			<label> <h3>Logradouro </h3></label>

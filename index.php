@@ -68,7 +68,7 @@ session_start();
 			?>			
 
 				<ul class="nav navbar-nav">
-        	<li><a href="cadastrar_pontos.php">Cadastrar Pontos</a></li>
+        	<li><a href="view_cadastrar_pontos.php">Cadastrar Pontos</a></li>
       	</ul>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
@@ -77,7 +77,7 @@ session_start();
             <li><a href="#">Configurações</a></li>
             <li><a href="#">Adiministrar contas</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="Controller/logout.php">Logout</a></li>
+            <li><a href="Controller/action_logout.php">Logout</a></li>
           </ul>
         </li>
       <?php 
@@ -106,7 +106,7 @@ session_start();
 	          <h2>Login</h2>
 	        </div>
 	        <div class="modal-body">
-	        	<form action="Controller/auth.php" method="POST">
+	        	<form action="Controller/action_auth.php" method="POST">
 	  				<div class="form-group">
 	    				<label for="login">Usuário:</label>
 	    				<input type="text" class="form-control" id="login" name="login">
@@ -123,7 +123,7 @@ session_start();
 	        </div>
 	        <div class="modal-footer">
 	          <label>Não tem conta?</label>
-	          <a href="cadastrar_usuario.php">Cadastre-se!</a>
+	          <a href="view_cadastrar_usuario.php">Cadastre-se!</a>
 	        </div>
 	    </div>
 	      
@@ -152,7 +152,7 @@ session_start();
 		</table>		
 		<!-- Footer -->
 		<div id="foot"></div>
-		<footer class="page-footer font-small blue">
+<footer class="page-footer font-small blue" id="rodape">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
@@ -172,7 +172,7 @@ var query = $(this).val();
 	if(query != ''){
 	
 $.ajax({
-	url:"Controller/search.php",
+	url:"Controller/action_search.php",
 	method:"POST",
 	data:{query:query},
 	success:function(data)

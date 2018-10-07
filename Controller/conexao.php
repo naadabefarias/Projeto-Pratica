@@ -2,8 +2,8 @@
 	
 	$username = "root";
 
-	$password = "ifpe";
-	$conn  =  new PDO('mysql:host=localhost;porta=3306;dbname=pontos', $username , $password);
+	$password = "kevin";
+	$conn  =  new PDO('mysql:host=localhost;porta=3306;dbname=ponto', $username , $password);
 
 ?>
 
