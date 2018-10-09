@@ -169,6 +169,102 @@ session_start();
   	</div>
 
 
+<div class="courselboot" >
+<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="10000" id="myCarousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+     </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="">
+      	<a href="#">
+      		<img src="myImage2.jpg" class="img-responsive">
+      		<div>
+      			
+      			<h4>Logadouro</h4>
+      		</div>
+      	</a>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+</div>
+
+
 
 <div id="corpo">
 	<h1> Pontos Cadastrados </h1>
