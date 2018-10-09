@@ -10,15 +10,14 @@ session_start();
 <head>
 	<title>Seu Ponto turistico</title>
 	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+	
 
 
 
@@ -27,7 +26,8 @@ session_start();
 
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed">
+<div>
+	<nav class="navbar navbar-default navbar-lg navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -37,20 +37,19 @@ session_start();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Pontos Turísticos</a>
+      <a class="navbar-brand" href="index.php">
+      	<img src="/images/icon-ponto.png" alt="Brand" class="logo">
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Sobre</a></li>
-      </ul>
-      <ul class="nav navbar-nav">
-        <li><a href="#">Quem Somos Nós</a></li>
-      </ul>
+	  	
       <form class="navbar-form navbar-left">
         <div class="form-group" >
-          <input type="text"  class="form-control" placeholder="Pesquise um ponto">
+       	<div class="col-lg-4">
+          <input type="text"  class="form-control pesq" placeholder="Pesquise um ponto">
+        </div>
         </div>
         <button type="submit" class="btn btn-default">Pesquisa</button>
       </form>
@@ -59,9 +58,17 @@ session_start();
       <?php 
       	if (!isset($_SESSION['user'])){
       ?>
+
+
+
+		<li class="menu-item4">
+			<button type="button" id='cadastro' class="btn btn-info modais" data-toggle="modal" data-target="#myCadastro">Sign Up  <span class="glyphicon glyphicon-user"></span></button>
+		</li>
         <li id="" class="menu-item4">
-							<button type="button" id='login' class="btn btn-info" data-toggle="modal" data-target="#myModal">Sign In <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
-				</li>
+			<button type="button" id='login' class="btn btn-info modais" data-toggle="modal" data-target="#myModal">Login <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
+		</li>
+
+
 
 			<?php  
 				}else{
@@ -88,6 +95,7 @@ session_start();
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</div>
 	<!-- MODAL DE LOGIN -->
 	<?php  
 		if (isset($_GET['error'])){
@@ -96,39 +104,73 @@ session_start();
 	<?php  }
 
 	?>
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+   <!-- Primeiro modal-->
+ 	<div class="modal fade" id="myModal" role="dialog">
+    	<div class="modal-dialog">
     
-      <!-- Modal content-->
-	    <div class="modal-content">
-	        <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h2>Login</h2>
-	        </div>
-	        <div class="modal-body">
-	        	<form action="Controller/action_auth.php" method="POST">
-	  				<div class="form-group">
-	    				<label for="login">Usuário:</label>
-	    				<input type="text" class="form-control" id="login" name="login">
-	  				</div>
-					<div class="form-group">
-						<label for="pwd">Senha:</label>
-					    <input type="password" class="form-control" id="pwd" name="senha">
-					</div>
-					<div class="checkbox">
-	    				<label><input type="checkbox"> Lembrar de mim</label>
-	  				</div>
-	  				<button type="submit" class="btn btn-primary btn-block">Entrar</button>
-				</form>
-	        </div>
-	        <div class="modal-footer">
-	          <label>Não tem conta?</label>
-	          <a href="view_cadastrar_usuario.php">Cadastre-se!</a>
-	        </div>
-	    </div>
-	      
-	</div>
-  </div>
+	    	<div class="modal-content">
+	        	<div class="modal-header">
+	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	          		<h2>Login</h2>
+	        	</div>
+	        	<div class="modal-body">
+	        		<form action="Controller/action_auth.php" method="POST">
+	  					<div class="form-group">
+	    					<label for="login">Usuário:</label>
+	    					<input type="text" class="form-control" id="login" name="login">
+	  					</div>
+						<div class="form-group">
+							<label for="pwd">Senha:</label>
+					    	<input type="password" class="form-control" id="pwd" name="senha">
+						</div>
+						<div class="checkbox">
+	    					<label><input type="checkbox"> Lembrar de mim</label>
+	  					</div>
+	  					<button type="submit" class="btn btn-primary btn-block">Entrar</button>
+					</form>
+	        	</div>
+	    	</div>
+		</div>
+  	</div>
+	     
+		<!-- Segundo modal -->
+	<div class="modal fade" id="myCadastro" role="dialog">
+    	<div class="modal-dialog">
+    
+	    	<div class="modal-content">
+	        	<div class="modal-header">
+	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	          		<h2>Cadastro</h2>
+	        	</div>
+	        	<div class="modal-body">
+	        		<form action="Controller/action_cadastrar_usuario.php" method="POST">
+	  					<div class="form-group">
+	    					<label for="email">Nome:</label>
+	    					<input type="text" class="form-control" id="nome" name="nome">
+	  					</div>
+	  					<div class="form-group">
+	    					<label for="login">Usuário:</label>
+	    					<input type="text" class="form-control" id="login" name="user">
+	  					</div>
+						<div class="form-group">
+							<label for="pwd">Senha:</label>
+					    	<input type="password" class="form-control" id="pwd" name="pass">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Confirme a Senha:</label>
+					    	<input type="password" class="form-control" id="pwd2" name="senha2">
+						</div>
+						
+	  					<button type="submit" class="btn btn-primary btn-block">Cadastrar-se</button>
+					</form>
+	        	</div>
+	    	</div>
+		</div>
+  	</div>
+
+
+
+<div id="corpo">
 	<h1> Pontos Cadastrados </h1>
 		<table class="ui celled table" id="tabela">
 			<tr>
@@ -149,10 +191,11 @@ session_start();
 				<?php	echo "</tr>";
 				}
 			 ?>
-		</table>		
+		</table>	
+		</div>	
 		<!-- Footer -->
 		<div id="foot"></div>
-<footer class="page-footer font-small blue" id="rodape">
+		<footer class="page-footer font-small blue">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
@@ -172,7 +215,7 @@ var query = $(this).val();
 	if(query != ''){
 	
 $.ajax({
-	url:"Controller/action_search.php",
+	url:"Controller/search.php",
 	method:"POST",
 	data:{query:query},
 	success:function(data)
