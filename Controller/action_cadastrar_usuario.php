@@ -16,7 +16,7 @@
 
 		$stmt = $queryOne->fetchAll();
 
-		if ($queryOne->rowCount() >= 1){
+		if ($queryOne->rowCount() > 1){
 
 ?>
 		<script type="text/javascript">
