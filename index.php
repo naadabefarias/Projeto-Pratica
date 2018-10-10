@@ -15,12 +15,7 @@ session_start();
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	
-
-
-
 	
 		<!-- Barra superior -->
 
@@ -48,11 +43,15 @@ session_start();
       <form class="navbar-form navbar-left">
         <div class="form-group" >
        	<div class="col-lg-4">
-          <input type="text"  class="form-control pesq" placeholder="Pesquise um ponto">
+          <input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto" autocomplete="off">
+       	
         </div>
         </div>
+       
         <button type="submit" class="btn btn-default">Pesquisa</button>
+        <div id="locais" class="locais"></div>
       </form>
+     
       <ul class="nav navbar-nav navbar-right">
 
       <?php 
@@ -169,102 +168,6 @@ session_start();
   	</div>
 
 
-<div class="courselboot" >
-<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="10000" id="myCarousel">
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-     </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="">
-      	<a href="#">
-      		<img src="myImage2.jpg" class="img-responsive">
-      		<div>
-      			
-      			<h4>Logadouro</h4>
-      		</div>
-      	</a>
-      </div>
-    </div>
-  </div>
- 
-</div>
-</div>
-
-
 
 <div id="corpo">
 	<h1> Pontos Cadastrados </h1>
@@ -304,14 +207,14 @@ session_start();
 </body>
 </html>
 
-<script >//Função de pesquisa, Auto complete Input
+<script>//Função de pesquisa, Auto complete Input
 $(document).ready(function(){
-$('#txtBusca').keyup(function() {
+$('#form-controlpesq').keyup(function() {
 var query = $(this).val();
 	if(query != ''){
 	
 $.ajax({
-	url:"Controller/search.php",
+	url:"Controller/action_search.php",
 	method:"POST",
 	data:{query:query},
 	success:function(data)
@@ -325,7 +228,7 @@ $('#locais').html(data);
     });
 });
     $(document).on('click', 'li', function(){
-    $('#txtBusca').val($(this) .text());
+    $('#form-controlpesq').val($(this) .text());
     $('#locais') .fadeOut();
 	});
     </script>

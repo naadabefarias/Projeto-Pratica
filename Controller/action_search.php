@@ -8,12 +8,13 @@ if (isset($_POST["query"])){
 	
 	$result = mysqli_query($connect,$query);
 	
-	$output = '<ul class="lista">';
+	$output = '<ul class="listas_result">';
 	if (mysqli_num_rows($result) > 0)
 	{
-
+$a =0;
 while ($row = mysqli_fetch_array($result)){
-	$output .= '<li>'. $row["nome_ponto"]. '</li>';
+	$a++;
+	$output .= '<li>' .$row["nome_ponto"]. '</li>';
  }
 }
 else {
