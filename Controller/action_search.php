@@ -1,26 +1,32 @@
 <?php 	
+include('conexao.php');
 
-$connect = mysqli_connect("localhost", "root", "jhonny3545", "banco");
 if (isset($_POST["query"])){
+	$dado = $_POST["query"];
+
 	$output = '';
-	$query = "SELECT * FROM pontos_turisticos WHERE nome_ponto LIKE '%".
-	$_POST["query"] ."%'";
+
+
+$checking=("SELECT * FROM pontos_turisticos WHERE nome_ponto LIKE :pesquisa");
+
+		$queryOne = $conn->prepare($checking);
+		$queryOne->bindValue(':pesquisa', '%'.$dado.'%');
+		$return = $queryOne -> execute();
+if ($return >= 1 ) {
+		$stmt = $queryOne->fetchAll();
+		$output = '<ul class="listas_result">';
+		
+		for ($i = 0; $i < sizeof($stmt); $i++){
+			$output .= '<li>' .$stmt[$i]['nome_ponto']. '</li>';
+		
+		}
+	}
+	else { 
+$output .= '<li> nada encontrado</li>';
 	
-	$result = mysqli_query($connect,$query);
-	
-	$output = '<ul class="listas_result">';
-	if (mysqli_num_rows($result) > 0)
-	{
-$a =0;
-while ($row = mysqli_fetch_array($result)){
-	$a++;
-	$output .= '<li>' .$row["nome_ponto"]. '</li>';
- }
-}
-else {
-		$output .= '<li> Nada encontrado</li>';
-}
+	}
 $output .= '</ul>';
 echo $output;
 }
+
 ?>
