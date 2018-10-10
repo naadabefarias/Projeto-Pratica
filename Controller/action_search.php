@@ -22,7 +22,7 @@ if ($return >= 1 ) {
 		}
 	}
 	else { 
-$output .= '<li> nada encontrado</li>';
+
 	
 	}
 $output .= '</ul>';
