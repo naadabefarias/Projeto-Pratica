@@ -7,6 +7,7 @@ if (isset($_POST["query"])){
 	$output = '';
 
 
+<<<<<<< HEAD
 	$checking=("SELECT * FROM pontos_turisticos WHERE nome_ponto LIKE :pesquisa");
 
 	$queryOne = $conn->prepare($checking);
@@ -30,6 +31,28 @@ if (isset($_POST["query"])){
 	}
 	$output .= '</ul>';
 	echo $output;
+=======
+$checking=("SELECT * FROM pontos_turisticos WHERE nome_ponto LIKE :pesquisa");
+
+		$queryOne = $conn->prepare($checking);
+		$queryOne->bindValue(':pesquisa', '%'.$dado.'%');
+		$return = $queryOne -> execute();
+if ($return >= 1 ) {
+		$stmt = $queryOne->fetchAll();
+		$output = '<ul class="listas_result">';
+		
+		for ($i = 0; $i < sizeof($stmt); $i++){
+			$output .= '<li>' .$stmt[$i]['nome_ponto']. '</li>';
+		
+		}
+	}
+	else { 
+
+	
+	}
+$output .= '</ul>';
+echo $output;
+>>>>>>> f326df1f652ee40d77145a326ef838611901bfd4
 }
 
 ?>
