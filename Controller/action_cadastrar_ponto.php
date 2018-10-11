@@ -10,6 +10,7 @@
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
 		if(isset($imagem)){
+			mkdir(__DIR__.'/../upload/', 0777, true);//Cria a pasta upload e se já existir não faz nada.
 			$extensao  =  strtolower(substr($imagem['name'], -4));//pega as 4 ultimas letras do nome
 			$novo_nome =  "imagem_".md5(time()).$extensao;//nome do arquivo salvo
 			$diretorio =  "../upload/";//onde ele será salvo
