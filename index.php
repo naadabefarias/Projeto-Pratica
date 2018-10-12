@@ -167,6 +167,47 @@ session_start();
 		</div>
   	</div>
 
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  		<!-- Indicators -->
+  		<ol class="carousel-indicators">
+    		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    		<li data-target="#myCarousel" data-slide-to="1"></li>
+    		<li data-target="#myCarousel" data-slide-to="2"></li>
+  		</ol>
+
+  		<!-- Wrapper for slides -->
+  		<div class="carousel-inner" role="listbox">
+    		<div class="item active">
+      			<a href="#">
+      				<img src="images/pontos/igarassu__abril_2010.jpg" alt="...">
+    			</a>
+      			<div class="carousel-caption">
+        			<h3></h3>
+      			</div>
+    		</div>
+
+    		<div class="item">
+    			<a href="#">
+      				<img src="images/pontos/igarassu__abril_2010.jpg" alt="...">
+    			</a>
+      			<div class="carousel-caption">
+        			<h3></h3>
+      			</div>
+    		</div>
+
+    		<div class="item">
+      			<a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
+      				<img src="images/pontos/igarassu__abril_2010.jpg" alt="...">
+    			</a>
+      			<div class="carousel-caption">
+        			<h3></h3>
+      			</div>
+    		</div>
+  	</div>
+
+</div>
+
+
 
 
 <div id="corpo">
