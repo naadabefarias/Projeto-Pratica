@@ -2,7 +2,7 @@
 require_once('Controller/conexao.php');
 
 	// $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
-$consulta = $conn -> query("SELECT nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;"); 
+$consulta = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;"); 
 session_start();
 ?>
 <!DOCTYPE html>
@@ -182,11 +182,12 @@ session_start();
 			<?php 
 
 				while($linha = $consulta -> fetch(PDO::FETCH_ASSOC)){
-					echo "<tr>";
-						echo "<td>{$linha['nome_ponto']}</td>";
+					echo "<tr>";?>
+				<?php	echo "<td>{$linha['nome_ponto']}</td>";
 						echo "<td>{$linha['logradouro']}</td>";
 						echo "<td>{$linha['bairro']}</td>";?>
 						<td><img src= "upload/<?=$linha['imagem'];?>" class="img"></td>
+						<td><a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">Visualizar ponto: <?=$linha['nome_ponto']?></a></td>
 				<?php	echo "</tr>";
 				}
 			 ?>
