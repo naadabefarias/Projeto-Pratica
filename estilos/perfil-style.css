@@ -1,0 +1,27 @@
+button.modais{
+  margin-top: 7px;
+  margin-right: 5px;
+}
+div#foot{
+  height: 1000px;
+}
+
+img.img{
+  height: 10em;
+  width: 15em;
+}
+img.logo{
+  margin-top: -15px;
+  height: 4em;
+  width: 10em;
+}
+
+ul{
+  font-size: 15pt;
+}
+#corpo{
+  margin-top: 6em;
+  width: 70%;
+  margin-left: 15%;
+
+}
