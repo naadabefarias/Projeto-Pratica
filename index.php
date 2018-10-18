@@ -184,8 +184,6 @@ session_start();
   				}
 	      	endwhile ?>
 
-  		</ol>
-
   		<!-- Slides do Carousel -->
   		<div class="carousel-inner" role="listbox">
 	
