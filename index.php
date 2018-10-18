@@ -166,45 +166,68 @@ session_start();
 	    	</div>
 		</div>
   	</div>
+		<!--Carousel -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  		<!-- Indicadores do Carousel -->
+		<ol class="carousel-indicators">
+  	
+  	<?php   	$ativo = 0;
+  			while ($ativo < 3):
+	      		if ($ativo == 0) { ?>
+		      		<li data-target="#myCarousel" data-slide-to="<?=$ativo?>" class="active"></li>
+	    	<?php $ativo++;
+	    		}else{
+					if($ativo <= 2):?>
+	      				<li data-target="#myCarousel" data-slide-to="<?=$ativo;?>"></li>
+	      		<?php $ativo++; ?>
+			  <?php endif; 		
+  				}
+	      	endwhile ?>
 
+  		</ol>
 
-
-<div id="corpo">
-	<h1> Pontos Cadastrados </h1>
-		<table class="ui celled table" id="tabela">
-			<tr>
-				<th> Nome do Ponto </th>
-				<th> Logradouro </th>
-				<th> Bairro </th>
-				<th> imagem </th>
-			</tr>
-			
-			<?php 
-
-				while($linha = $consulta -> fetch(PDO::FETCH_ASSOC)){
-					echo "<tr>";?>
-				<?php	echo "<td>{$linha['nome_ponto']}</td>";
-						echo "<td>{$linha['logradouro']}</td>";
-						echo "<td>{$linha['bairro']}</td>";?>
-						<td><img src= "upload/<?=$linha['imagem'];?>" class="img"></td>
-						<td><a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">Visualizar ponto: <?=$linha['nome_ponto']?></a></td>
-				<?php	echo "</tr>";
-				}
-			 ?>
-		</table>	
-		</div>	
-		<!-- Footer -->
-		<div id="foot"></div>
+  		<!-- Slides do Carousel -->
+  		<div class="carousel-inner" role="listbox">
+	
+	<?php 	$ativoCarr = 0;
+      		while($linha = $consulta -> fetch(PDO::FETCH_ASSOC)):
+      		 	if ($ativoCarr == 0) {?>
+	      			<div class="item active">
+      		 			<a href="view_visualizar_pontos.php?id=<?=$linha['id']?>">
+	        			<img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
+      		 			</a>
+	      			</div>
+    <?php 	$ativoCarr++;
+      			}else{
+      				if ($ativoCarr <= 2): ?>	
+		      			<div class="item">
+							<a href="view_visualizar_pontos.php?id=<?=$linha['id']?>">
+		        			<img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
+		        			</a>
+		      			</div>
+      		<?php 	$ativoCarr++;
+      			 	endif;
+      			};
+      		endwhile; ?>
+		
+			<!-- Controles de Direita e Esquerda -->
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		      <span class="glyphicon glyphicon-chevron-left"></span>
+		      <span class="sr-only">Anterior</span>
+		    </a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		      <span class="glyphicon glyphicon-chevron-right"></span>
+		      <span class="sr-only">Próximo</span>
+		    </a>
+		</div>		
+	</div>	
+	<!-- Footer -->
+	<div id="foot"></div>
 		<footer class="page-footer font-small blue">
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <strong>IFPE</strong>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+		  	<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">© 2018 Copyright:<strong>IFPE</strong></div>
+		</footer>
+	</div>
 </body>
 </html>
 
