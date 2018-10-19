@@ -21,11 +21,6 @@ session_start();
 
 </head>
 <body>
-	<?php if (isset($_GET['alr'])):?>
-		<script type="text/javascript">
-			alert("Dados alterados com Sucesso\nFaça o Login novamente!");
-		</script>
-	<?php endif ?>
 <div>
 	<nav class="navbar navbar-default navbar-lg navbar-fixed-top">
   <div class="container-fluid">
@@ -207,7 +202,7 @@ session_start();
       				if ($ativoCarr <= 2): ?>	
 		      			<div class="item">
 							<a href="view_visualizar_pontos.php?id=<?=$linha['id']?>">
-		        			<img style="width: 1200px;height: 400px;" src="upload/<?=$linha['imagem'];?>">
+		        			<img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
 		        			</a>
 		      			</div>
       		<?php 	$ativoCarr++;

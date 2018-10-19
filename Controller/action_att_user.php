@@ -1,5 +1,5 @@
 <?php 
-	include 'conexao.php';
+	include "conexao.php";
 	session_start();
 	$usuario = $_SESSION['user'];
 
@@ -16,9 +16,9 @@
 		$update->bindParam(2,$user);
 		$update->bindParam(3,$usuario);
 		$update->execute();
-		session_destroy();
+		$_SESSION['user']=$user;
 		
-		header("Location: /index.php?alr");
+		header("Location: /view_perfil.php");
 	}
 	else{
 		header("Location: /view_perfil.php?pwderr");

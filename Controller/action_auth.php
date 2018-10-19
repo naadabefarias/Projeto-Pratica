@@ -1,5 +1,6 @@
 <?php 
-	require_once 'conexao.php';
+
+	include'conexao.php';
 
 	$login = $_POST['login'];
 	$senha = $_POST['senha'];
@@ -13,11 +14,10 @@
 	if ($consulta->rowCount() >= 1){
 		session_start();
 		$_SESSION['user'] = $login;
-		header('Location: ../index.php');
+		header("Location: /index.php");
 
 	} else {
-		header('Location: ../index.php?error');
-	}
+		header("Location: /index.php?erro");
 
-
+    }
 ?>

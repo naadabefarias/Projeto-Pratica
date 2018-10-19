@@ -222,7 +222,7 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
 $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;");        while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
             if ($ativoCarr <= 3):?>
         <div class="col-md-3 col-sm-6 mb-4">
-          <a href="visualizar.php?id=<?=$linha['id'];?>">
+          <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
             <img class="img-fluid img2" src="../upload/<?=$linha['imagem'];?>" alt="">
                 <br><br><h3><?=$linha['nome_ponto'];?></h3>    
           </a>
