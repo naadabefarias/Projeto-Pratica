@@ -21,6 +21,11 @@ session_start();
 
 </head>
 <body>
+	<?php if (isset($_GET['alr'])):?>
+		<script type="text/javascript">
+			alert("Dados alterados com Sucesso\nFaça o Login novamente!");
+		</script>
+	<?php endif ?>
 <div>
 	<nav class="navbar navbar-default navbar-lg navbar-fixed-top">
   <div class="container-fluid">
