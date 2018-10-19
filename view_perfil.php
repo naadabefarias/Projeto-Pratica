@@ -1,5 +1,9 @@
 <?php 
 	session_start(); 
+	if (!isset($_SESSION['user'])){
+		header('Location: index.php');
+		exit();
+	}
 	$user = $_SESSION['user'];
 	require_once 'Controller/conexao.php';
 	$stmt = $conn->prepare("SELECT name,user FROM Users where user=?");
@@ -74,14 +78,12 @@
 			      <tr>
 			        <th>Nome</th>
 			        <th>Usuário</th>
-			        <th>Email</th>
 			      </tr>
 			    </thead>
 			    <tbody>
 			      <tr>
 			        <td><?=$dados['name']?></td>
 			        <td><?=$dados['user']?></td>
-			        <td>john@example.com</td>
 			      </tr>
 			      
 			    </tbody>
