@@ -28,13 +28,15 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
       body {
         padding-top: 56px;
       }
-  .img1{
+    .img1{
     width: 750px;
     height: 500px;
+    border-radius:10%;
   }
   .img2{
-    width: 500px;
-    height: 300px;
+    width: 250px;
+    height: 150px;
+  border-radius: 10%;
   }
 }
 </style>
@@ -215,17 +217,14 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
 
       <!-- Related Projects Row -->
       <h3 class="my-4">Outros pontos turisticos:</h3>
-
-      <div class="row">
+<div class="row">
  <?php   $ativoCarr = 0;
 $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;");        while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
             if ($ativoCarr <= 3):?>
         <div class="col-md-3 col-sm-6 mb-4">
-          <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
+          <a href="visualizar.php?id=<?=$linha['id'];?>">
             <img class="img-fluid img2" src="../upload/<?=$linha['imagem'];?>" alt="">
-            <div class="carousel-caption">
-                <br><br><h3><?=$linha['nome_ponto'];?></h3>
-             </div>
+                <br><br><h3><?=$linha['nome_ponto'];?></h3>    
           </a>
         </div>
 <?php       $ativoCarr++;
