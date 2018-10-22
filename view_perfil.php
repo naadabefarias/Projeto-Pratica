@@ -58,7 +58,7 @@
 	          <ul class="dropdown-menu">
 	            <li><a href="view_perfil.php">Perfil</a></li>
 	            <li><a href="#">Configurações</a></li>
-	            <li><a href="#">Adiministrar contas</a></li>
+	            <li><a href="#">Administrar contas</a></li>
 	            <li role="separator" class="divider"></li>
 	            <li><a href="Controller/action_logout.php">Logout</a></li>
 	          </ul>
@@ -129,10 +129,11 @@
 			      
 			    </tbody>
 			</table>
-			</div>
 			<a href="view_perfil.php?att"><button class="btn-primary btn">Alterar Dados</button></a>
 			<?php endif ?>
 	</div>
+	</div>
+
 			<!-- Footer -->
 	<footer class="container-fluid text-center">
   		<div class="footer-copyright text-center py-3">© 2018 Copyright:<strong>IFPE</strong></div>

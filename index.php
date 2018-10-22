@@ -37,7 +37,9 @@ session_start();
         <li><a href="#">About</a></li>
         <li><input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto" autocomplete="off">
        	</li>
-       	<li><button type="submit" class="btn btn-default pesq">Pesquisa</button></li>
+       	<li><button type="submit" class="btn btn-default pesq">Pesquisa</button>
+					<!-- <p id="locais"><a href=""></a></p> -->
+       	</li>
       </ul>
     
     <?php if (!isset($_SESSION['user'])): ?>
@@ -53,7 +55,7 @@ session_start();
 	          <ul class="dropdown-menu">
 	            <li><a href="view_perfil.php">Perfil</a></li>
 	            <li><a href="#">Configurações</a></li>
-	            <li><a href="#">Adiministrar contas</a></li>
+	            <li><a href="#">Administrar contas</a></li>
 	            <li role="separator" class="divider"></li>
 	            <li><a href="Controller/action_logout.php">Logout</a></li>
 	          </ul>
@@ -239,7 +241,7 @@ $('#locais').html(data);
 	  }
     });
 });
-    $(document).on('click', 'li', function(){
+    $(document).on('click', 'p', function(){
     $('#form-controlpesq').val($(this) .text());
     $('#locais') .fadeOut();
 	});

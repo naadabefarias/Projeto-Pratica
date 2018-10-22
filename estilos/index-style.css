@@ -1,4 +1,7 @@
-
+#locais{
+  background-color: white;
+  color: black;
+}
 
 img.img{
   height: 10em;
@@ -20,7 +23,8 @@ footer {
       color: white;
     }
 input.pesq{
-  width: 40em;
+  width: 50em;
+  margin-left: 5em;
 }    
 .pesq{
   margin-top: 7px;

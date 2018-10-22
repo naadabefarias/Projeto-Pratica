@@ -77,7 +77,7 @@ if (!isset($_SESSION['user'])) {
 	          <ul class="dropdown-menu">
 	            <li><a href="view_perfil.php">Perfil</a></li>
 	            <li><a href="#">Configurações</a></li>
-	            <li><a href="#">Adiministrar contas</a></li>
+	            <li><a href="#">Administrar contas</a></li>
 	            <li role="separator" class="divider"></li>
 	            <li><a href="Controller/action_logout.php">Logout</a></li>
 	          </ul>
