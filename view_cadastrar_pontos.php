@@ -24,20 +24,69 @@ if (!isset($_SESSION['user'])) {
 
 		margin-top: 25px;
 	}
-	img.logo{
-	  margin-top: -15px;
-	  height: 4em;
-	  width: 10em;
-	}
-	nav{
- 		height: 5em;
-	}
+	input.pesq{
+  width: 40em;
+}    
+.pesq{
+  margin-top: 7px;
+  margin-left: 7px;
+}
 	form {
 		margin-top: 50px;
 	}
+	.container{
+		margin-top: 6em;
+		height: 800px;	
+	}
+	footer {
+      background-color: #000000;
+      padding: 25px;
+      color: white;
+    }
 </style>
 <body>
-	<?php include 'cabecalho.php'; ?>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-map-marker"></span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto" autocomplete="off">
+       	</li>
+       	<li><button type="submit" class="btn btn-default pesq">Pesquisa</button></li>
+      </ul>
+    
+    <?php if (!isset($_SESSION['user'])): ?>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#myCadastro" id="cadastro"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal"  id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+  	<?php else: ?>
+ 		<ul class="nav navbar-nav navbar-right">
+        	<li class="active"><a href="#">Cadastrar Pontos</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="view_perfil.php">Perfil</a></li>
+	            <li><a href="#">Configurações</a></li>
+	            <li><a href="#">Adiministrar contas</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="Controller/action_logout.php">Logout</a></li>
+	          </ul>
+	        </li>
+      	</ul>
+    <?php endif ?>       
+    </div>
+  </div>
+</nav>
 	<div class="ui container">
 		<h1> Cadastro de Pontos Turísticos </h1>
 		<form method="post" action="Controller/action_cadastrar_ponto.php" class="ui form" enctype="multipart/form-data">
@@ -54,5 +103,10 @@ if (!isset($_SESSION['user'])) {
 			<input type="submit" value="Cadastrar" class="ui primary button">
 		</form>
 	</div>
+
+		<!-- Footer -->
+	<footer class="container-fluid text-center">
+  		<div class="footer-copyright text-center py-3">© 2018 Copyright:<strong>IFPE</strong></div>
+	</footer>
 </body>
 </html>

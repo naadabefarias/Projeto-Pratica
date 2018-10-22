@@ -21,80 +21,50 @@ session_start();
 
 </head>
 <body>
-<div>
-	<nav class="navbar navbar-default navbar-lg navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.php">
-      	<img src="/images/icon-ponto.png" alt="Brand" class="logo">
-      </a>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-map-marker"></span></a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  	
-      <form class="navbar-form navbar-left">
-        <div class="form-group" >
-       	<div class="col-lg-4">
-          <input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto" autocomplete="off">
-       	
-        </div>
-        </div>
-       
-        <button type="submit" class="btn btn-default">Pesquisa</button>
-        <div id="locais" class="locais"></div>
-      </form>
-     
-      <ul class="nav navbar-nav navbar-right">
-
-      <?php 
-      	if (!isset($_SESSION['user'])){
-      ?>
-
-
-
-		<li class="menu-item4">
-			<button type="button" id='cadastro' class="btn btn-info modais" data-toggle="modal" data-target="#myCadastro">Sign Up  <span class="glyphicon glyphicon-user"></span></button>
-		</li>
-        <li id="" class="menu-item4">
-			<button type="button" id='login' class="btn btn-info modais" data-toggle="modal" data-target="#myModal">Login <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></button>
-		</li>
-
-
-
-			<?php  
-				}else{
-			?>			
-
-				<ul class="nav navbar-nav">
-        	<li><a href="view_cadastrar_pontos.php">Cadastrar Pontos</a></li>
-      	</ul>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="view_perfil.php">Perfil</a></li>
-            <li><a href="#">Configurações</a></li>
-            <li><a href="#">Adiministrar contas</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="Controller/action_logout.php">Logout</a></li>
-          </ul>
-        </li>
-      <?php 
-      	} 
-
-      ?>  
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto" autocomplete="off">
+       	</li>
+       	<li><button type="submit" class="btn btn-default pesq">Pesquisa</button></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</div>
+    
+    <?php if (!isset($_SESSION['user'])): ?>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#myCadastro" id="cadastro"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal"  id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+  	<?php else: ?>
+ 		<ul class="nav navbar-nav navbar-right">
+        	<li><a href="view_cadastrar_pontos.php">Cadastrar Pontos</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="view_perfil.php">Perfil</a></li>
+	            <li><a href="#">Configurações</a></li>
+	            <li><a href="#">Adiministrar contas</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="Controller/action_logout.php">Logout</a></li>
+	          </ul>
+	        </li>
+      	</ul>
+    <?php endif ?>       
+    </div>
+  </div>
+</nav>	
+
+
 	<!-- MODAL DE LOGIN -->
 	<?php  
 		if (isset($_GET['error'])){
@@ -242,12 +212,10 @@ session_start();
    
 </div><br>
 	<!-- Footer -->
-	<div id="foot"></div>
-		<footer class="page-footer font-small blue">
-		  	<!-- Copyright -->
-			<div class="footer-copyright text-center py-3">© 2018 Copyright:<strong>IFPE</strong></div>
-		</footer>
-	</div>
+	<footer class="container-fluid text-center">
+  		<div class="footer-copyright text-center py-3">© 2018 Copyright:<strong>IFPE</strong></div>
+	</footer>
+
 </body>
 </html>
 

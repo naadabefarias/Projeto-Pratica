@@ -1,8 +1,11 @@
 <?php
 	
-	$username = "id7135713_aluno";
+	// $username = "id7135713_aluno";
 
-	$password = "ifpe2018";
-	$conn  =  new PDO('mysql:host=localhost;porta=3306;dbname=id7135713_ifpe', $username , $password);
-
+	// $password = "ifpe2018";
+	// $conn  =  new PDO('mysql:host=localhost;porta=3306;dbname=id7135713_ifpe', $username , $password);
+	
+	$username = "root";
+	$password = "luigi355";
+	$conn = new PDO('mysql:host=localhost;porta=3306;dbname=banco',$username,$password);
 ?>

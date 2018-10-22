@@ -2,23 +2,13 @@ button.modais{
   margin-top: 7px;
   margin-right: 5px;
 }
-div#foot{
-  height: 1000px;
-}
+
 
 img.img{
   height: 10em;
   width: 15em;
 }
-img.logo{
-  margin-top: -15px;
-  height: 4em;
-  width: 10em;
-}
 
-ul{
-  font-size: 15pt;
-}
 #corpo{
   margin-top: 6em;
   width: 70%;
@@ -27,4 +17,19 @@ ul{
 }
 div#dados{
   margin-top: 70px;
+}
+  input.pesq{
+  width: 40em;
+}    
+.pesq{
+  margin-top: 7px;
+  margin-left: 7px;
+}
+footer {
+      background-color: #000000;
+      padding: 25px;
+      color: white;
+}
+#corpo{
+  height: 800px;
 }
