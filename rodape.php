@@ -1,3 +1,4 @@
+</div>
 	<div id="foot"></div>
 		<footer class="page-footer font-small blue">
 		  	<!-- Copyright -->
