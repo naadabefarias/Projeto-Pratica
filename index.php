@@ -6,7 +6,7 @@
 			<!-- Indicadores do Carousel -->
 			<ol class="carousel-indicators">
 
-				<?php   	$ativo = 0;
+				<?php   $ativo = 0;
 				while ($ativo < 3):
 					if ($ativo == 0) { ?>
 						<li data-target="#myCarousel" data-slide-to="<?=$ativo?>" class="active"></li>

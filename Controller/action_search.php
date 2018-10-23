@@ -18,7 +18,7 @@ if (isset($_POST["query"])){
 	
 	
 		$stmt = $queryOne->fetchAll();
-		$output = '<ul class="listas_result">';
+		$output = '<ul class="listas_result" style="list-style-type:none;">';
 		if ($stmt!=null){
 		
 		

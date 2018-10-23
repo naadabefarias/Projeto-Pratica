@@ -33,13 +33,17 @@ session_start();
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Home</a></li>
 					<li><a href="sobre.php">Sobre</a></li>
-					<li><input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
+					<li>
+						
+					<input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
+					<p class="locais" id="locais"><a href=""></a></p>
 					</li>
 					<li><button type="submit" class="btn btn-default pesq">Pesquisar</button>
-						<!-- <p id="locais"><a href=""></a></p> -->
+						
 					</li>
-				</ul>
 
+				</ul>
+							
 				<?php if (!isset($_SESSION['user'])): ?>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#" data-toggle="modal" data-target="#myCadastro" id="cadastro"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
