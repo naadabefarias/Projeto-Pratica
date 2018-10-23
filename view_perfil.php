@@ -134,9 +134,8 @@
 	</div>
 	</div>
 
-			<!-- Footer -->
-	<footer class="container-fluid text-center">
-  		<div class="footer-copyright text-center py-3">© 2018 Copyright:<strong>IFPE</strong></div>
-	</footer>
-</body>
-</html>
+<?php 
+	
+	require_once('view_footer.html');
+
+ ?>

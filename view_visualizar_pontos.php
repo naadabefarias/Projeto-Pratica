@@ -1,6 +1,6 @@
 <?php
 
-require_once('header.php');
+require_once('view_header.php');
 $id = $_GET['id'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
@@ -87,7 +87,7 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
 </style>
 <div id="teste">
 <?php 
-	require_once('footer.html');
+	require_once('view_footer.html');
 ?>
 </div>
     

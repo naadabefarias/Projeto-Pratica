@@ -1,5 +1,5 @@
 		<!-- Header -->
-		<?php require_once('header.php') ?>
+		<?php require_once('view_header.php') ?>
 
 		<!--Carousel -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -56,8 +56,8 @@
 				</a>
 			</div>		
 		</div>
-		<div class="container text-center">    
-			<h3>Melhores Pontos Turisticos da Região</h3><br>
+		<div class="container text-center" id="listagem_pontos">    
+			<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3><br>
 			<?php $v = 0;
 			$consultei = $conn -> query("SELECT id, nome_ponto, imagem FROM pontos_turisticos;");
 			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
@@ -104,4 +104,4 @@ $(document).on('click', 'p', function(){
 </script>
 
 <!-- Footer -->
-<?php require_once('footer.html') ?>
+<?php require_once('view_footer.html') ?>
