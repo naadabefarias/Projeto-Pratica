@@ -65,7 +65,7 @@
 					<div class="grande">
 						<div class="col-sm-4">
 							<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">  
-								<img src="../upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
+								<img src="upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
 								<p><?=$linha1['nome_ponto'];?></p>
 							</a>
 						</div>
