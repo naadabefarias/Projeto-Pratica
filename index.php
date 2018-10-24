@@ -14,7 +14,7 @@
 					}else{
 						if($ativo <= 2):?>
 							<li data-target="#myCarousel" data-slide-to="<?=$ativo;?>"></li>
-							<?php $ativo++; ?>
+							<?php $ativo++; ?>	
 						<?php endif; 		
 					}
 				endwhile ?>
