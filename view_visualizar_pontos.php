@@ -1,6 +1,6 @@
 <?php
 
-require_once('header.php');
+require_once('view_header.php');
 $id = $_GET['id'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
@@ -38,7 +38,7 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
       <div class="row">
 
         <div class="col-md-8 img" >
-          <img class="img-fluid img1"  src="../upload/<?=$linha['imagem'];?>" alt="">
+          <img class="img-fluid img1"  src="upload/<?=$linha['imagem'];?>" alt="">
         </div>
 
         <div class="col-md-4">
@@ -63,7 +63,7 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
             if ($ativoCarr <= 3):?>
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
-            <img class="img-fluid img2" src="../upload/<?=$linha['imagem'];?>" alt="">
+            <img class="img-fluid img2" src="upload/<?=$linha['imagem'];?>" alt="">
                 <br><br><h3><?=$linha['nome_ponto'];?></h3>    
           </a>
         </div>
@@ -87,7 +87,7 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
 </style>
 <div id="teste">
 <?php 
-	require_once('footer.html');
+	require_once('view_footer.html');
 ?>
 </div>
     

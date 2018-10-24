@@ -1,10 +1,9 @@
 #locais{
   background-color: white;
   color: black;
-  margin-left:5em;
+  margin-left:5em;  
  border-radius:4px;
  }
-
 img.img{
   height: 10em;
   width: 15em;
@@ -14,15 +13,11 @@ img.logo{
   height: 4em;
   width: 10em;
 }
-
-
 .carousel{
   margin-top: 3.5em;
 }
 footer {
-      background-color: #000000;
-      padding: 25px;
-      color: white; 
+      
     }
 input.pesq{
   width: 50em;
@@ -31,4 +26,45 @@ input.pesq{
 .pesq{
   margin-top: 7px;
   margin-left: 7px;
+}
+ 
+ footer{
+background-color: #000000;
+      padding: 25px;
+ } 
+
+ .links_footer{
+  margin-top: 2em;
+  list-style-type: none;
+  float:left;
+   display: inline;
+    overflow:hidden; 
+
+ }
+ .footer-copyright {
+  position:auto;
+margin-right: 1em;
+color:white;
+margin-top: -2em;
+
+ }
+
+ .pesquisar_footer{
+  
+  color: white; 
+  float: right;
+ }
+ .link_comuns{
+  margin-top:2em;
+  margin-left: 35em;
+  list-style-type: none;
+  font-size:18px;
+ }
+ .link3{
+  width:60px;
+  height:40px;
+ }
+.seila{
+width:70px;
+
 }

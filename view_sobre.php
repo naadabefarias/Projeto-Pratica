@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php require_once('view_header.php'); ?>
 
 <style type="text/css">
 
@@ -25,4 +25,4 @@
 
 <h1 align="Center"> Sobre </h1>
 
-<?php require_once('footer.html'); ?>
+<?php require_once('view_footer.html'); ?>

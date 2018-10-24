@@ -7,6 +7,7 @@ session_start();
 <html>
 <head>
 	<title>Seu Ponto turistico</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
 	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +19,20 @@ session_start();
 	<!-- Barra superior -->
 </head>
 <body>
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Mali');
+		#titulo_pontos{
+			margin-top: 30px;
+			font-family: 'Mali', cursive;
+			font-size: 30pt;
+		}
+
+		#listagem_pontos {
+			font-family: 'Mali', cursive;
+			font-style: italic;
+		}
+	</style>
 	<div id="geral">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
@@ -32,7 +47,7 @@ session_start();
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Home</a></li>
-					<li><a href="sobre.php">Sobre</a></li>
+					<li><a href="view_sobre.php">Sobre</a></li>
 					<li>
 						
 					<input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">

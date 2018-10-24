@@ -1,4 +1,6 @@
 <?php 
+	session_start();
+	$id = $_SESSION['id'];
  	require_once('conexao.php');
  	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_FILES['imagem'])){
  		
@@ -18,18 +20,18 @@
 		}	
 
  		
- 		$sql = "INSERT INTO pontos_turisticos (nome_ponto, logradouro, bairro, numero_ponto, imagem) 
-						VALUES('$nome', '$logradouro', '$bairro', '$numero', '$novo_nome')";
+ 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem) 
+						VALUES(?, ?, ?, ?, ?, ?)";
  		
  		$query = $conn->prepare($sql);
- 		$query->bindParam(':nome', $nome);
-		$query->bindParam(':logradouro', $logradouro);
-		$query->bindParam(':bairro', $bairro);
-		$query->bindParam(':numero', $numero);
-		$query->bindParam(':imagem', $novo_nome);
+		$query->bindParam(1, $id);
+ 		$query->bindParam(2, $nome);
+		$query->bindParam(3, $logradouro);
+		$query->bindParam(4, $bairro);
+		$query->bindParam(5, $numero);
+		$query->bindParam(6, $novo_nome);
  		$stmt = $query->execute();
 		header('Location: ../index.php');
-		
 	} else {
  		echo "Erro!!";
  	}
