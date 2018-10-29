@@ -20,7 +20,7 @@ img.logo{
  background-image: url('images/confete.gif');   
     }
 input.pesq{
-  width: 50em;
+    width: 50em;
   margin-left: 5em;
 }    
 .pesq{
@@ -71,9 +71,5 @@ margin-top:2em;
 
 }
 .form-inline{
- margin-left:55em;
-margin-top:-6em;
-text-align:left;
-width:100em;
-margin-right:5em;
+ position: fixed;
 }
