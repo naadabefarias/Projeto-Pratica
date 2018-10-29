@@ -16,8 +16,8 @@ img.logo{
 .carousel{
   margin-top: 3.5em;
 }
-footer {
-      
+/*footer {
+ background-image: url('images/confete.gif');   
     }
 input.pesq{
   width: 50em;
@@ -26,11 +26,12 @@ input.pesq{
 .pesq{
   margin-top: 7px;
   margin-left: 7px;
-}
+}*/
  
  footer{
 background-color: #000000;
       padding: 25px;
+
  } 
 
  .links_footer{
@@ -64,7 +65,15 @@ margin-top: -2em;
   width:60px;
   height:40px;
  }
-.seila{
-width:70px;
+.seila {
+width:13em;
+margin-top:2em;
 
+}
+.form-inline{
+ margin-left:55em;
+margin-top:-6em;
+text-align:left;
+width:100em;
+margin-right:5em;
 }
