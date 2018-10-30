@@ -84,7 +84,7 @@ $(document).ready(function(){
 		if(query != ''){
 
 			$.ajax({
-				url:"Controller/action_search.php",
+				url:"Controller/action_filtrar.php",
 				method:"POST",
 				data:{query:query},
 				success:function(data)

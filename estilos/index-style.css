@@ -18,7 +18,7 @@ img.logo{
 }
 /*footer {
  background-image: url('images/confete.gif');   
-    }
+    }*/
 input.pesq{
     width: 50em;
   margin-left: 5em;
@@ -26,7 +26,7 @@ input.pesq{
 .pesq{
   margin-top: 7px;
   margin-left: 7px;
-}*/
+}
  
  footer{
 background-color: #000000;
@@ -70,6 +70,4 @@ width:13em;
 margin-top:2em;
 
 }
-.form-inline{
- position: fixed;
-}
+

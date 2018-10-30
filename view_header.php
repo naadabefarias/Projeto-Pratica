@@ -54,14 +54,14 @@ session_start();
 					<li class="active"><a href="index.php">Home</a></li>
 					<li><a href="view_sobre.php">Sobre</a></li>
 					<li>
-						
-					<input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
+			
+					<form class="pesquisa-ponto" action="search_ponto.php">		
+					<input type="text" name="search" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
 					<p class="locais" id="locais"><a href=""></a></p>
 					</li>
 					<li><button type="submit" class="btn btn-default pesq">Pesquisar</button>
-						
 					</li>
-
+						</form>	
 				</ul>
 							
 				<?php if (!isset($_SESSION['user'])): ?>

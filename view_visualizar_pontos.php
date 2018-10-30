@@ -2,6 +2,7 @@
 
 require_once('view_header.php');
 $id = $_GET['id'];
+$pesquisa = $_POST['search'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
   $linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
