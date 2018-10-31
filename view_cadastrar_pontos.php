@@ -12,15 +12,13 @@ body {
 
 	margin-top: 25px;
 }
-input.pesq{
-	width: 40em;
-}    
-.pesq{
+  
+/*.pesq{
 	margin-top: 7px;
 	margin-left: 7px;
-}
+*/}
 form {
-	margin-top: 50px;
+	margin-top: 5em;
 }
 .container{
 	margin-top: 6em;

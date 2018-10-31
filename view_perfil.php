@@ -1,4 +1,5 @@
 <?php 
+	require_once 'view_header.php';
 	session_start(); 
 	if (!isset($_SESSION['user'])){
 		header('Location: index.php');
@@ -11,71 +12,18 @@
 	$stmt->execute();
 	$dados = $stmt->fetch();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Perfil</title>
-	<link rel="stylesheet" type="text/css" href="estilos/perfil-style.css">
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-cale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<link rel="icon" type="image/png" href="images/icon.png">
-</head>
-<body>
-			<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-map-marker"></span></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><input type="text" name="form-controlpesq" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto" autocomplete="off">
-       	</li>
-       	<li><button type="submit" class="btn btn-default pesq">Pesquisa</button></li>
-      </ul>
-    
-    <?php if (!isset($_SESSION['user'])): ?>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" data-toggle="modal" data-target="#myCadastro" id="cadastro"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#myModal"  id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-  	<?php else: ?>
- 		<ul class="nav navbar-nav navbar-right">
-        	<li><a href="view_cadastrar_pontos.php">Cadastrar Pontos</a></li>
-	        <li class="dropdown active">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="view_perfil.php">Perfil</a></li>
-	            <li><a href="#">Configurações</a></li>
-	            <li><a href="#">Administrar contas</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="Controller/action_logout.php">Logout</a></li>
-	          </ul>
-	        </li>
-      	</ul>
-    <?php endif ?>       
-    </div>
-  </div>
-</nav>
+	<style type="text/css">
+		#corpo{
+ 		 height: 1000px;
+		 margin-top: 6em;
+		}
+		div#dados{
+ 		 margin-top: 70px;
+		}
+	</style>
 
-	<?php if (isset($_GET['pwderr'])):?>
-		<script type="text/javascript">
-			alert("Senha Inválida!");
-		</script>
-	<?php endif ?>
 
-	<div id="corpo">
+	<div id="corpo" class="container">
 		<h1>Perfil <span class="glyphicon glyphicon-user"></span></h1>
 		<div id="dados">
 			<?php if(isset($_GET['att'])):?>
