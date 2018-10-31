@@ -8,6 +8,7 @@
 		$logradouro = $_POST['logradouro'];
 		$bairro = $_POST['bairro'];
 		$numero = $_POST['numero'];
+		$categoria = $_POST['categoria'];
 
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
@@ -20,9 +21,8 @@
 		}	
 
  		
- 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem) 
-						VALUES(?, ?, ?, ?, ?, ?)";
- 		
+ 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem, categoria) 
+						VALUES(?, ?, ?, ?, ?, ?, ?)";
  		$query = $conn->prepare($sql);
 		$query->bindParam(1, $id);
  		$query->bindParam(2, $nome);
@@ -30,10 +30,11 @@
 		$query->bindParam(4, $bairro);
 		$query->bindParam(5, $numero);
 		$query->bindParam(6, $novo_nome);
+		$query->bindParam(7, $categoria);
  		$stmt = $query->execute();
 		header('Location: ../index.php');
 	} else {
- 		echo "Erro!!";
+ 		//echo "Erro!!";
  	}
 	
   ?> 

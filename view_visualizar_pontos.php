@@ -54,6 +54,7 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
         </div>
 
       </div>
+      
       <!-- /.row -->
 
       <!-- Related Projects Row -->

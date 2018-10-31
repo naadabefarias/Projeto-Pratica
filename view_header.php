@@ -1,6 +1,6 @@
 <?php 
 require_once('Controller/conexao.php');
-$consulta = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;"); 
+$consulta = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos ORDER BY id DESC;"); 
 session_start();
 ?>
 <!DOCTYPE html>
