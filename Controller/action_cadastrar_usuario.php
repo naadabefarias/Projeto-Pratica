@@ -1,32 +1,32 @@
 <?php
+	session_start();
 	include "conexao.php";
 
-	if(isset($_POST['nome']) && isset($_POST['user']) && isset($_POST['pass'])){
+	if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null && $_POST['senha2']!=null ){
 
 
 		$nome = $_POST['nome'];
 		$user = $_POST['user'];
 		$pass = sha1($_POST['pass']);
 
-		$checking=("SELECT * FROM users WHERE user = ? ");
+		$checking=("SELECT * FROM Users WHERE user = ?");
 
 		$queryOne = $conn->prepare($checking);
 		$queryOne->bindParam(1,$user);
 		$queryOne -> execute();
 
-		$stmt = $queryOne->fetchAll();
+		$stmt = $queryOne->fetch();
+			
+	{
+	$_SESSION['pass_fail'] = true;
+	header('location:../index.php');
+	}
+		if ($stmt[0] != null){
+			
+				$_SESSION['cadastro_falhou']=true;
+				header('location:../index.php');
 
-		if ($queryOne->rowCount() > 1){
-
-?>
-		<script type="text/javascript">
-			alert("Este usuário já existe");
-		</script>
-
-<?php 
-
-
-		} else {
+		} else if ($_POST['pass'] = $_POST['senha2']){
 			
 			$sql = "INSERT INTO Users(name, user, password) VALUES (:nome, :user, :pass)";
 			$query = $conn->prepare($sql);
@@ -34,10 +34,14 @@
 			$query->bindParam(':user', $user);
 			$query->bindParam(':pass', $pass);
 			$stmt = $query->execute();
-
-			header('Location: ../index.php');
-		}
+				
+					$_SESSION['cadastro_sucesso'] = true;
+					header('location:../index.php');	
+		}	
 		
+	}else {
+		$_SESSION['fail_campo']=true;
+			header('location:../index.php');
 	}
 
 ?>

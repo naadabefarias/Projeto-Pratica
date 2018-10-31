@@ -104,4 +104,6 @@ $(document).on('click', 'p', function(){
 </script>
 
 <!-- Footer -->
-<?php require_once('view_footer.html') ?>
+<?php require_once('view_footer.html');
+
+?>	

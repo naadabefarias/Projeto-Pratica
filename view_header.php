@@ -55,7 +55,7 @@ session_start();
 					<li><a href="view_sobre.php">Sobre</a></li>
 					<li>
 			
-					<form class="pesquisa-ponto" action="search_ponto.php">		
+					<form class="pesquisa-ponto" action="view_search_ponto.php" >		
 					<input type="text" name="search" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
 					<p class="locais" id="locais"><a href=""></a></p>
 					</li>
@@ -160,3 +160,19 @@ session_start();
 				</div>
 			</div>
 		</div>
+		<!-- Footer -->
+<?php
+session_start();
+if(isset($_SESSION['cadastro_sucesso'])){
+echo "<script>alert('Seja bem vindo, você agora já faz parte da nossa Comunidade');</script>";
+session_destroy();
+}
+if(isset($_SESSION['cadastro_falhou'])) {
+echo "<script>alert('Esse usuario já foi utilizado');</script>";
+session_destroy();
+
+}
+if(isset($_SESSION['fail_campo'])){
+echo "<script>alert('Campos não preenchidos ou senhas não condizem!');</script>";
+session_destroy();
+}
