@@ -91,7 +91,6 @@ $(document).ready(function(){
 				{
 					$('#locais').fadeIn();
 					$('#locais').html(data);
-
 				}
 			});
 		}
