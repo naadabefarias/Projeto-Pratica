@@ -1,7 +1,7 @@
 <?php
 
 require_once('view_header.php');
-$id = $_GET['id'];
+$id = $_GET['id'];//id do ponto
 $pesquisa = $_POST['search'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
@@ -28,36 +28,53 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
   }
 }
 </style>
-    <div class="container">
+<!--     <div cl<!--  -->
 
-      <!-- Portfolio Item Heading -->
-      <h1 class="my-4"><?=$linha['nome_ponto'];?>
-        <small>Aqui será o apelido ou um nome carinhoso do ponto</small>
-      </h1>
+      <div class="w3-content" style="max-width:950px; background-color: lightgrey; padding: 50px">
+        <h1>Galeria de Fotos do Ponto</h1>
+        <img class="mySlides" src="upload/<?=$linha['imagem'];?>" style="width:100%; display:none; max-height: 500px">
+        <img class="mySlides" src="upload/<?=$linha['imagem'];?>" style="width:100%; max-height: 500px">
+        <img class="mySlides" src="upload/<?=$linha['imagem'];?>" style="width:100%;display:none; max-height: 500px">
 
-      <!-- Portfolio Item Row -->
-      <div class="row">
-
-        <div class="col-md-8 img" >
-          <img class="img-fluid img1"  src="upload/<?=$linha['imagem'];?>" alt="">
+        <div class="w3-row-padding w3-section">
+          <div class="w3-col s4">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="upload/<?=$linha['imagem'];?>" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+          </div>
+          <div class="w3-col s4">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="upload/<?=$linha['imagem'];?>" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+          </div>
+          <div class="w3-col s4">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="upload/<?=$linha['imagem'];?>" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+          </div>
         </div>
-
-        <div class="col-md-4">
-          <h3 class="my-3">Descrição do ponto:</h3>
-          <p>Aqui será colocada uma breve descrição do ponto turistico.</p>
-          <h3 class="my-3">Detalhes deste ponto:</h3>
-          <ul>
-            <li>Logradouro: <strong><?=$linha['logradouro'];?></strong></li>
-            <li>Bairro: <strong><?=$linha['bairro'];?></strong></li>
-            <li>Número do ponto: <strong><?=$linha['numero_ponto'];?></strong></li>
-          </ul>
-        </div>
-
       </div>
+
+<script>
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
       
       <!-- /.row -->
 
       <!-- Related Projects Row -->
+      <div class="container" style="margin-top: 3em">
       <h3 class="my-4">Outros pontos turisticos:</h3>
 <div class="row">
  <?php   $ativoCarr = 0;
