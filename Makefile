@@ -23,8 +23,8 @@ conf-git-cleyton:
 	git config user.name "kevinsousa"
 
 conf-git-jhonny:
-	git config user.email "jhonny@email.com"
-	git config user.name "kevinsousa"
+	git config user.email "jhonnyfarias87@gmail.com"
+	git config user.name "jhonnyfreitas1"
 
 
 bd-conf:
