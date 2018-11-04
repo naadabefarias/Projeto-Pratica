@@ -2,8 +2,7 @@
 	session_start();
 	include "conexao.php";
 
-	if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null && $_POST['senha2']!=null ){
-
+	if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null && $_POST['senha2']!=null && $_POST['pass'] == $_POST['senha2']){
 
 		$nome = $_POST['nome'];
 		$user = $_POST['user'];
@@ -17,16 +16,12 @@
 
 		$stmt = $queryOne->fetch();
 			
-	{
-	$_SESSION['pass_fail'] = true;
-	header('location:../index.php');
-	}
 		if ($stmt[0] != null){
 			
 				$_SESSION['cadastro_falhou']=true;
 				header('location:../index.php');
 
-		} else if ($_POST['pass'] = $_POST['senha2']){
+		} else {
 			
 			$sql = "INSERT INTO Users(name, user, password) VALUES (:nome, :user, :pass)";
 			$query = $conn->prepare($sql);
@@ -36,6 +31,7 @@
 			$stmt = $query->execute();
 				
 					$_SESSION['cadastro_sucesso'] = true;
+
 					header('location:../index.php');	
 		}	
 		
