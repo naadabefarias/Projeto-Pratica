@@ -5,19 +5,13 @@ session_start();
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
-		<title>Celke - Reputacao com estrela</title>
+		<title>Sistema de avaliação</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="estilo.css">
+		<link rel="stylesheet" href="/estilos/estilo.css">
 	</head>
 	<body>
 		<h1>Avalie</h1>
-		<?php
-		if(isset($_SESSION['msg'])){
-			echo $_SESSION['msg']."<br><br>";
-			unset($_SESSION['msg']);
-		}
-		?>
-		<form method="POST" action="processa.php" enctype="multipart/form-data">
+		<form method="POST" action="/Controller/action_avaliar.php" enctype="multipart/form-data">
 			<div class="estrelas">
 				<input type="radio" id="vazio" name="estrela" value="" checked>
 				
