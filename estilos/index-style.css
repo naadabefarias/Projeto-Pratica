@@ -66,8 +66,20 @@ margin-top: -2em;
   height:40px;
  }
 .seila {
-width:13em;
-margin-top:2em;
+width:10em;
+margin-top:3em;
+margin-right:2em;
+}
+footer{
+background-image: url(images/Icon_azul.png);
+background-repeat: no-repeat;
+background-position:right;
 
 }
 
+a{
+   text-decoration: none;
+}
+.copy{
+
+}

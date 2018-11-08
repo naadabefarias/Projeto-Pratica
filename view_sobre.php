@@ -1,7 +1,6 @@
 <?php require_once('view_header.php'); ?>
 <h1 class="text-center text-uppercase font-weight-bold mt-5 mb-3 mt-5"><a href="index.php"><img src="images/icon-ponto.png" style="width: 300px;
-  height:150px;"></a></h1>
-
+  height:150px; margin-top:0em;"></a></h1>
 <!--Section description-->
 <p class="text-center text-uppercase font-weight-bold"><b>Tudo que você precisa saber</b></p>
 
@@ -47,10 +46,11 @@
   amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
   pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
   repellat eveniet quia vitae</p>
-</br></br><p class="text-center text-uppercase font-weight-bold"><b>Conheça nossos Desenvolvedores </b></p>
-
+</br></br>
 <!--First row-->
-<div class="row ml-2 mr-1 pb-2 pt-1">
+<p class="text-center text-uppercase font-weight-bold"><b style="font-size:20px;">Conheça nossos Desenvolvedores </b></p>
+<div class="row ml-2 mr-1 pb-2 pt-1" style=" height:57em;  ">
+
 
   <!--First column-->
   <div class="col-md-12" ">
@@ -62,52 +62,57 @@
 
       <figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_naadabe.jpg" class="img-fluid z-depth-4"	style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-4" onmouseover="this.src='images/dev_naadabe.jpg'" onmouseout="this.src='images/coqueiro.jpg'"	style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Naadabe Farias</p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Naadabe Farias</p>
       </figure>
 
       <figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_rodholfo.jpg" class="img-fluid z-depth-1" style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_rodholfo.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Rodholfo Antonio</p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Rodholfo Antonio</p>
       </figure>	
 
       <figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_cleiton.jpg" class="img-fluid z-depth-1" style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_cleiton.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Cleyton Vinicius</p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Cleyton Vinicius</p>
       </figure>
 
       <figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_erikson.jpg" class="img-fluid z-depth-2" style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-2" onmouseover="this.src='images/dev_erikson.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Erikson Ferreira</p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Erikson Ferreira</p>
       </figure>
       </br>
       
         <div style="margin-top:29em;">
  <figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_kevin.jpg" class="img-fluid z-depth-1" style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_kevin.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Kevin Sousa </p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Kevin Sousa </p>
 
       </figure><figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_kevin.jpg" class="img-fluid z-depth-1" style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_kevin.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Luigi Martins</p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Luigi Martins</p>
       </figure><figure class="col-md-3">
         <a href="#">
-          <img src="images/dev_jhonny.jpg" class="img-fluid z-depth-1" style=" border-radius:6px;">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_jhonny.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
         </a>
-        <p class="text-uppercase font-weight-bold blue-grey-text mt-4">Jhonny Farias</p>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Jhonny Farias</p>
       </figure>
-     
+      </figure><figure class="col-md-3">
+        <a href="#">
+          <img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_voce.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+        </a>
+        <p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Você</p>
+      </figure>
 </div>
     </div>
     <!--/Full width lightbox-->
@@ -116,7 +121,7 @@
   <!--/First column-->
 
   <div class="col-md-12 text-center py-4">
-    <a class="btn btn-outline-black waves-effect" ><strong>more</strong></a>
+
   </div>
 
 </div>	
@@ -128,7 +133,7 @@
 	}
 	
 	h1{
-		margin-top: 100px;
+		margin-top: 50px;
 	}
 
 	html, body {
