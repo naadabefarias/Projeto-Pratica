@@ -24,3 +24,10 @@ CREATE TABLE `pontos_turisticos` (
  KEY `user_id` (`user_id`),
  CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ); 
+
+CREATE TABLE `avaliacoes` (
+  	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`qnt_estrela` int(11) NOT NULL,
+	`modified` datetime DEFAULT NULL,
+	PRIMARY KEY(`id`)
+);

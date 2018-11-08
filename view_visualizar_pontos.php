@@ -47,6 +47,7 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
             <img class="demo w3-opacity w3-hover-opacity-off" src="upload/<?=$linha['imagem'];?>" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
           </div>
         </div>
+        <?= include "conexao.php"; ?>
       </div>
 
 <script>
