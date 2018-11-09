@@ -1,8 +1,7 @@
 <?php
-
 require_once('view_header.php');
 $id = $_GET['id'];//id do ponto
-$pesquisa = $_POST['search'];
+// $pesquisa = $_POST['search'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
   $linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
@@ -47,7 +46,7 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
             <img class="demo w3-opacity w3-hover-opacity-off" src="upload/<?=$linha['imagem'];?>" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
           </div>
         </div>
-        <?= include "conexao.php"; ?>
+        <?= include "avalie.php"; ?>
       </div>
 
 <script>

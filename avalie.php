@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -11,7 +9,7 @@ session_start();
 	</head>
 	<body>
 		<h1>Avalie</h1>
-		<form method="POST" action="/Controller/action_avaliar.php" enctype="multipart/form-data">
+		<form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
 			<div class="estrelas">
 				<input type="radio" id="vazio" name="estrela" value="" checked>
 				
