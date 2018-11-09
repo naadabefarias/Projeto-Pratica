@@ -79,7 +79,8 @@ function showDivs(n) {
       <h3 class="my-4">Outros pontos turisticos:</h3>
 <div class="row">
  <?php   $ativoCarr = 0;
-$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;");        while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
+$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;");   
+     while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
             if ($ativoCarr <= 3):?>
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">

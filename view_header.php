@@ -163,7 +163,6 @@ session_start();
 		</div>
 		<!-- Footer -->
 <?php
-session_start();
 if(isset($_SESSION['cadastro_sucesso'])){
 echo "<script>alert('Seja bem vindo, você agora já faz parte da nossa Comunidade');</script>";
 session_destroy();

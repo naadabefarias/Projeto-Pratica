@@ -41,19 +41,19 @@ form {
 		<input type="text" name="bairro" placeholder="Bairro" required=""><br><br>
 		<label> <h3>Número </h3></label>
 		<input type="text" name="numero" placeholder="Número" ><br><br>
+		<label> <h3>Descrição: </h3></label>
+		<input type="text" name="descricao" placeholder="Descrição" ><br><br>
 		<label> <h3>Imagem </h3></label>
 		<input type="file" name="imagem" placeholder="Imagem" ><br><br>
-    <label for="sel1">Select list (select one):</label>
+    <label for="sel1">Selecione o tipo de ponto:</label>
       <select class="form-control" name="categoria">
-        <option value="praia">praia</option>
-        <option value="rio">rio</option>
-        <option value="praca">praca</option>
-        <option value="museu">museu</option>
-        <option value="igreja">igreja</option>
-        <option value="monumento">monumento</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option value="igreja">Igrejas Históricas</option>
+        <option value="monumento">Monumentos Antigos</option>
+        <option value="museu">Museus Históricos</option>
+        <option value="naturezaparques">Natureza e Parques</option>
+        <option value="praia">Praia</option>
+        <option value="praca">Praça</option>
+        <option value="rio">Rio</option>
       </select>
 		<input type="submit" value="Cadastrar" class="ui primary button">
 	</form>

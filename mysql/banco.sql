@@ -19,7 +19,8 @@ CREATE TABLE `pontos_turisticos` (
  `bairro` varchar(200) NOT NULL,
  `numero_ponto` varchar(50) DEFAULT NULL,
  `imagem` varchar(100) NOT NULL,
- `categoria` enum('praia', 'rio', 'praca', 'museu', 'monumento', 'igreja') NOT NULL,
+ `descricao` varchar(200) NOT NULL,
+ `categoria` enum('praia', 'rio', 'praca', 'museu', 'monumento', 'igreja','naturezaparques') NOT NULL,
  PRIMARY KEY (`id`),
  KEY `user_id` (`user_id`),
  CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE

@@ -2,13 +2,14 @@
 	session_start();
 	$id = $_SESSION['id'];
  	require_once('conexao.php');
- 	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_FILES['imagem'])){
+ 	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
  		
  		$nome = $_POST['nome_ponto'];
 		$logradouro = $_POST['logradouro'];
 		$bairro = $_POST['bairro'];
 		$numero = $_POST['numero'];
 		$categoria = $_POST['categoria'];
+		$descricao = $_POST['descricao'];
 
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
@@ -21,8 +22,8 @@
 		}	
 
  		
- 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem, categoria) 
-						VALUES(?, ?, ?, ?, ?, ?, ?)";
+ 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem, categoria, descricao) 
+						VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
  		$query = $conn->prepare($sql);
 		$query->bindParam(1, $id);
  		$query->bindParam(2, $nome);
@@ -31,6 +32,7 @@
 		$query->bindParam(5, $numero);
 		$query->bindParam(6, $novo_nome);
 		$query->bindParam(7, $categoria);
+		$query->bindParam(8, $descricao);
  		$stmt = $query->execute();
 		header('Location: ../index.php');
 	} else {

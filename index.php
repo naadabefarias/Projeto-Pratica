@@ -58,15 +58,40 @@
 		</div>
 		<div class="container text-center" id="listagem_pontos">    
 			<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3><br>
+			<h2>Praia</h2>
 			<?php $v = 0;
-			$consultei = $conn -> query("SELECT id, nome_ponto, imagem FROM pontos_turisticos;");
+			$praia = 'praia';
+			$consultei = $conn -> query("SELECT id, nome_ponto, imagem,categoria, descricao FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
 			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
-				if ($v <= 4 ):?>
+				if ($v <= 2 ):?>
 					<div class="grande">
 						<div class="col-sm-4">
 							<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">  
 								<img src="upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
-								<p><?=$linha1['nome_ponto'];?></p>
+								<h4><?=$linha1['nome_ponto'];?></h4>
+								<p><?=$linha1['descricao'];?></p>
+							</a>
+						</div>
+					</div>    
+					<?php  $v++;
+				endif; 
+			endwhile
+			?>   
+
+		</div><br>
+		<div class="container text-center" id="listagem_pontos">    
+			<h2>Igreja</h2>
+			<?php $v = 0;
+			$igreja = 'igreja';
+			$consultei = $conn -> query("SELECT id, nome_ponto, imagem,categoria, descricao FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
+			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				if ($v <= 2 ):?>
+					<div class="grande">
+						<div class="col-sm-4">
+							<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">  
+								<img src="upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
+								<h5><?=$linha1['nome_ponto'];?></h5>
+								<p><?=$linha1['descricao'];?></p>
 							</a>
 						</div>
 					</div>    
