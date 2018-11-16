@@ -27,7 +27,7 @@
 				<label for="estrela_cinco"><i class="fa"></i></label>
 				<input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
 				
-				<input type="submit" value="Cadastrar">
+				<input type="submit" value="Avaliar" class="ui primary button">
 				
 			</div>
 		</form>
