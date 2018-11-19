@@ -11,25 +11,30 @@ CREATE TABLE `Users` (
  PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `pontos_turisticos` (
- `id` int(11) NOT NULL AUTO_INCREMENT,
- `user_id` int(11) NOT NULL,
- `aval_id` int(11) NOT NULL,
- `nome_ponto` varchar(200) NOT NULL,
- `logradouro` varchar(200) NOT NULL,
- `bairro` varchar(200) NOT NULL,
- `numero_ponto` varchar(50) DEFAULT NULL,
- `imagem` varchar(100) NOT NULL,
- `descricao` varchar(200) NOT NULL,
- `categoria` enum('praia', 'rio', 'praca', 'museu', 'monumento', 'igreja','naturezaparques') NOT NULL,
- PRIMARY KEY (`id`),
- CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
- CONSTRAINT `pk_aval` FOREIGN KEY (`aval_id`) REFERENCES `avaliacoes` (`id`)
-);
+	CREATE TABLE `pontos_turisticos` (
+	 `id` int(11) NOT NULL AUTO_INCREMENT,
+	 `user_id` int(11) NOT NULL,
+	 `nome_ponto` varchar(200) NOT NULL,
+	 `logradouro` varchar(200) NOT NULL,
+	 `bairro` varchar(200) NOT NULL,
+	 `numero_ponto` varchar(50) DEFAULT NULL,
+	 `imagem` varchar(100) NOT NULL,
+	 `descricao` varchar(200) NOT NULL,
+	 `categoria` enum('praia', 'rio', 'praca', 'museu', 'monumento', 'igreja','naturezaparques') NOT NULL,
+	 PRIMARY KEY (`id`),
+	 CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+	);
 
-CREATE TABLE `avaliacoes`(
-    `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `qnt_estrela` INT(11) NOT NULL,
+CREATE TABLE `artigos`(
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+  	`votos` int(11) NOT NULL,
+  	`pontos` int(11) NOT NULL,
     `modified` DATETIME DEFAULT NULL,
-    PRIMARY KEY(`id`)
+ 	`id_user` int(11) NOT NULL,
+ 	`id_ponto` int(11) NOT NULL,
+
+    PRIMARY KEY(`id`),
+ 	CONSTRAINT `pk_users2` FOREIGN KEY (`id_user`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ 	CONSTRAINT `pk_aval` FOREIGN KEY (`id_ponto`) REFERENCES `pontos_turisticos` (`id`)
+
 );

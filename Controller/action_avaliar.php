@@ -1,19 +1,20 @@
 <?php
-session_start();
-include "conexao.php";
-//Para que o Horário fique igual ao de Brasilia
-date_default_timezone_set("America/Sao_Paulo");
-setlocale(LC_ALL, 'pt_BR');
+	include_once "../conexao.php";
+	if(isset($_POST['votar'])){
+		$artigoId = (int)$_POST['artigo'];
+		$ponto = (int)$_POST['ponto'];
 
-$idPonto 	= $_GET['id'];
-$estrela 	= $_POST['estrela'];
-$created = date_create();
-$date = date_format($created, 'd-m-y');
+		$pegaArtigo = $pdo->prepare("SELECT votos, pontos FROM `artigos` WHERE `id` = ?");
+		$pegaArtigo->execute(array($artigoId));
+		while($row = $pegaArtigo->fetchObject()){
+			$pontosUpd = ($row->pontos+$ponto);
+			$votosUpd = ($row->votos+1);
 
-		$star = ("INSERT INTO avaliacoes (qnt_estrela) VALUES (?)");
-		$queryTwo = $conn->prepare($star);
-		$queryTwo->bindParam(1, $estrela);
-	 	$stmt = $queryTwo->execute();
-		 header('Location: ../view_visualizar_pontos.php?id='.$idPonto);
-
-	
+			$atualizaArtigo = $pdo->prepare("UPDATE `artigos` SET `votos` = ?, `pontos` = ? WHERE `id` = ?");
+			if($atualizaArtigo->execute(array($votosUpd, $pontosUpd, $artigoId))){
+				$calculo = round(($pontosUpd/$votosUpd),1);
+				die(json_encode(array('average' => $calculo, 'votos' => $votosUpd)));
+			}
+		}
+	}
+?>
