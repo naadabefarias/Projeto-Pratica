@@ -1,5 +1,5 @@
 <?php
-	include_once "../conexao.php";
+	include_once "conexao.php";
 	if(isset($_POST['votar'])){
 		$artigoId = (int)$_POST['artigo'];
 		$ponto = (int)$_POST['ponto'];
