@@ -1,5 +1,5 @@
 <?php
-	include_once "conexao.php";
+	//include_once "conexao.php";
 ?>
 <html lang="pt-BR">
 <head>
