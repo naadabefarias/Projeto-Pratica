@@ -26,22 +26,21 @@ CREATE TABLE `Users` (
 	 CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 	);
 
-CREATE TABLE `artigos`(
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-  	`votos` int(11) NOT NULL,
-  	`pontos` int(11) NOT NULL,
-    `modified` DATETIME DEFAULT NULL,
- 	`id_user` int(11) NOT NULL,
- 	`id_ponto` int(11) NOT NULL,
+	CREATE TABLE `artigos`(
+		`id` int(11) NOT NULL AUTO_INCREMENT,
+	  	`votos` int(11) NOT NULL,
+	  	`pontos` int(11) NOT NULL,
+	    `modified` DATETIME DEFAULT NULL,
+	 	`id_ponto` int(11) NOT NULL ,
 
-    PRIMARY KEY(`id`),
- 	CONSTRAINT `pk_users2` FOREIGN KEY (`id_user`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
- 	CONSTRAINT `pk_aval` FOREIGN KEY (`id_ponto`) REFERENCES `pontos_turisticos` (`id`)
+	    PRIMARY KEY(`id`),
+	 	CONSTRAINT `pk_aval` FOREIGN KEY (`id_ponto`) REFERENCES `pontos_turisticos` (`id`)
+	 	);
 =======
 CREATE TABLE `pontos_turisticos` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `user_id` int(11) NOT NULL,
- `nome_ponto` varchar(200) NOT NULL,
+ `nome_ponto` varchar(200) NOT NULL, 
  `logradouro` varchar(200) NOT NULL,
  `bairro` varchar(200) NOT NULL,
  `numero_ponto` varchar(50) DEFAULT NULL,
@@ -52,16 +51,3 @@ CREATE TABLE `pontos_turisticos` (
  CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE `avaliacoes`(
-    `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `id_ponto` int(11) NOT NULL,
-    `id_user` int(11) NOT NULL,
-    `qnt_estrela` INT(11) NOT NULL,
-    `modified` DATETIME DEFAULT NULL,
-    `desc` varchar(255) NOT NULL,
-    PRIMARY KEY(`id`),
-    CONSTRAINT `pk_ponto` FOREIGN KEY (`id_ponto`) REFERENCES `pontos_turisticos` (`id`),
-    CONSTRAINT `pk_user` FOREIGN KEY (`id_user`) REFERENCES `Users` (`id`)
->>>>>>> a2bed1bfb5edce6943a2ab2fa0bd947612ac2815
-
-);

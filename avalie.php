@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="/estilos/estilo.css">
 	</head>
 	<body>
-		<h1>Avalie</h1>
 		<form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
 			<div class="estrelas">
 				<input type="radio" id="vazio" name="estrela" value="" checked>
@@ -27,11 +26,8 @@
 				<label for="estrela_cinco"><i class="fa"></i></label>
 				<input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
 				
-<<<<<<< HEAD
-				<input type="submit" value="Avaliar">
-=======
+
 				<input type="submit" value="Avaliar" class="ui primary button">
->>>>>>> a2bed1bfb5edce6943a2ab2fa0bd947612ac2815
 				
 			</div>
 		</form>
