@@ -102,30 +102,7 @@
 
 		</div><br>
 
-<script>//Função de pesquisa, Auto complete Input
-$(document).ready(function(){
-	$('#form-controlpesq').keyup(function() {
-		var query = $(this).val();
-		if(query != ''){
 
-			$.ajax({
-				url:"Controller/action_filtrar.php",
-				method:"POST",
-				data:{query:query},
-				success:function(data)
-				{
-					$('#locais').fadeIn();
-					$('#locais').html(data);
-				}
-			});
-		}
-	});
-});
-$(document).on('click', 'p', function(){
-	$('#form-controlpesq').val($(this) .text());
-	$('#locais') .fadeOut();
-});
-</script>
 
 <!-- Footer -->
 <?php require_once('view_footer.html');
