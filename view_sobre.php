@@ -31,6 +31,8 @@ que engrandecem a cidade.<br>
 Os pontos turísticos por serem bastante requisitados elevam a economia visto que há um rendimento
 e desenvolvimento maior do comércio por receberem estrangeiros que inserem dinheiro em grande
 escala com compras e aluguéis.<br>
+<strong> Dificuldade ao procurar pontos</strong><br>  
+
 =======
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
