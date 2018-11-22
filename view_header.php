@@ -1,5 +1,6 @@
 <?php 
 require_once('Controller/conexao.php');
+
 $consulta = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos ORDER BY id DESC;"); 
 session_start();
 ?>
@@ -110,6 +111,9 @@ session_start();
 					<div class="modal-body">
 						<form action="Controller/action_auth.php" method="POST">
 							<div class="form-group">
+								 <a class="btn btn-block btn-social btn-facebook" href="returnFB.php">
+   								 <span class="fa fa-facebook"></span> Login com Facebook
+  											</a>
 								<label for="login">Usuário:</label>
 								<input type="text" class="form-control" id="login" name="login">
 							</div>

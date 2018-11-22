@@ -6,6 +6,12 @@ $id = $_GET['id'];//id do ponto
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
   $linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
 <style>
       body {
       padding-top: 54px;
@@ -46,7 +52,8 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
             <img class="demo w3-opacity w3-hover-opacity-off" src="upload/<?=$linha['imagem'];?>" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
           </div>
         </div>
-        <?= include "avalie.php"; ?>
+         <center><?php include "avalie.php"; ?></center>
+        
       </div>
 
 <script>
@@ -99,15 +106,17 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
 
 <!-- RODAPÉ -->
 <style type="text/css">
-	
-	#teste {
-		margin-top: 25px;
-	}
+  
+  #teste {
+    margin-top: 25px;
+  }
 
 </style>
 <div id="teste">
 <?php 
-	require_once('view_footer.html');
+  require_once('view_footer.html');
 ?>
 </div>
     
+</body>
+</html>

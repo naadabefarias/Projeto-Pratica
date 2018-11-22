@@ -58,7 +58,7 @@
 		</div>
 		<div class="container text-center" id="listagem_pontos">    
 			<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3><br>
-			<h2>Praia</h2>
+			<h2>Praias</h2>
 			<?php $v = 0;
 			$praia = 'praia';
 			$consultei = $conn -> query("SELECT id, nome_ponto, imagem,categoria, descricao FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
@@ -80,7 +80,7 @@
 
 		</div><br>
 		<div class="container text-center" id="listagem_pontos">    
-			<h2>Igreja</h2>
+			<h2>Igrejas</h2>
 			<?php $v = 0;
 			$igreja = 'igreja';
 			$consultei = $conn -> query("SELECT id, nome_ponto, imagem,categoria, descricao FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
@@ -102,30 +102,7 @@
 
 		</div><br>
 
-<script>//Função de pesquisa, Auto complete Input
-$(document).ready(function(){
-	$('#form-controlpesq').keyup(function() {
-		var query = $(this).val();
-		if(query != ''){
 
-			$.ajax({
-				url:"Controller/action_filtrar.php",
-				method:"POST",
-				data:{query:query},
-				success:function(data)
-				{
-					$('#locais').fadeIn();
-					$('#locais').html(data);
-				}
-			});
-		}
-	});
-});
-$(document).on('click', 'p', function(){
-	$('#form-controlpesq').val($(this) .text());
-	$('#locais') .fadeOut();
-});
-</script>
 
 <!-- Footer -->
 <?php require_once('view_footer.html');
