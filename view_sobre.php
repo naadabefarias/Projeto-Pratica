@@ -5,47 +5,8 @@
 <p class="text-center text-uppercase font-weight-bold"><b>Tudo que você precisa saber</b></p>
 
 <!--Section description-->
-<p class="section-description mt-2 pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident<h4> alguma coisa</h4> voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  <h4> alguma coisa</h4>	
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-  amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-  pariatur accusamus veniam. At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
-  repellat eveniet quia vitae</p>
+<p class="section-description mt-2 pt-4"><center><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong></center>
+
 </br></br>
 <!--First row-->
 <p class="text-center text-uppercase font-weight-bold"><b style="font-size:20px;">Conheça nossos Desenvolvedores </b></p>
