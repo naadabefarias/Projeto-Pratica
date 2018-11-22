@@ -23,7 +23,10 @@ height:150px; margin-top:0em;"></a></h1>
 <<<<<<< HEAD
 <p class="section-description mt-2 pt-4"><center><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong></center><br>
 <strong>A importância dos pontos hoje em dia</strong><br>
-
+Não há importância expressiva e significativa em relação ao turismo; muito mais gastos são
+aplicados em outras zonas da sociedade, como por exemplo: ambientes de lazer. Assim sendo, os
+pontos turíticos são desprezados em matéria de custos mesmo contendo responsabilidades socias
+que engrandecem a cidade.<br>
 =======
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
