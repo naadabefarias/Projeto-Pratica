@@ -28,6 +28,9 @@ aplicados em outras zonas da sociedade, como por exemplo: ambientes de lazer. As
 pontos turíticos são desprezados em matéria de custos mesmo contendo responsabilidades socias
 que engrandecem a cidade.<br>
 <strong> O aumento da economia com os pontos</strong><br>
+Os pontos turísticos por serem bastante requisitados elevam a economia visto que há um rendimento
+e desenvolvimento maior do comércio por receberem estrangeiros que inserem dinheiro em grande
+escala com compras e aluguéis.<br>
 =======
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
