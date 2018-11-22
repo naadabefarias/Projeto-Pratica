@@ -32,6 +32,9 @@ Os pontos turísticos por serem bastante requisitados elevam a economia visto qu
 e desenvolvimento maior do comércio por receberem estrangeiros que inserem dinheiro em grande
 escala com compras e aluguéis.<br>
 <strong> Dificuldade ao procurar pontos</strong><br>  
+Há uma dificuldade no que tange às procuras relativas a pontos turísticos; indivíduos tentam
+insitentemente buscar lugares apreciosos, todavia não é fácil encontrar o que requer considerando o
+investimento baixo em pontos turísticos.<br>
 
 =======
 <div id="descricao">
