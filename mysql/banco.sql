@@ -46,6 +46,6 @@ drop database if exists ponto;
 		  `modified` datetime DEFAULT NULL,
 		   PRIMARY KEY (`id`),
 		   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-		   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+		   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 	);
 

@@ -58,7 +58,7 @@
 		</div>
 		<div class="container text-center" id="listagem_pontos">    
 			<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3><br>
-			<h2>Praia</h2>
+			<h2>Praias</h2>
 			<?php $v = 0;
 			$praia = 'praia';
 			$consultei = $conn -> query("SELECT id, nome_ponto, imagem,categoria, descricao FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
@@ -80,7 +80,7 @@
 
 		</div><br>
 		<div class="container text-center" id="listagem_pontos">    
-			<h2>Igreja</h2>
+			<h2>Igrejas</h2>
 			<?php $v = 0;
 			$igreja = 'igreja';
 			$consultei = $conn -> query("SELECT id, nome_ponto, imagem,categoria, descricao FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
