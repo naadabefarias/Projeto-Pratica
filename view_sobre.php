@@ -27,6 +27,7 @@ Não há importância expressiva e significativa em relação ao turismo; muito 
 aplicados em outras zonas da sociedade, como por exemplo: ambientes de lazer. Assim sendo, os
 pontos turíticos são desprezados em matéria de custos mesmo contendo responsabilidades socias
 que engrandecem a cidade.<br>
+<strong> O aumento da economia com os pontos</strong><br>
 =======
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
