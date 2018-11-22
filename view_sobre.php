@@ -21,7 +21,8 @@ height:150px; margin-top:0em;"></a></h1>
 
 <!--Section description-->
 <<<<<<< HEAD
-<p class="section-description mt-2 pt-4"><center><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong></center>
+<p class="section-description mt-2 pt-4"><center><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong></center><br>
+<strong>A importância dos pontos hoje em dia</strong><br>
 
 =======
 <div id="descricao">
