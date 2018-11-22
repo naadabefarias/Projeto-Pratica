@@ -6,6 +6,6 @@
 	// $conn  =  new PDO('mysql:host=localhost;porta=3306;dbname=id7135713_ifpe', $username , $password);
 	
 	$username = "root";
-	$password = "luigi355";
+	$password = "aaa";
 	$conn = new PDO('mysql:host=localhost;porta=3306;dbname=ponto',$username,$password);
 ?>
