@@ -35,6 +35,7 @@ escala com compras e aluguéis.<br>
 Há uma dificuldade no que tange às procuras relativas a pontos turísticos; indivíduos tentam
 insitentemente buscar lugares apreciosos, todavia não é fácil encontrar o que requer considerando o
 investimento baixo em pontos turísticos.<br>
+<strong>Buscas mais rápidas e objetivas</strong><br>
 
 =======
 <div id="descricao">
