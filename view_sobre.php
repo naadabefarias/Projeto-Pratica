@@ -36,7 +36,10 @@ Há uma dificuldade no que tange às procuras relativas a pontos turísticos; in
 insitentemente buscar lugares apreciosos, todavia não é fácil encontrar o que requer considerando o
 investimento baixo em pontos turísticos.<br>
 <strong>Buscas mais rápidas e objetivas</strong><br>
+As pesquisas por pontos turísticos com um auxílio de um site altera relativamente sobremodo os
+peíodos de procura e a objetividade dessas procuras no tocante ao que realmente é desejado.
 
+</br></br>
 =======
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
