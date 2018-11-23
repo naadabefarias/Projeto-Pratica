@@ -43,7 +43,7 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
-		Este é o site <strong>Seuturismo</strong>, que foi desenvolvido para a disciplina de Projeto e Prática do 2º periodo do curso de Informática para Internet. O intuito deste site é facilitar o desenvolvimento turistico das cidades, pricipalmente da cidade de Igarassu que é uma cidade com muita história. Este site surgiu de uma carência que nossa cidade tem de informações na web aos turistas que a visitam, por isso resolvemos criar para dar uma visibiliade melhor para ela. Os alunos e desenvolvedores do site são:<strong> Kevin Sousa, Luigi Martins, Naadabe Farias, Jhonny Farias, Rhodolfo Santana e Erickson Ferreira. </strong>
+		Este é o site <strong>Seuturismo</strong>, que foi desenvolvido para a disciplina de Projeto e Prática do 2º periodo do curso de Informática para Internet. O intuito deste site é facilitar o desenvolvimento turistico das cidades, pricipalmente da cidade de Igarassu que é uma cidade com muita história. Este site surgiu de uma carência que nossa cidade tem de informações na web aos turistas que a visitam, por isso resolvemos criar para dar uma visibiliade melhor para ela. Os alunos e desenvolvedores do site são:<strong>Cleyton Vinicius, Kevin Sousa, Luigi Martins, Naadabe Farias, Jhonny Farias, Rhodolfo Santana e Erickson Ferreira. </strong>
 	</p>
 </div>
 
