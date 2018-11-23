@@ -20,7 +20,7 @@ height:150px; margin-top:0em;"></a></h1>
 <p class="text-center text-uppercase font-weight-bold"><b>Tudo que você precisa saber</b></p>
 
 <!--Section description-->
-<<<<<<< HEAD
+
 <p class="section-description mt-2 pt-4"><center><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong></center><br>
 <strong>A importância dos pontos hoje em dia</strong><br>
 Não há importância expressiva e significativa em relação ao turismo; muito mais gastos são
@@ -40,13 +40,13 @@ As pesquisas por pontos turísticos com um auxílio de um site altera relativame
 peíodos de procura e a objetividade dessas procuras no tocante ao que realmente é desejado.
 
 </br></br>
-=======
+
 <div id="descricao">
 	<p id="des" class="section-description mt-2 pt-4">
 		Este é o site <strong>Seuturismo</strong>, que foi desenvolvido para a disciplina de Projeto e Prática do 2º periodo do curso de Informática para Internet. O intuito deste site é facilitar o desenvolvimento turistico das cidades, pricipalmente da cidade de Igarassu que é uma cidade com muita história. Este site surgiu de uma carência que nossa cidade tem de informações na web aos turistas que a visitam, por isso resolvemos criar para dar uma visibiliade melhor para ela. Os alunos e desenvolvedores do site são:<strong> Kevin Sousa, Luigi Martins, Naadabe Farias, Jhonny Farias, Rhodolfo Santana e Erickson Ferreira. </strong>
 	</p>
 </div>
->>>>>>> ef0799bafa0d42cc0b9ec7ccf600cec2321a9c15
+
 </br></br>
 <!--First row-->
 <p class="text-center text-uppercase font-weight-bold"><b style="font-size:20px;">Conheça nossos Desenvolvedores </b></p>
