@@ -119,7 +119,7 @@ session_start();
 							</div>
 							<div class="form-group">
 								<label for="pwd">Senha:</label>
-								<input type="password" class="form-control" id="pwd" name="senha">
+								<input type="password" class="form-control" id="pwd" name="senha" minlength="6">
 							</div>
 							<div class="checkbox">
 								<label><input type="checkbox"> Lembrar de mim</label>
@@ -152,11 +152,11 @@ session_start();
 							</div>
 							<div class="form-group">
 								<label for="pwd">Senha:</label>
-								<input type="password" class="form-control" id="pwd" name="pass">
+								<input type="password" class="form-control" id="pwd" name="pass" minlength="6">
 							</div>
 							<div class="form-group">
 								<label for="pwd">Confirme a Senha:</label>
-								<input type="password" class="form-control" id="pwd2" name="senha2">
+								<input type="password" class="form-control" id="pwd2" name="senha2" minlength="6">
 							</div>
 
 							<button type="submit" class="btn btn-primary btn-block">Cadastrar-se</button>
