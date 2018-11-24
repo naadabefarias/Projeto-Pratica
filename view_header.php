@@ -143,8 +143,12 @@ session_start();
 					<div class="modal-body">
 						<form action="Controller/action_cadastrar_usuario.php" method="POST">
 							<div class="form-group">
-								<label for="email">Nome:</label>
+								<label for="email">Nome Completo:</label>
 								<input type="text" class="form-control" id="nome" name="nome">
+							</div>
+							<div class="form-group">
+								<label for="email">E-Mail:</label>
+								<input type="email" class="form-control" id="email" name="email" required="E-mail inválido">
 							</div>
 							<div class="form-group">
 								<label for="login">Usuário:</label>
