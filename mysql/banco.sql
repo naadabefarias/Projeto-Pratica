@@ -45,7 +45,17 @@ drop database if exists ponto;
 		  `qnt_estrela` int(11) NOT NULL,
 		  `modified` datetime DEFAULT NULL,
 		   PRIMARY KEY (`id`),
-		   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+		   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`),
 		   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 	);
+
+		CREATE TABLE imagens(
+			img varchar(100) NOT NULL,
+			imagens_id INT NOT NULL AUTO_INCREMENT,
+			ponto_id INT NOT NULL,
+
+			PRIMARY KEY (imagens_id),
+			CONSTRAINT fk_ponto FOREIGN KEY (ponto_id) REFERENCES pontos_turisticos (id)
+		);
+
 
