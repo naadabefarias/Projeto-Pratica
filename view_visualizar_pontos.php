@@ -254,11 +254,14 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     </div>
     <br>
     <br>
-    <div class="container avaliacoes">
-        <h1>Avaliações:</h1>
-      
-         <?php include "avalie.php"; ?>
-    </div>
+    <center>
+        
+      <div class="container avaliacoes">
+          <h1>Avalie</h1>
+        
+           <?php include "avalie.php"; ?>
+      </div>
+    </center>
 
       
 
