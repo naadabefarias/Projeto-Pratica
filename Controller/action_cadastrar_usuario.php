@@ -34,7 +34,7 @@ if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null &&
 
 		$_SESSION['cadastro_sucesso'] = true;
 
-		header('location:../PHPMailer/email.php');	
+		header('location: email.php');	
 	}	
 
 }else {

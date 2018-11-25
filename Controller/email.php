@@ -3,7 +3,7 @@
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
-require './vendor/autoload.php';
+require '../PHPMailer/vendor/autoload.php';
 
 $nome = $_SESSION['nomeCadastro'];
 $email = $_SESSION['emailCadastro'];
@@ -37,7 +37,7 @@ $mail->addAddress($email, $nome);
 //Corpo, oq vai ter dentro da caixa de email
 $mail->Subject = 'SeuTurismo Cadastro';
 //Aqui a gente coloca um html básico para envio
-$mail->msgHTML(file_get_contents('email.html'),dirname(__FILE__));
+$mail->msgHTML(file_get_contents('emailPronto.html'),dirname(__FILE__));
 //Replace the plain text body with one created manually
 $mail->AltBody = 'Teste';
 // $mail->addAttachment('images/phpmailer_mini.png');
@@ -46,7 +46,9 @@ if(!$mail->send()) {
 	echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
 	
-	header('location:../index.php');
+	// header('location: ../index.php');
+	echo "<script> location.replace('../index.php'); </script>";
+	// exit();
 }
 
 ?>

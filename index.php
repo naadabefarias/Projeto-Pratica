@@ -1,5 +1,4 @@
-		<!-- Header -->
-		<?php require_once('view_header.php') ?>
+<?php require_once('view_header.php') ?>
 
 		<!--Carousel -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
