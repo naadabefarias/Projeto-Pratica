@@ -261,7 +261,12 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
         
            <?php include "avalie.php"; ?>
       </div>
+
+      <div>
+       
+      </div>
     </center>
+
 
       
 

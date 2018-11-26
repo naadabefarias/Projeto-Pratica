@@ -35,6 +35,10 @@ form {
 	<form method="post" action="Controller/action_cadastrar_ponto.php" class="ui form" enctype="multipart/form-data">
 		<label><h3>Nome do Ponto Turístico </h3></label>
 		<input type="text" name="nome_ponto" placeholder="Nome do Ponto Turístico" required=""><br><br>
+		<label> <h3>Latitude </h3></label>
+		<input type="text" name="lat" placeholder="Latitude" required=""><br><br>
+		<label> <h3>Longitude </h3></label>
+		<input type="text" name="lng" placeholder="Longitude" required=""><br><br>
 		<label> <h3>Logradouro </h3></label>
 		<input type="text" name="logradouro" placeholder="Logradouro" required=""><br><br>
 		<label> <h3>Bairro </h3></label>
