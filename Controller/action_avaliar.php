@@ -4,7 +4,6 @@ include "conexao.php";
 //Para que o Horário fique igual ao de Brasilia
 date_default_timezone_set("America/Recife");
 setlocale(LC_ALL, 'pt_BR');
-
 $id 		= $_SESSION['id'];
 $user 		= $_SESSION['user'];
 $idPonto 	= $_GET['id'];
@@ -17,7 +16,7 @@ $date 		= date_format($created, 'Y-m-d H:i:s');
 		$consulta->bindParam(1, $id);
 		$consulta->bindParam(2, $idPonto);
 	 	$stmt = $consulta->execute();
-
+	 	
 	 	if ($consulta->rowCount() >= 1) {
 			$fetch 		= $consulta->fetch();
 			$star 		= ("UPDATE avaliacoes SET qnt_estrela=?, modified=?");

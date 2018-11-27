@@ -5,7 +5,6 @@ $id = $_GET['id'];//id do ponto
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
   $linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
-
 $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   
 ?>
@@ -15,7 +14,6 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
       body {
       padding-top: 54px;
     }
-
     @media (min-width: 992px) {
       body {
         padding-top: 56px;
@@ -35,28 +33,23 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     margin-top: -13em;
     color: white;
     margin-left: 50px;
-
   }
   h1.inf{
     font-size: 50pt;
-
   }
   h2.inf{
     font-size: 30pt;
   }
-
   div.desc{
     margin-top: 10em;
   }
   form#my_form{
     display: none;
   }
-
   .add_foto{
     margin-top: 20px;
     text-align: center;
   }
-
 }
 </style>
 <!--     <div cl<!--  -->
@@ -83,7 +76,6 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
 
     <script type="text/javascript">
         jssor_1_slider_init = function() {
-
             var jssor_1_SlideshowTransitions = [
               {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
               {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
@@ -108,7 +100,6 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
               {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
               {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
             ];
-
             var jssor_1_options = {
               $AutoPlay: 1,
               $SlideshowOptions: {
@@ -125,30 +116,21 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
                 $SpacingY: 5
               }
             };
-
             var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
             /*#region responsive code begin*/
-
             var MAX_WIDTH = 980;
-
             function ScaleSlider() {
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
                 var containerWidth = containerElement.clientWidth;
-
                 if (containerWidth) {
-
                     var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
                     jssor_1_slider.$ScaleWidth(expectedWidth);
                 }
                 else {
                     window.setTimeout(ScaleSlider, 30);
                 }
             }
-
             ScaleSlider();
-
             $Jssor$.$AddEvent(window, "load", ScaleSlider);
             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
@@ -163,12 +145,10 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
             animation-iteration-count: infinite;
             animation-timing-function: linear;
         }
-
         @keyframes jssorl-009-spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
         /*jssor slider arrow skin 106 css*/
         .jssora106 {display:block;position:absolute;cursor:pointer;}
         .jssora106 .c {fill:#fff;opacity:.3;}
@@ -178,7 +158,6 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
         .jssora106.jssora106dn .c {opacity:.2;}
         .jssora106.jssora106dn .a {opacity:1;}
         .jssora106.jssora106ds {opacity:.3;pointer-events:none;}
-
         /*jssor slider thumbnail skin 101 css*/
         .jssort101 .p {position: absolute;top:0;left:0;box-sizing:border-box;background:#000;}
         .jssort101 .p .cv {position:relative;top:0;left:0;width:100%;height:100%;border:2px solid #000;box-sizing:border-box;z-index:1;}
@@ -254,19 +233,13 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     </div>
     <br>
     <br>
-    <center>
-        
-      <div class="container avaliacoes">
-          <h1>Avalie</h1>
-        
-           <?php include "avalie.php"; ?>
-      </div>
-
-      <div>
-       
-      </div>
-    </center>
-
+    <div class="container avaliacoes">
+        <h1>Avalie</h1>
+        <center>
+          <?php include "avalie.php"; ?>
+          
+        </center>
+    </div>
 
       
 
@@ -274,7 +247,6 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
 function currentDiv(n) {
   showDivs(slideIndex = n);
 }
-
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -292,7 +264,6 @@ function showDivs(n) {
 }
   var btn = document.getElementById('btn_form');
   var form = document.getElementById('my_form');
-
   btn.addEventListener('click', function() {
     form.style.display = 'block';
     btn.style.display = 'none';
@@ -331,7 +302,6 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
   #teste {
     margin-top: 25px;
   }
-
 </style>
 <div id="teste">
 <?php 
