@@ -28,18 +28,6 @@ drop database if exists ponto;
 		 CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 		);
 
-		CREATE TABLE `artigos`(
-			`id` int(11) NOT NULL AUTO_INCREMENT,
-		  	`votos` int(11) NOT NULL,
-		  	`pontos` int(11) NOT NULL,
-		    `modified` DATETIME DEFAULT NULL,
-		 	`id_ponto` int(11) NOT NULL ,
-
-		    PRIMARY KEY(`id`),
-		 	CONSTRAINT `pk_aval` FOREIGN KEY (`id_ponto`) REFERENCES `pontos_turisticos` (`id`)
-		 	);
-
-
 		CREATE TABLE `avaliacoes` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `qnt_aval` int(11) NOT NULL,

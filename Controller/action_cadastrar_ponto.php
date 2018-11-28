@@ -2,6 +2,8 @@
 	session_start();
 	$id = $_SESSION['id'];
  	require_once('conexao.php');
+
+ 
  	if(isset($_POST['nome_ponto']) && isset($_POST['lat']) && isset($_POST['lng']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
  		
  		$nome = $_POST['nome_ponto'];
@@ -40,7 +42,11 @@
  		$stmt = $query->execute();
 		header('Location: ../index.php');
 	} else {
+<<<<<<< HEAD
  		echo "<script>alert('erro')</script>";
+=======
+ 		// echo "Erro!!";
+>>>>>>> d0c4d75e3a7acc083c00fb7d8468039a364a0469
  	}
 	
   ?> 

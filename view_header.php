@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
 	<title>Seu Ponto turistico</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css"> -->
 	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<meta charset="utf-8">
@@ -19,7 +19,7 @@ session_start();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<link rel="icon" type="image/png" href="images/icon.png">
 	<!-- Barra superior -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!-- Bootstrap core CSS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -39,6 +39,21 @@ session_start();
 			font-family: 'Mali', cursive;
 			font-style: italic;
 		}
+
+		.btn{
+			background-color: #337ab7;
+			color: white;
+		}
+		/*.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+			background-color: #337ab7;
+		}
+
+		.navbar-inverse .navbar-nav>li>a {
+    		color: white;
+		}*/
+
+
+	
 	</style>
 	<div id="geral">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -61,7 +76,7 @@ session_start();
 					<input type="text" name="search" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
 					<p class="locais" id="locais"><a href=""></a></p>
 					</li>
-					<li><button type="submit" class="btn btn-default pesq">Pesquisar</button>
+					<li><button type="submit" class="btn pesq">Pesquisar</button>
 					</li>
 						</form>	
 				</ul>
@@ -95,7 +110,7 @@ session_start();
 		<?php  
 		if (isset($_GET['error'])){
 			?>
-			<div class="alert alert-danger" role="alert">Login ou senha inválido!</div>		
+			<div class="alert alert-danger" role="text">Login ou senha inválido!</div>		
 		<?php  }
 
 		?>

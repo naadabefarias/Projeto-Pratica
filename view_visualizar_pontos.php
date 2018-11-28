@@ -1,4 +1,4 @@
-<?php
+ <?php
 require_once('view_header.php');
 $id = $_GET['id'];//id do ponto
 // $pesquisa = $_POST['search'];
@@ -45,28 +45,42 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   h2.inf{
     font-size: 30pt;
   }
-  div.desc{
-    margin-top: 10em;
-  }
+
   form#my_form{
     display: none;
   }
   .add_foto{
     margin-top: 20px;
-    text-align: center;
+    margin-left: 80px;
+  }
+  .desc{
+    background-color: blue;
+    color: white;
+    height: 31em;
+  }
+  .visu{
+    background-color: green;
+    margin-top: -4px;
   }
 }
 </style>
 
 <!--     <div cl<!--  -->
+<<<<<<< HEAD
     <div class="container">
       <img style="width: 100%;height: 31em; margin-top: -1em;"  src="upload/<?=$linha['imagem'];?>">
+=======
+    <div class="visu" style="height: 31em;">
+      <img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
+>>>>>>> d0c4d75e3a7acc083c00fb7d8468039a364a0469
       <div class="infponto">
         <h1 class="inf"><?=$linha['nome_ponto']?></h1>
         <h2 class="inf"><?=$linha['bairro']; ?> </h2>
       </div>
+    
     </div>
 
+<<<<<<< HEAD
     <div class="container desc">
       <h1>Descrições:</h1>
       <h3>Nome dado ao ponto: <?=$linha['nome_ponto']?></h3>
@@ -74,12 +88,24 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
       <h3>Descrição: <?=$linha['descricao']; $linha['categoria'];?> </h3>
 
 
+=======
+    
+    <div class="container">
+      <div class="page-header">
+        <h1>Descrições:</h1>
+      </div>
+      <p>Nome dado ao ponto: <?=$linha['nome_ponto']?></p>
+      <p>Endereço: <?=$linha['logradouro']?>, <?=$linha['bairro']?></p>
+      <p>Descrição: <?=$linha['descricao']?></p>
+>>>>>>> d0c4d75e3a7acc083c00fb7d8468039a364a0469
     </div>
+    
     <br>
     <br>
     <div class="container">  
-      <h1>Fotos:</h1>
-
+      <div class="page-header">
+        <h1>Fotos:</h1>
+      </div>
     <script type="text/javascript">
         jssor_1_slider_init = function() {
             var jssor_1_SlideshowTransitions = [
@@ -230,7 +256,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     <div class="add_foto">
         <button id=btn_form>Adicionar Fotos</button>
         <form id="my_form" method="POST" action="Controller/action_add_imagem.php?ponto_id=<?=$id?>" enctype="multipart/form-data">
-          <input type="file" name="imagem"><br>
+          <input type="file" name="imagem" required=""><br>
           <input type="submit" value="Adicionar">
         </form>
     </div>
@@ -239,12 +265,12 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     </div>
     <br>
     <br>
-    <div class="container avaliacoes">
+    <div class="containerAvaliacoes">
         <h1>Avalie</h1>
-        <center>
+
           <?php include "avalie.php"; ?>
           
-        </center>
+        
     </div>
 
       
@@ -283,13 +309,14 @@ function showDivs(n) {
       <h3 class="my-4">Outros pontos turisticos:</h3>
 <div class="row">
  <?php   $ativoCarr = 0;
-$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;");   
+$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos
+  WHERE id!= $id;");   
      while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
             if ($ativoCarr <= 3):?>
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
             <img class="img-fluid img2" src="upload/<?=$linha['imagem'];?>" alt="">
-                <br><br><h3><?=$linha['nome_ponto'];?></h3>    
+                <br><h3><?=$linha['nome_ponto'];?></h3>    
           </a>
         </div>
 <?php       $ativoCarr++;
