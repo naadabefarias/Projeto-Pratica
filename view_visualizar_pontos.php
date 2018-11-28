@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once('view_header.php');
 $id = $_GET['id'];//id do ponto
 // $pesquisa = $_POST['search'];
@@ -8,19 +8,17 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
 $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   
 ?>
-<script type="text/javascript"> // altera title para o nome do ponto2
-  document.title="Ponto | " + "<?php echo $linha['nome_ponto'];  ?>";
-
-</script>
+<script>
+document.title= "Ponto | "+"<?php echo $linha['nome_ponto']; ?>";
+ </script>
 <script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
-
 <style>
+
       body {
       padding-top: 54px;
     }
     @media (min-width: 992px) {
       body {
-       
         padding-top: 56px;
       }
     .img1{
@@ -64,31 +62,16 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   }
 }
 </style>
-
 <!--     <div cl<!--  -->
-<<<<<<< HEAD
-    <div class="container">
-      <img style="width: 100%;height: 31em; margin-top: -1em;"  src="upload/<?=$linha['imagem'];?>">
-=======
     <div class="visu" style="height: 31em;">
       <img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
->>>>>>> d0c4d75e3a7acc083c00fb7d8468039a364a0469
       <div class="infponto">
         <h1 class="inf"><?=$linha['nome_ponto']?></h1>
-        <h2 class="inf"><?=$linha['bairro']; ?> </h2>
+        <h2 class="inf"><?=$linha['bairro']?></h2>
       </div>
     
     </div>
 
-<<<<<<< HEAD
-    <div class="container desc">
-      <h1>Descrições:</h1>
-      <h3>Nome dado ao ponto: <?=$linha['nome_ponto']?></h3>
-      <h3>Endereço: <?=$linha['logradouro']?>, <?=$linha['bairro']?></h3>
-      <h3>Descrição: <?=$linha['descricao']; $linha['categoria'];?> </h3>
-
-
-=======
     
     <div class="container">
       <div class="page-header">
@@ -97,7 +80,6 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
       <p>Nome dado ao ponto: <?=$linha['nome_ponto']?></p>
       <p>Endereço: <?=$linha['logradouro']?>, <?=$linha['bairro']?></p>
       <p>Descrição: <?=$linha['descricao']?></p>
->>>>>>> d0c4d75e3a7acc083c00fb7d8468039a364a0469
     </div>
     
     <br>
@@ -265,7 +247,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     </div>
     <br>
     <br>
-    <div class="containerAvaliacoes">
+    <div class="container avaliacoes">
         <h1>Avalie</h1>
 
           <?php include "avalie.php"; ?>
