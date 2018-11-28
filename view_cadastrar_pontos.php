@@ -16,17 +16,19 @@ body {
 /*.pesq{
 	margin-top: 7px;
 	margin-left: 7px;
-*/}
-form {
-	margin-top: 5em;
-}
-.container{
-	margin-top: 6em;
-	height: 800px;	
+*/
+
+.form{
+    margin-top: 3em;
 }
 
 #titulo_cadastro {
 	font-family: 'Mali', cursive;
+}
+
+.cad{
+    margin-top: 5em;
+    margin-bottom: 7em;
 }
 
 
@@ -81,39 +83,58 @@ form {
             });
         }
     </script>
-<div class="ui container">
+<div class="container cad">
 	<h1 id="titulo_cadastro"> Cadastro de Pontos Turísticos </h1>
-	<form method="post" action="Controller/action_cadastrar_ponto.php" class="ui form" enctype="multipart/form-data">
-		<label><h3>Nome do Ponto Turístico </h3></label>
-		<input type="text" name="nome_ponto" placeholder="Nome do Ponto Turístico" required=""><br><br>
-		<label> <h3>Latitude </h3></label>
-		<input type="text" name="lat" placeholder="Latitude" required=""><br><br>
-		<label> <h3>Longitude </h3></label>
-		<input type="text" name="lng" placeholder="Longitude" required=""><br><br>
-		<label> <h3>Logradouro </h3></label>
-		<input type="text" name="logradouro" placeholder="Logradouro" required=""><br><br>
-		<label> <h3>Bairro </h3></label>
-		<input type="text" name="bairro" placeholder="Bairro" required=""><br><br>
-		<label> <h3>Número </h3></label>
-		<input type="text" name="numero" placeholder="Número" ><br><br>
-		<label> <h3>Descrição: </h3></label>
-		<input type="text" name="descricao" placeholder="Descrição" ><br><br>
-		<label> <h3>Imagem </h3></label>
-		<input type="file" name="imagem" placeholder="Imagem" ><br><br>
-    <label for="sel1">Selecione o tipo de ponto:</label>
-      <select class="form-control" name="categoria">
-        <option value="igreja">Igrejas Históricas</option>
-        <option value="monumento">Monumentos Antigos</option>
-        <option value="museu">Museus Históricos</option>
-        <option value="naturezaparques">Natureza e Parques</option>
-        <option value="praia">Praia</option>
-        <option value="praca">Praça</option>
-        <option value="rio">Rio</option>
-      </select>
-		<input type="submit" value="Cadastrar" class="ui primary button">
-	
+    <div class="form">
+	<form method="post" action="Controller/action_cadastrar_ponto.php" class="form">
+        <div class="form-group">
+            <label for="text">Nome do Ponto:</label>
+            <input type="text" class="form-control" name="nome_ponto">
+        </div>
+
+        <div class="form-group">
+            <label for="text">Logradouro:</label>
+            <input type="text" class="form-control" name="logradouro">
+        </div>
+
+        <div class="form-group">
+            <label for="text">Bairro:</label>
+            <input type="text" class="form-control" name="bairro">
+        </div>
+
+        <div class="form-group">
+            <label for="text">Número:</label>
+            <input type="text" class="form-control" name="numero">
+        </div>
+
+        <div class="form-group">
+            <label for="comment">Descrição:</label>
+            <textarea type="text" class="form-control" name="descricao"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="file">Imagem:</label>
+            <input type="file" class="form-control file" name="imagem">
+        </div>
+    	
+        <div class="form-group">	
+        <label for="sel1">Selecione o tipo de ponto:</label>
+          <select class="form-control" name="categoria">
+            <option value="igreja">Igrejas Históricas</option>
+            <option value="monumento">Monumentos Antigos</option>
+            <option value="museu">Museus Históricos</option>
+            <option value="naturezaparques">Natureza e Parques</option>
+            <option value="praia">Praia</option>
+            <option value="praca">Praça</option>
+            <option value="rio">Rio</option>
+          </select>
+        </div>
+        <div class="form-group">    
+    		<input type="submit" value="Cadastrar" class="btn btn-primary">
+    	</div>
 
 	</form>
+    </div>
 </div>
 
 <?php 

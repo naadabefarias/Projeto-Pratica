@@ -40,9 +40,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   h2.inf{
     font-size: 30pt;
   }
-  div.desc{
-    margin-top: 10em;
-  }
+
   form#my_form{
     display: none;
   }
@@ -50,30 +48,42 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     margin-top: 20px;
     text-align: center;
   }
+  .desc{
+    background-color: blue;
+    color: white;
+    height: 31em;
+  }
+  .visu{
+    background-color: green;
+  }
 }
 </style>
 <!--     <div cl<!--  -->
-    <div class="container">
+    <div class="visu" style="height: 31em;">
       <img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
       <div class="infponto">
         <h1 class="inf"><?=$linha['nome_ponto']?></h1>
         <h2 class="inf"><?=$linha['bairro']?></h2>
       </div>
+    
     </div>
 
-    <div class="container desc">
-      <h1>Descrições:</h1>
-      <h3>Nome dado ao ponto: <?=$linha['nome_ponto']?></h3>
-      <h3>Endereço: <?=$linha['logradouro']?>, <?=$linha['bairro']?></h3>
-      <h3>Descrição: <?=$linha['descricao']?></h3>
-
-
+    
+    <div class="container">
+      <div class="page-header">
+        <h1>Descrições:</h1>
+      </div>
+      <p>Nome dado ao ponto: <?=$linha['nome_ponto']?></p>
+      <p>Endereço: <?=$linha['logradouro']?>, <?=$linha['bairro']?></p>
+      <p>Descrição: <?=$linha['descricao']?></p>
     </div>
+    
     <br>
     <br>
     <div class="container">  
-      <h1>Fotos:</h1>
-
+      <div class="page-header">
+        <h1>Fotos:</h1>
+      </div>
     <script type="text/javascript">
         jssor_1_slider_init = function() {
             var jssor_1_SlideshowTransitions = [
@@ -235,10 +245,10 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     <br>
     <div class="container avaliacoes">
         <h1>Avalie</h1>
-        <center>
+
           <?php include "avalie.php"; ?>
           
-        </center>
+        
     </div>
 
       
