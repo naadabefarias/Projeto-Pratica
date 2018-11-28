@@ -11,8 +11,8 @@ conf-git-luigi:
 	git config user.name "Luigimartins"
 
 conf-git-naadabe:
-	git config user.email "kevinsmoura@hotmail.com"
-	git config user.name "kevinsousa"
+	git config user.email "naadabefarias@gmail.com"
+	git config user.name "naadabefarias"
 
 conf-git-rhodolfo:
 	git config user.email "rhodolfo.dodo@hotmail.com"
