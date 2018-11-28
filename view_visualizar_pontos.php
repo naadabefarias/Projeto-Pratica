@@ -55,6 +55,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   }
   .visu{
     background-color: green;
+    margin-top: -4px;
   }
 }
 </style>
@@ -287,13 +288,14 @@ function showDivs(n) {
       <h3 class="my-4">Outros pontos turisticos:</h3>
 <div class="row">
  <?php   $ativoCarr = 0;
-$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos;");   
+$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos
+  WHERE id!= $id;");   
      while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
             if ($ativoCarr <= 3):?>
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
             <img class="img-fluid img2" src="upload/<?=$linha['imagem'];?>" alt="">
-                <br><br><h3><?=$linha['nome_ponto'];?></h3>    
+                <br><h3><?=$linha['nome_ponto'];?></h3>    
           </a>
         </div>
 <?php       $ativoCarr++;
