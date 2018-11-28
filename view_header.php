@@ -39,6 +39,21 @@ session_start();
 			font-family: 'Mali', cursive;
 			font-style: italic;
 		}
+
+		.btn{
+			background-color: #337ab7;
+			color: white;
+		}
+		/*.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+			background-color: #337ab7;
+		}
+
+		.navbar-inverse .navbar-nav>li>a {
+    		color: white;
+		}*/
+
+
+	
 	</style>
 	<div id="geral">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -61,7 +76,7 @@ session_start();
 					<input type="text" name="search" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
 					<p class="locais" id="locais"><a href=""></a></p>
 					</li>
-					<li><button type="submit" class="btn btn-default pesq">Pesquisar</button>
+					<li><button type="submit" class="btn pesq">Pesquisar</button>
 					</li>
 						</form>	
 				</ul>

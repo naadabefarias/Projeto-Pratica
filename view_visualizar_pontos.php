@@ -46,7 +46,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   }
   .add_foto{
     margin-top: 20px;
-    text-align: center;
+    margin-left: 80px;
   }
   .desc{
     background-color: blue;
@@ -234,7 +234,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     <div class="add_foto">
         <button id=btn_form>Adicionar Fotos</button>
         <form id="my_form" method="POST" action="Controller/action_add_imagem.php?ponto_id=<?=$id?>" enctype="multipart/form-data">
-          <input type="file" name="imagem"><br>
+          <input type="file" name="imagem" required=""><br>
           <input type="submit" value="Adicionar">
         </form>
     </div>

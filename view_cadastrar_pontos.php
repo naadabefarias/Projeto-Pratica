@@ -86,7 +86,7 @@ body {
 <div class="container cad">
 	<h1 id="titulo_cadastro"> Cadastro de Pontos Turísticos </h1>
     <div class="form">
-	<form method="post" action="Controller/action_cadastrar_ponto.php" class="form">
+	<form method="POST" action="Controller/action_cadastrar_ponto.php" class="form" enctype="multipart/form-data">
         <div class="form-group">
             <label for="text">Nome do Ponto:</label>
             <input type="text" class="form-control" name="nome_ponto">
@@ -105,6 +105,16 @@ body {
         <div class="form-group">
             <label for="text">Número:</label>
             <input type="text" class="form-control" name="numero">
+        </div>
+        
+        <div class="form-group">
+            <label for="text">Latitude:</label>
+            <input type="text" class="form-control" name="lat">
+        </div>
+
+        <div class="form-group">
+            <label for="text">Longitude:</label>
+            <input type="text" class="form-control" name="lng">
         </div>
 
         <div class="form-group">
