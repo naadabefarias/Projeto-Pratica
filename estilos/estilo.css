@@ -6,3 +6,7 @@
 }.estrelas  input[type=radio]:checked  ~ label i.fa:before{
 	color: #CCC;
 }
+.containerAvaliacoes {
+
+	text-align: center;
+ }

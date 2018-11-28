@@ -110,7 +110,7 @@ session_start();
 		<?php  
 		if (isset($_GET['error'])){
 			?>
-			<div class="alert alert-danger" role="alert">Login ou senha inválido!</div>		
+			<div class="alert alert-danger" role="text">Login ou senha inválido!</div>		
 		<?php  }
 
 		?>

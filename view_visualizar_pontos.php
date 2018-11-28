@@ -1,4 +1,4 @@
-<?php
+ <?php
 require_once('view_header.php');
 $id = $_GET['id'];//id do ponto
 // $pesquisa = $_POST['search'];
@@ -244,7 +244,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
     </div>
     <br>
     <br>
-    <div class="container avaliacoes">
+    <div class="containerAvaliacoes">
         <h1>Avalie</h1>
 
           <?php include "avalie.php"; ?>

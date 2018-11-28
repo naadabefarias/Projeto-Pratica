@@ -8,6 +8,7 @@ $id 		= $_SESSION['id'];
 $user 		= $_SESSION['user'];
 $idPonto 	= $_GET['id'];
 $estrela 	= $_POST['estrela'];
+$_SESSION['estrela'] = $estrela;
 $created 	= date_create();
 $date 		= date_format($created, 'Y-m-d H:i:s');
 
@@ -32,5 +33,6 @@ $date 		= date_format($created, 'Y-m-d H:i:s');
 			$queryTwo->bindParam(2, $id);	
 			$queryTwo->bindParam(3, $idPonto);	
 			$stmt 		= $queryTwo->execute();	
+
 		 	  header('Location: ../view_visualizar_pontos.php?id='.$idPonto);
 	 	}
