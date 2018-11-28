@@ -40,7 +40,7 @@
  		$stmt = $query->execute();
 		header('Location: ../index.php');
 	} else {
- 		//echo "Erro!!";
+ 		echo "<script>alert('erro')</script>";
  	}
 	
   ?> 

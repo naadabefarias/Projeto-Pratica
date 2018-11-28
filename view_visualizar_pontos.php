@@ -8,14 +8,19 @@ $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'");
 $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   
 ?>
+<script type="text/javascript"> // altera title para o nome do ponto2
+  document.title="Ponto | " + "<?php echo $linha['nome_ponto'];  ?>";
 
+</script>
 <script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+
 <style>
       body {
       padding-top: 54px;
     }
     @media (min-width: 992px) {
       body {
+       
         padding-top: 56px;
       }
     .img1{
@@ -52,12 +57,13 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
   }
 }
 </style>
+
 <!--     <div cl<!--  -->
     <div class="container">
-      <img style="width: 100%;height: 31em;" src="upload/<?=$linha['imagem'];?>">
+      <img style="width: 100%;height: 31em; margin-top: -1em;"  src="upload/<?=$linha['imagem'];?>">
       <div class="infponto">
         <h1 class="inf"><?=$linha['nome_ponto']?></h1>
-        <h2 class="inf"><?=$linha['bairro']?></h2>
+        <h2 class="inf"><?=$linha['bairro']; ?> </h2>
       </div>
     </div>
 
@@ -65,7 +71,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
       <h1>Descrições:</h1>
       <h3>Nome dado ao ponto: <?=$linha['nome_ponto']?></h3>
       <h3>Endereço: <?=$linha['logradouro']?>, <?=$linha['bairro']?></h3>
-      <h3>Descrição: <?=$linha['descricao']?></h3>
+      <h3>Descrição: <?=$linha['descricao']; $linha['categoria'];?> </h3>
 
 
     </div>

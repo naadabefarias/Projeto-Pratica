@@ -105,5 +105,5 @@
 
 		<!-- Footer -->
 		<?php require_once('view_footer.html');
-
+		
 		?>	
