@@ -15,7 +15,7 @@ $mail->isSMTP();
 // 0 = não mostrar msgs
 // 1 = msg do navegador
 // 2 = msg do navegador e erros do server
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 0;
 //o ip do servidor de email de sua preferencia
 $mail->Host = 'smtp.gmail.com';
 //colocar a porta do smtp
@@ -46,9 +46,9 @@ if(!$mail->send()) {
 	echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
 	
-	// header('location: ../index.php');
-	echo "<script> location.replace('../index.php'); </script>";
-	// exit();
+	header('location: ../index.php');
+	// echo "<script> location.replace('../index.php'); </script>";
+	exit();
 }
 
 ?>
