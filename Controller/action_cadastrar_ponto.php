@@ -10,8 +10,8 @@
 		$logradouro = $_POST['logradouro'];
 		$bairro = $_POST['bairro'];
 		$numero = $_POST['numero'];
-		$categoria = $_POST['categoria'];
 		$descricao = $_POST['descricao'];
+		$categoria = $_POST['categoria'];
 
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
@@ -22,7 +22,6 @@
 			$diretorio =  "../upload/";//onde ele será salvo
 			move_uploaded_file($imagem['tmp_name'], $diretorio.$novo_nome);//mover o arquivo para o diretorio
 		}	
-
  		
  		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem, categoria, descricao) 
 						VALUES(?, ?, ?, ?, ?, ?, ?, ?)";

@@ -154,10 +154,20 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       <div class="container desk">
         <h1><?= $linha['nome_ponto']?></h1>
         <h3><?= $linha['bairro']?></h3>
-        <p><span>Estrelas</span> (numero de avaliações)</p>
         <p>Avaliações</p>
+        <?php 
+        $media = 0;
+        $qnt_avaliacoes = $avaliacao->rowCount();
+        foreach ($avaliacoes as $aval ) {
+          $media += $aval['qnt_estrela'];
+        }
+        $media = $media / $qnt_avaliacoes;
+         ?>
 
-        <h3>Como chegar:</h3>
+         <p>Média de ( <?=$media?> ) estrelas<br> 
+          Número de avaliações  (<?=$qnt_avaliacoes?>)</p>
+
+        <h3>Como chegar</h3>
         <p>API google maps</p>
       </div>  
     </div>
@@ -173,7 +183,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     </div>
     <div class="container">
       <div class="page-header">
-        <h1>Descrições:</h1>
+        <h1>Descrições</h1>
       </div>
       <div style="margin-left: 20px;">
         <p><?=$linha['descricao']?></p>
@@ -184,21 +194,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     <br>
     <div class="container avaliacoes">
       <div class="page-header">
-        <h1>Avaliações:</h1>
-        <?php 
-        $media = 0;
-        $qnt_avaliacoes = $avaliacao->rowCount();
-        foreach ($avaliacoes as $aval ) {
-          $media += $aval['qnt_estrela'];
-        }
-        $media = $media / $qnt_avaliacoes;
-         ?>
-
-         <p>media de estrelas ( <?=$media?> ) numero de avaliações (<?=$qnt_avaliacoes?>)</p>
-      </div>  
-      <div>
-          <p>Cada avaliação deverá ser listada aqui!</p><br>
-          <h4>Faça sua avaliação:</h4>
+          <h2>Faça sua avaliação</h4>
           <form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
       <div class="estrelas">
         <input type="radio" id="vazio" name="estrela" value="" checked>
@@ -219,7 +215,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         <label for="estrela_cinco"><i class="fa"></i></label>
         <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
         
-        <input type="submit" value="Avaliar" class="btn btn-primary">
+        <input type="submit" value="Avaliar" class="btn btn-  primary">
         
       </div>
     </form>
