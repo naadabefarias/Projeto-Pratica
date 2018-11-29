@@ -1,3 +1,4 @@
+
 drop database if exists ponto;
 	create database if not exists ponto;
 
@@ -29,13 +30,12 @@ drop database if exists ponto;
 		);
 
 		CREATE TABLE `avaliacoes` (
-		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `qnt_aval` int(11) NOT NULL,
 		  `user_id` int(11) NOT NULL,
 		  `qnt_estrela` int(11) NOT NULL,
 		  `ponto_id` int(11) NOT NULL,
 		  `modified` datetime DEFAULT NULL,
-		   PRIMARY KEY (`id`),
+		   PRIMARY KEY (user_id,ponto_id),
 		   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`),
 		   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 	);

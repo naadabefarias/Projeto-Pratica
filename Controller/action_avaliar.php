@@ -12,7 +12,7 @@ $_SESSION['estrela'] = $estrela;
 $created 	= date_create();
 $date 		= date_format($created, 'Y-m-d H:i:s');
 
-		$star = ("SELECT id,user_id,ponto_id FROM avaliacoes WHERE user_id=? and ponto_id=? ");
+		$star = ("SELECT user_id,ponto_id FROM avaliacoes WHERE user_id=? and ponto_id=? ");
 		$consulta = $conn->prepare($star);
 		$consulta->bindParam(1, $id);
 		$consulta->bindParam(2, $idPonto);
