@@ -30,7 +30,6 @@ drop database if exists ponto;
 		);
 
 		CREATE TABLE `avaliacoes` (
-		  `qnt_aval` int(11) NOT NULL,
 		  `user_id` int(11) NOT NULL,
 		  `qnt_estrela` int(11) NOT NULL,
 		  `ponto_id` int(11) NOT NULL,

@@ -6,7 +6,11 @@ $id = $_GET['id'];//id do ponto
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
   $linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
 $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
-  
+
+
+$user_id = $_SESSION['id'];
+$avaliacao = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = '$id' and user_id = '$user_id'");
+$avaliacoes = $avaliacao->fetchAll();  
 ?>
 <script>
 document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
@@ -181,7 +185,16 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     <div class="container avaliacoes">
       <div class="page-header">
         <h1>Avaliações:</h1>
-        <p>Estrelas (numero de avaliações)</p>
+        <?php 
+        $media = 0;
+        $qnt_avaliacoes = $avaliacao->rowCount();
+        foreach ($avaliacoes as $aval ) {
+          $media += $aval['qnt_estrela'];
+        }
+        $media = $media / $qnt_avaliacoes;
+         ?>
+
+         <p>media de estrelas ( <?=$media?> ) numero de avaliações (<?=$qnt_avaliacoes?>)</p>
       </div>  
       <div>
           <p>Cada avaliação deverá ser listada aqui!</p><br>
