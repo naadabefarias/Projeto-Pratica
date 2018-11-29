@@ -68,6 +68,10 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     display: inline-block;
   }
 
+  .desk{
+    margin-left: 20px;
+  }
+
  
 
 }
@@ -134,9 +138,14 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     </div>
     
     <div class="descricoes">
-      <div class="container">
+      <div class="container desk">
         <h1><?= $linha['nome_ponto']?></h1>
-        <h2><?= $linha['bairro']?></h2>
+        <h3><?= $linha['bairro']?></h3>
+        <p><span>Estrelas</span> (numero de avaliações)</p>
+        <p>Avaliações</p>
+
+        <h3>Como chegar:</h3>
+        <p>API google maps</p>
       </div>  
     </div>
     <div class="add_foto">
@@ -153,15 +162,23 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       <div class="page-header">
         <h1>Descrições:</h1>
       </div>
-      
+      <div style="margin-left: 20px;">
+        <p><?=$linha['descricao']?></p>
+      </div>
     </div>
     
     <br>
     <br>
     <div class="container avaliacoes">
-        <h1>Avalie</h1>
-
+      <div class="page-header">
+        <h1>Avaliações:</h1>
+        <p>Estrelas (numero de avaliações)</p>
+      </div>  
+      <div>
+          <p>Cada avaliação deverá ser listada aqui!</p><br>
+          <h4>Faça sua avaliação:</h4>
           <?php include "avalie.php"; ?>
+      </div>
           
         
     </div>
