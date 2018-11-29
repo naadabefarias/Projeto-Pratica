@@ -204,19 +204,20 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         <input type="radio" id="vazio" name="estrela" value="" checked>
         
         <label for="estrela_um"><i class="fa"></i></label>
-        <input type="radio" id="estrela_um" name="estrela" value="1">
+        <input type="radio" id="estrela_um" name="estrela" value="1"<?php if ($aval['qnt_estrela'] == 1) :?> checked <?php endif;?> 
+        >
         
         <label for="estrela_dois"><i class="fa"></i></label>
-        <input type="radio" id="estrela_dois" name="estrela" value="2">
+        <input type="radio" id="estrela_dois" name="estrela" value="2"<?php if ($aval['qnt_estrela'] ==2):?> checked <?php endif;?>>
         
         <label for="estrela_tres"><i class="fa"></i></label>
-        <input type="radio" id="estrela_tres" name="estrela" value="3">
+        <input type="radio" id="estrela_tres" name="estrela" value="3"<?php if ($aval['qnt_estrela'] ==3):?> checked <?php endif;?>>
         
         <label for="estrela_quatro"><i class="fa"></i></label>
-        <input type="radio" id="estrela_quatro" name="estrela" value="4">
+        <input type="radio" id="estrela_quatro" name="estrela" value="4"<?php if ($aval['qnt_estrela'] ==4) :?> checked <?php endif;?>>
         
         <label for="estrela_cinco"><i class="fa"></i></label>
-        <input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
+        <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
         
         <input type="submit" value="Avaliar" class="btn btn-primary">
         
