@@ -1,3 +1,60 @@
+
+#imagem {
+width : 25em;
+height :30em;
+
+position: fixed;
+}
+*{
+  margin:0;
+padding: 0;
+
+}
+:target ~ #toninho{
+margin-top:4em;
+top:0;
+transition: all .3s;
+transition-delay:  .2s;
+}
+
+#texto {
+position: absolute;
+margin-top: 4em;
+margin-left: 1em;
+
+font-size:15px;
+}
+#toninho{
+  width: 50%;
+  height: 100%;
+  top:-50em;  
+  left:0;
+  z-index: 2000;
+  position: fixed;
+margin-left: 30em;
+margin-right: 30em;
+}
+.fechar{
+  color:red;
+  font-family: sans-serif;
+  text-decoration: none;
+  position: absolute;
+  font-size:40px;
+  width:80px;
+  height: 80px;
+  text-align: center;
+  left: 0;
+  cursor:pointer;
+}
+p:active {
+display:none;
+}
+.fechar:hover{
+opacity:.1; 
+z-index: 2000;
+}
+
+/*   aki     */
 #locais{
   background-color: white;
   color: black;

@@ -1,4 +1,7 @@
-<?php require_once('view_header.php') ?>
+<?php require_once('view_header.php');
+	  require_once('toninho/toninho.php'); 	 	
+	  require_once('toninho/toninho_login.php');
+ ?>
 
 		<!--Carousel -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -17,6 +20,7 @@
 						<?php endif; 		
 					}
 				endwhile ?>
+
 
 			</ol>
 
@@ -126,8 +130,8 @@
 			endwhile
 			?>   
 
-		</div><br>
-
+			</div><br>
+			
 
 
 		<!-- Footer -->
