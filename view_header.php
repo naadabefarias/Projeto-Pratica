@@ -163,6 +163,19 @@ session_start();
 								<input type="text" class="form-control" id="nome" name="nome">
 							</div>
 							<div class="form-group">
+								<label for="email">Idade:</label>
+								<input type="text" class="form-control" id="nome" name="nome">
+							</div>
+							<div class="form-group">
+								<label for="email">Raça:</label>
+								<input type="text" class="form-control" id="nome" name="nome">
+							</div>
+							<div class="form-group">
+								<label for="email">Onde Você mora?</label>
+								<input type="text" class="form-control" id="nome" name="nome">
+							</div>
+
+							<div class="form-group">
 								<label for="email">E-Mail:</label>
 								<input type="email" class="form-control" id="email" name="email" required="E-mail inválido">
 							</div>
