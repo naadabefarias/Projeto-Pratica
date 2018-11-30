@@ -10,7 +10,9 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
 
 $user_id = $_SESSION['id'];
 $avaliacao = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = '$id' and user_id = '$user_id'");
-$avaliacoes = $avaliacao->fetchAll();  
+$avaliacoes = $avaliacao->fetchAll();
+$mediaOne = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = $id");   
+$mediaAna = $mediaOne->fetchAll();
 ?>
 <script>
 document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
@@ -155,9 +157,10 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         <h1><?= $linha['nome_ponto']?></h1>
         <h3><?= $linha['bairro']?></h3>
         <p>Avaliações</p>
-        <?php 
+        <?php
         $media = 0;
-        $qnt_avaliacoes = $avaliacao->rowCount();
+        $qnt_avaliacoes = $mediaOne->rowCount();
+
         foreach ($avaliacoes as $aval ) {
           $media += $aval['qnt_estrela'];
         }

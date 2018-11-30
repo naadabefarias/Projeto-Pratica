@@ -27,15 +27,15 @@ drop database if exists ponto;
 		 CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 		);
 
-		CREATE TABLE `avaliacoes` (
-		  `user_id` int(11) NOT NULL,
-		  `qnt_estrela` int(11) NOT NULL,
-		  `ponto_id` int(11) NOT NULL,
-		  `modified` datetime DEFAULT NULL,
-		   PRIMARY KEY (user_id,ponto_id),
-		   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`),
-		   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-	);
+			CREATE TABLE `avaliacoes` (
+			  `user_id` int(11) NOT NULL,
+			  `qnt_estrela` int(11) NOT NULL,
+			  `ponto_id` int(11) NOT NULL,
+			  `modified` datetime DEFAULT NULL,
+			   PRIMARY KEY (user_id,ponto_id),
+			   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`),
+			   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+		);
 
 		CREATE TABLE imagens(
 			img varchar(100) NOT NULL,
@@ -44,6 +44,6 @@ drop database if exists ponto;
 
 			PRIMARY KEY (imagens_id),
 			CONSTRAINT fk_ponto FOREIGN KEY (ponto_id) REFERENCES pontos_turisticos (id)
-		);
+		);	
 
 
