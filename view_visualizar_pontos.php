@@ -29,7 +29,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     div.container{
       background-color: white;
       padding-bottom: 3em;
-      padding-top: 2em;
+      padding-top: 1em;
     }
     @media (min-width: 992px) {
       
@@ -86,6 +86,26 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     height: 400px;
   }
 
+  .avaliacoes{
+  
+    padding-top: 1em;
+  }
+
+  /*Formatação das Avaliações*/
+  div.mediaAva{
+  }
+
+  div.fazerAva{
+  }
+
+  div.ava{
+    border: 1px solid #cdd0d2;
+    padding-left: 10px;
+    padding-bottom: 1em;
+    margin-top: 15px;
+
+  }
+
 
 
 
@@ -114,7 +134,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     <div class="container" style="box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);">
     
     <div class="img">
-      <img style="height: 400px;" src="upload/<?=$linha['imagem']?>">
+      <img style="height: 400px; width: 100%;" src="upload/<?=$linha['imagem']?>">
     </div>
     
     <div class="descricoes" >
@@ -143,8 +163,8 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     <div style="padding-top: 20px;">
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#home">Fotos</a></li>
-          <li><a data-toggle="tab" href="#menu1">Localização</a></li>
-          <li><a data-toggle="tab" href="#menu2">Avaliações</a></li>
+          <li><a data-toggle="tab" href="#menu1">Avaliações</a></li>
+          <li><a data-toggle="tab" href="#menu2">Localização</a></li>
         </ul>
 
         <div class="tab-content">
@@ -202,12 +222,50 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     </div>
           </div>
           <div id="menu1" class="tab-pane fade">
-            <h3>Menu 1</h3>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
+                <div class="avaliacoes">
+                  <div class="mediaAva ava">
+                    <h3>Média de Avaliações:</h3>
+
+
+                  </div>                
+                  <div class="recenteAva ava">
+                    <h3>Avaliações Recentes:</h3>
+                  </div>
+  
+                  <div class="fazerAva ava">
+                      <h3 >Faça sua avaliação</h3>
+                      <form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
+                        <div class="estrelas">
+                          <input type="radio" id="vazio" name="estrela" value="" checked>
+                          
+                          <label for="estrela_um"><i class="fa"></i></label>
+                          <input type="radio" id="estrela_um" name="estrela" value="1"<?php if ($aval['qnt_estrela'] == 1) :?> checked <?php endif;?> 
+                          >
+                          
+                          <label for="estrela_dois"><i class="fa"></i></label>
+                          <input type="radio" id="estrela_dois" name="estrela" value="2"<?php if ($aval['qnt_estrela'] ==2):?> checked <?php endif;?>>
+                          
+                          <label for="estrela_tres"><i class="fa"></i></label>
+                          <input type="radio" id="estrela_tres" name="estrela" value="3"<?php if ($aval['qnt_estrela'] ==3):?> checked <?php endif;?>>
+                          
+                          <label for="estrela_quatro"><i class="fa"></i></label>
+                          <input type="radio" id="estrela_quatro" name="estrela" value="4"<?php if ($aval['qnt_estrela'] ==4) :?> checked <?php endif;?>>
+                          
+                          <label for="estrela_cinco"><i class="fa"></i></label>
+                          <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
+                          
+                          <input type="submit" value="Avaliar" class="btn btn-  primary">
+                          
+                        </div>
+                      </form>
+                    </div> 
+
+                      
+                  </div>
+              </div>    
           <div id="menu2" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            <h3>Maps</h3>
+            <p>Onde deve ficar o MAPS com a localização</p>
           </div>
         </div>
     </div>
@@ -233,34 +291,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     
     <br>
     <br>
-    <div class="container avaliacoes">
-      <div class="page-header">
-          <h2>Faça sua avaliação</h4>
-          <form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
-            <div class="estrelas">
-              <input type="radio" id="vazio" name="estrela" value="" checked>
-              
-              <label for="estrela_um"><i class="fa"></i></label>
-              <input type="radio" id="estrela_um" name="estrela" value="1"<?php if ($aval['qnt_estrela'] == 1) :?> checked <?php endif;?> 
-              >
-              
-              <label for="estrela_dois"><i class="fa"></i></label>
-              <input type="radio" id="estrela_dois" name="estrela" value="2"<?php if ($aval['qnt_estrela'] ==2):?> checked <?php endif;?>>
-              
-              <label for="estrela_tres"><i class="fa"></i></label>
-              <input type="radio" id="estrela_tres" name="estrela" value="3"<?php if ($aval['qnt_estrela'] ==3):?> checked <?php endif;?>>
-              
-              <label for="estrela_quatro"><i class="fa"></i></label>
-              <input type="radio" id="estrela_quatro" name="estrela" value="4"<?php if ($aval['qnt_estrela'] ==4) :?> checked <?php endif;?>>
-              
-              <label for="estrela_cinco"><i class="fa"></i></label>
-              <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
-              
-              <input type="submit" value="Avaliar" class="btn btn-  primary">
-              
-            </div>
-          </form>
-      </div> -->
+
           
         
     </div>
@@ -273,7 +304,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       <!-- Related Projects Row -->
       <div class="container" style="box-sizing: border-box; margin-top: 10px;
        border-radius: 4px; box-shadow: 3px; box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);">
-        <div class="page-header">
+        <div class="page-header" style="padding-top: 0px;">
           <h2 class="my-4">Outros pontos turisticos:</h2>
         </div>  
 <div class="row">
