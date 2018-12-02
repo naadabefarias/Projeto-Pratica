@@ -20,7 +20,7 @@ $date 		= date_format($created, 'Y-m-d H:i:s');
 	 	
 	 	if ($consulta->rowCount() >= 1) {
 			$fetch 		= $consulta->fetch();
-			$star 		= ("UPDATE avaliacoes SET qnt_estrela=?, modified=?");
+			$star 		= ("UPDATE avaliacoes SET qnt_estrela=?, modified=? WHERE user_id = $id");
 			$queryTwo 	= $conn->prepare($star);	
 			$queryTwo->bindParam(1, $estrela);	
 			$queryTwo->bindParam(2, $date);	

@@ -39,7 +39,7 @@ drop database if exists ponto;
 
 		CREATE TABLE imagens(
 			img varchar(100) NOT NULL,
-			imagens_id INT NOT NULL AUTO_INCREMENT,
+			imagens_id INT(11) NOT NULL AUTO_INCREMENT,
 			ponto_id INT NOT NULL,
 
 			PRIMARY KEY (imagens_id),

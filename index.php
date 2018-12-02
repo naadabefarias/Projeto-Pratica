@@ -1,6 +1,5 @@
 <?php require_once('view_header.php');
-	  require_once('toninho/toninho.php'); 	 	
-	  require_once('toninho/toninho_login.php');
+
  ?>
 
 		<!--Carousel -->
