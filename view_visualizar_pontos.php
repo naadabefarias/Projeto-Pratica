@@ -22,7 +22,14 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
 
       body {
       padding-top: 54px;
+      background-color: #ebeced;
      
+    }
+
+    div.container{
+      background-color: white;
+      padding-bottom: 3em;
+      padding-top: 2em;
     }
     @media (min-width: 992px) {
       
@@ -54,11 +61,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     margin-top: 20px;
     margin-left: 80px;
   }
-  .desc{
-    /*background-color: blue;*/
-    color: white;
-    height: 31em;
-  }
+
   .visu{
     margin-top: -4px;
   }
@@ -67,16 +70,25 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
   .descricoes{
     display: inline-block;
     float: right;
-    width: 50%;
+    width: 45%;
+
   }
 
   .gallery{
-    display: inline-block;
+    margin: auto;
+    padding-top: 30px;
+    /*margin-top: 15px;*/
   }
 
-  .desk{
-    margin-left: 20px;
+  .img{
+    display: inline-block;
+    width: 50%;
+    height: 400px;
   }
+
+
+
+
 
   .estrelas input[type=radio]{
   display: none;
@@ -99,8 +111,45 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     
     <link rel="stylesheet" href="estilos/slider.css">
 
+    <div class="container" style="box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);">
     
-    <div class="gallery" style="width: 50%">
+    <div class="img">
+      <img style="height: 400px;" src="upload/<?=$linha['imagem']?>">
+    </div>
+    
+    <div class="descricoes" >
+      <div class="desk">
+        <h1><?= $linha['nome_ponto']?></h1>
+        <h3><?= $linha['bairro']?></h3>
+        <p>Avaliações</p>
+        <?php
+        $media = 0;
+        $qnt_avaliacoes = $mediaOne->rowCount();
+
+        foreach ($mediaAna as $aval ) {
+          // echo $aval['qnt_estrela'];
+          $media += $aval['qnt_estrela'];
+        }
+        $media = $media / $qnt_avaliacoes;
+         ?>
+
+         <p>Média de ( <?=$media?> ) estrelas<br> 
+          Número de avaliações  (<?=$qnt_avaliacoes?>)</p>
+
+        <h3>Como chegar</h3>
+        <p>API google maps</p>
+      </div>  
+    </div>
+    <div style="padding-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">Fotos</a></li>
+          <li><a data-toggle="tab" href="#menu1">Localização</a></li>
+          <li><a data-toggle="tab" href="#menu2">Avaliações</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+                <div class="gallery" style="width: 50%;">
     <div id="jssor_1" style="position:relative;top:0px;left:0px;width:980%;height:600px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -125,11 +174,11 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
             <div data-u="slides">
                 <div data-u="prototype" class="p" style="width:190px;height:90px;">
                     <div data-u="thumbnailtemplate" class="t"></div>
-                    <svg viewbox="0 0 16000 16000" class="cv">
+                    <!-- <svg viewbox="0 0 16000 16000" class="cv">
                         <circle class="a" cx="8000" cy="8000" r="3238.1"></circle>
                         <line class="a" x1="6190.5" y1="8000" x2="9809.5" y2="8000"></line>
                         <line class="a" x1="8000" y1="9809.5" x2="8000" y2="6190.5"></line>
-                    </svg>
+                    </svg> -->
                 </div>
             </div>
         </div>
@@ -151,41 +200,29 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     </div>
     <script type="text/javascript">jssor_1_slider_init();</script>
     </div>
-    
-    <div class="descricoes">
-      <div class="container desk">
-        <h1><?= $linha['nome_ponto']?></h1>
-        <h3><?= $linha['bairro']?></h3>
-        <p>Avaliações</p>
-        <?php
-        $media = 0;
-        $qnt_avaliacoes = $mediaOne->rowCount();
-
-        foreach ($mediaAna as $aval ) {
-          echo $aval['qnt_estrela'];
-          $media += $aval['qnt_estrela'];
-        }
-        $media = $media / $qnt_avaliacoes;
-         ?>
-
-         <p>Média de ( <?=$media?> ) estrelas<br> 
-          Número de avaliações  (<?=$qnt_avaliacoes?>)</p>
-
-        <h3>Como chegar</h3>
-        <p>API google maps</p>
-      </div>  
+          </div>
+          <div id="menu1" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          </div>
+        </div>
     </div>
-    <div class="add_foto">
+    </div>
+<!--     <div class="add_foto">
         <button id=btn_form>Adicionar Fotos</button>
         <form id="my_form" method="POST" action="Controller/action_add_imagem.php?ponto_id=<?=$id?>" enctype="multipart/form-data">
           <input type="file" name="imagem" required=""><br>
           <input type="submit" value="Adicionar">
         </form>
-    </div>
+    </div> -->
 
 
     </div>
-    <div class="container">
+<!--     <div class="container">
       <div class="page-header">
         <h1>Descrições</h1>
       </div>
@@ -200,30 +237,30 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       <div class="page-header">
           <h2>Faça sua avaliação</h4>
           <form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
-      <div class="estrelas">
-        <input type="radio" id="vazio" name="estrela" value="" checked>
-        
-        <label for="estrela_um"><i class="fa"></i></label>
-        <input type="radio" id="estrela_um" name="estrela" value="1"<?php if ($aval['qnt_estrela'] == 1) :?> checked <?php endif;?> 
-        >
-        
-        <label for="estrela_dois"><i class="fa"></i></label>
-        <input type="radio" id="estrela_dois" name="estrela" value="2"<?php if ($aval['qnt_estrela'] ==2):?> checked <?php endif;?>>
-        
-        <label for="estrela_tres"><i class="fa"></i></label>
-        <input type="radio" id="estrela_tres" name="estrela" value="3"<?php if ($aval['qnt_estrela'] ==3):?> checked <?php endif;?>>
-        
-        <label for="estrela_quatro"><i class="fa"></i></label>
-        <input type="radio" id="estrela_quatro" name="estrela" value="4"<?php if ($aval['qnt_estrela'] ==4) :?> checked <?php endif;?>>
-        
-        <label for="estrela_cinco"><i class="fa"></i></label>
-        <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
-        
-        <input type="submit" value="Avaliar" class="btn btn-  primary">
-        
-      </div>
-    </form>
-      </div>
+            <div class="estrelas">
+              <input type="radio" id="vazio" name="estrela" value="" checked>
+              
+              <label for="estrela_um"><i class="fa"></i></label>
+              <input type="radio" id="estrela_um" name="estrela" value="1"<?php if ($aval['qnt_estrela'] == 1) :?> checked <?php endif;?> 
+              >
+              
+              <label for="estrela_dois"><i class="fa"></i></label>
+              <input type="radio" id="estrela_dois" name="estrela" value="2"<?php if ($aval['qnt_estrela'] ==2):?> checked <?php endif;?>>
+              
+              <label for="estrela_tres"><i class="fa"></i></label>
+              <input type="radio" id="estrela_tres" name="estrela" value="3"<?php if ($aval['qnt_estrela'] ==3):?> checked <?php endif;?>>
+              
+              <label for="estrela_quatro"><i class="fa"></i></label>
+              <input type="radio" id="estrela_quatro" name="estrela" value="4"<?php if ($aval['qnt_estrela'] ==4) :?> checked <?php endif;?>>
+              
+              <label for="estrela_cinco"><i class="fa"></i></label>
+              <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
+              
+              <input type="submit" value="Avaliar" class="btn btn-  primary">
+              
+            </div>
+          </form>
+      </div> -->
           
         
     </div>
@@ -234,8 +271,11 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       <!-- /.row -->
 
       <!-- Related Projects Row -->
-      <div class="container" style="margin-top: 3em">
-      <h3 class="my-4">Outros pontos turisticos:</h3>
+      <div class="container" style="box-sizing: border-box; margin-top: 10px;
+       border-radius: 4px; box-shadow: 3px; box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);">
+        <div class="page-header">
+          <h2 class="my-4">Outros pontos turisticos:</h2>
+        </div>  
 <div class="row">
  <?php   $ativoCarr = 0;
 $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos
