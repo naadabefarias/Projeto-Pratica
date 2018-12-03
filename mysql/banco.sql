@@ -18,6 +18,8 @@ drop database if exists ponto;
 		 `user_id` int(11) NOT NULL,
 		 `nome_ponto` varchar(200) NOT NULL,
 		 `logradouro` varchar(200) NOT NULL,
+		 `lat` float(10,6) DEFAULT NULL,
+  		 `lng` float(10,6) DEFAULT NULL,	
 		 `bairro` varchar(200) NOT NULL,
 		 `numero_ponto` varchar(50) DEFAULT NULL,
 		 `imagem` varchar(100) NOT NULL,

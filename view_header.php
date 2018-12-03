@@ -65,7 +65,7 @@ session_start();
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>                        
 				</button>
-				<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-map-marker"></span></a>
+				<a class="navbar-brand" href="maps.php"><span class="glyphicon glyphicon-map-marker"></span></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">

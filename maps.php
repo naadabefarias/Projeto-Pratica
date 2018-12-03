@@ -11,7 +11,7 @@
       
       #map {
         width: 100%;
-    height: 650px; 
+    height: 630px; 
       }
     </style>
   </head>

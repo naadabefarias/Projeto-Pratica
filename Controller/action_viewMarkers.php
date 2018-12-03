@@ -11,8 +11,8 @@ function parseToXML($htmlStr){
 }
 
 // Select all the rows in the markers table
-$consulta = $conn -> query("SELECT * FROM pontos_turisticos"); 
-$linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
+$result_markers = $conn->query("SELECT * FROM pontos_turisticos");
+$resultado_markers =$result_markers->fetchAll();
 
 header("Content-type: text/xml");
 
@@ -20,16 +20,16 @@ header("Content-type: text/xml");
 echo '<markers>';
 
 // Iterate through the rows, printing XML nodes for each
-foreach ($linha as $pontos) {
-   # code...
+foreach ($resultado_markers as $row_markers) {
+  // Add to XML document node
   echo '<marker ';
-  echo 'name="' . parseToXML($pontos['nome_ponto']) . '" ';
-  echo 'lat="' . $pontos['lat'] . '" ';
-  echo 'lng="' . $pontos['lng'] . '" ';
-  echo 'logradouro="' . parseToXML($pontos['logradouro']) . '" ';
+  echo 'name="' . parseToXML($row_markers['nome_ponto']) . '" ';
+  echo 'address="' . parseToXML($row_markers['logradouro']) . '" ';
+  echo 'lat="' . $row_markers['lat'] . '" ';
+  echo 'lng="' . $row_markers['lng'] . '" ';
+  echo 'type="' . $row_markers['categoria'] . '" ';
   echo '/>';
 }
 
 // End XML file
 echo '</markers>';
-

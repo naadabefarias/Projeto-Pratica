@@ -141,23 +141,26 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       <div class="desk">
         <h1><?= $linha['nome_ponto']?></h1>
         <h3><?= $linha['bairro']?></h3>
-        <p>Avaliações</p>
+        <h3>Avaliações</h3>
         <?php
         $media = 0;
         $qnt_avaliacoes = $mediaOne->rowCount();
 
-        foreach ($mediaAna as $aval ) {
+        foreach ($avaliacoes as $aval ) {
           // echo $aval['qnt_estrela'];
           $media += $aval['qnt_estrela'];
         }
-        $media = $media / $qnt_avaliacoes;
+        foreach ($mediaAna as $todas_aval) {
+          $total_aval += $todas_aval['qnt_estrela'];
+          
+        }
+        $media = $total_aval / $qnt_avaliacoes;
          ?>
 
-         <p>Média de ( <?=$media?> ) estrelas<br> 
-          Número de avaliações  (<?=$qnt_avaliacoes?>)</p>
+         Média de ( <?=$media?> ) estrelas
 
         <h3>Como chegar</h3>
-        <p>API google maps</p>
+          API google maps
       </div>  
     </div>
     <div style="padding-top: 20px;">
@@ -224,12 +227,15 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
           <div id="menu1" class="tab-pane fade">
                 <div class="avaliacoes">
                   <div class="mediaAva ava">
-                    <h3>Média de Avaliações:</h3>
+                    <h3>Média de Avaliações</h3>
+                      Média de ( <?=$media?> ) estrelas<br> 
+                      Número de avaliações  (<?=$qnt_avaliacoes?>)
 
 
                   </div>                
                   <div class="recenteAva ava">
-                    <h3>Avaliações Recentes:</h3>
+                    <h3>Avaliações Recentes</h3>
+
                   </div>
   
                   <div class="fazerAva ava">
