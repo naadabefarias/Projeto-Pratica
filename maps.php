@@ -41,12 +41,14 @@
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('marker');
             Array.prototype.forEach.call(markers, function(markerElem) {
-              var name = markerElem.getAttribute('nome_ponto');
-              var address = markerElem.getAttribute('logradouro');
-              var type = markerElem.getAttribute('categoria');
+              var name = markerElem.getAttribute('name');
+              var address = markerElem.getAttribute('address');
+              var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
                   parseFloat(markerElem.getAttribute('lat')),
                   parseFloat(markerElem.getAttribute('lng')));
+
+              console.log(address);
 
               var infowincontent = document.createElement('div');
               var strong = document.createElement('strong');
@@ -70,6 +72,7 @@
             });
           });
         }
+        
 
 
 

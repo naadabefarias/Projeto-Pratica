@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	
 	// $username = "id7135713_aluno";
 

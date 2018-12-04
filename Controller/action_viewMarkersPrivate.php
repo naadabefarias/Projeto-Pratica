@@ -1,5 +1,8 @@
 <?php
 require("conexao.php");
+$id = $_GET['id'];
+$user_id = $_SESSION['id'];
+
 
 function parseToXML($htmlStr){
   $xmlStr=str_replace('<','&lt;',$htmlStr);
@@ -11,7 +14,7 @@ function parseToXML($htmlStr){
 }
 
 // Select all the rows in the markers table
-$result_markers = $conn->query("SELECT * FROM pontos_turisticos");
+$result_markers = $conn->query("SELECT * FROM pontos_turisticos WHERE id = $id AND user_id = $user_id");
 $resultado_markers =$result_markers->fetchAll();
 
 header("Content-type: text/xml");
