@@ -48,7 +48,6 @@
                   parseFloat(markerElem.getAttribute('lat')),
                   parseFloat(markerElem.getAttribute('lng')));
 
-              console.log(address);
 
               var infowincontent = document.createElement('div');
               var strong = document.createElement('strong');
@@ -95,7 +94,7 @@
       function doNothing() {}
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALb41AS7lJYvUw95sB2drZHwEu6SY6yBs&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXU9M6LguD4AXAmyallPd9_-p212i9xsg&callback=initMap">
     </script>
   </body>
 </html>

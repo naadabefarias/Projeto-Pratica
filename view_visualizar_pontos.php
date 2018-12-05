@@ -350,7 +350,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
             function doNothing() {}
           </script>
           <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALb41AS7lJYvUw95sB2drZHwEu6SY6yBs&callback=initMap"></script>
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXU9M6LguD4AXAmyallPd9_-p212i9xsg&callback=initMap"></script>
         </div>
       </div>
     </div>

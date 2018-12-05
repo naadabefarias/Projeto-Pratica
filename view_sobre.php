@@ -72,7 +72,7 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 				<a href="https://www.github.com/rhodolfosantana" target="_blank">
 					<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_rodholfo.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
 				</a>
-				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Rhodolfo Antonio</p>
+				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Rhodolfo Santana</p>
 			</figure>	
 
 			<figure class="col-md-3">
