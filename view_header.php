@@ -69,7 +69,7 @@ session_start();
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.php">Home</a></li>
+					<li class=""><a href="index.php">Home</a></li>
 					<li><a href="view_sobre.php">Sobre</a></li>
 					<li>
 			
