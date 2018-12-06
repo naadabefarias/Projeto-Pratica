@@ -1,3 +1,10 @@
+<?php
+  require'Controller/conexao.php';
+  $id = $_GET['id'];
+
+  $result_markers = $conn->query("SELECT * FROM pontos_turisticos WHERE id = $id");
+  $resultado_markers = $result_markers->fetchAll();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +25,7 @@
       }
       #floating-panel {
         position: absolute;
-        top:864px;
+        top:540px;
         left: 280px;
         z-index: 5;
         background-color: #fff;
@@ -32,16 +39,23 @@
     </style>
   </head>
   <body>
+     <?php
+      foreach ($resultado_markers as $row) {
+        $lat = $row['lat'];
+        $lng = $row['lng'];
+
+      }
+     ?>
     <div id="floating-panel">
-      <input id="address" type="textbox" placeholder="Mostre-me?">
+      <input id="address" type="textbox" value="<?= $row['nome_ponto'].', '.$row['bairro'] ;?>" >
       <input id="submit" type="button" value="Encontrar">
     </div>
     <div id="map"></div>
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: {lat: -7.833909, lng: -34.907374}
+          zoom: 14,
+          center: {lat: -7.833909 , lng: -34.907374 }
         });
         var geocoder = new google.maps.Geocoder();
 

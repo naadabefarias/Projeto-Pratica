@@ -12,7 +12,7 @@ function parseToXML($htmlStr){
 
 // Select all the rows in the markers table
 $result_markers = $conn->query("SELECT * FROM pontos_turisticos");
-$resultado_markers =$result_markers->fetchAll();
+$resultado_markers = $result_markers->fetchAll();
 
 header("Content-type: text/xml");
 
