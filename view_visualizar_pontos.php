@@ -158,7 +158,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         $media = $total_aval / $qnt_avaliacoes;
          ?>
 
-         Média de ( <?=$media?> ) estrelas
+         Média de (<?=number_format($media, 1, '.', ',')?> ) estrelas
 
         <h3>Como chegar</h3>
           API google maps
@@ -229,7 +229,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                 <div class="avaliacoes">
                   <div class="mediaAva ava">
                     <h3>Média de Avaliações</h3>
-                      Média de ( <?=number_format($media, 2, '.', ',')?> ) estrelas<br> 
+                      Média de ( <?=number_format($media, 1, '.', ',')?> ) estrelas<br> 
                       Número de avaliações  (<?=$qnt_avaliacoes?>)
 
 
