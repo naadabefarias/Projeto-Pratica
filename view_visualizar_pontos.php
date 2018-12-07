@@ -261,7 +261,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                           <label for="estrela_cinco"><i class="fa"></i></label>
                           <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
                           
-                          <input type="submit" value="Avaliar" class="btn btn-  primary">
+                          <input type="submit" value="Avaliar" class="btn btn-primary">
                           
                         </div>
                       </form>

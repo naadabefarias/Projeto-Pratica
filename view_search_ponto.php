@@ -1,27 +1,72 @@
-<?php 
-require_once('Controller/conexao.php');
-session_start();
+<?php
+
+require_once 'view_header.php';
+
+include('conexao.php');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<?php 
-	$dado_pesquisa = $_GET['search'];
+<style type="text/css">
+	.resultados{
+		margin-top: 5em;
+  		margin-bottom: 7em;
+	}
+	img{
+		max-width: 400px;
+	}
 
-	$consulta = $conn -> prepare("SELECT * FROM ponto_turisticos WHERE nome_ponto LIKE  =?");
-	$consulta -> bindValue(1,$dado_pesquisa);
-	$consulta -> execute();
-		$resultado = $consulta ->fetchall();
-		
-		for($i=0; $i<sizeof($resultado); $i++){
-				echo $resultado[$i]['id'];
-				echo $resultado[$i]['nome_ponto'];
-					
+	div.panel{
+		padding-bottom: 20px;
+	}
+</style>
+
+<div class="container resultados">
+	<h1 style="padding-bottom: 30px;">Todos os resultados:</h1>
+	<?php
+		if (isset($_POST["search"])){
+			$dado = $_POST["search"];
+
+			$output = '';
+
+
+
+			$checking=("SELECT * FROM pontos_turisticos WHERE nome_ponto LIKE :pesquisa");
+
+			$checking=("SELECT * FROM pontos_turisticos WHERE nome_ponto LIKE :pesquisa");
+
+			$queryOne = $conn->prepare($checking);
+			$queryOne->bindValue(':pesquisa', '%'.$dado.'%');
+			$return = $queryOne -> execute();
+			
+			
+				$stmt = $queryOne->fetchAll();
+				if ($stmt!=null){
+				
+				
+				for ($i = 0; $i < sizeof($stmt); $i++){
+					$id = $stmt[$i]['id'];
+					$output .= "<a href='view_visualizar_pontos.php?id=$id'>";
+					$output .= '<div class="container panel panel-default">';
+					$output .= '<h3>' .$stmt[$i]['nome_ponto']." - ". $stmt[$i]['bairro']. '</h3>';
+					$imagem = $stmt[$i]['imagem'];
+					$output .= "<img src='upload/$imagem'></img>";
+					$output .= '</div>';
+				
+				}
+			}
+				else { 
+					$output .= '<div class="container panel panel-default">';
+					$output .= '<h3> Nada Encontrado</h3>';
+					$output .= '</div>';
+			
+			}
+			echo $output;
 		}
+?>
+</div>
 
-			?>
-</body>
-</html>
+
+
+
+
+
+<?php include 'view_footer.html';?>
+?>

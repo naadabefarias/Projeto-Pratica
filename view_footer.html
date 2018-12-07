@@ -90,7 +90,8 @@ $(document).ready(function(){
   $('#form-controlpesq').keyup(function() {
     var query = $(this).val();
     if(query != ''){
-
+      
+      
       $.ajax({
         url:"Controller/action_filtrar.php",
         method:"POST",
@@ -107,12 +108,14 @@ $(document).ready(function(){
     }
   });
 
+  $('.ack').on('click', function(e){
+    e.preventDefault();
+    console.log("ok");
+  })
 
 });
-$(document).on('click', 'p', function(){
-  $('#form-controlpesq').val($(this) .text());
-  $('#locais') .fadeOut();
-});
+
+
 </script>
 </body>
 </html>

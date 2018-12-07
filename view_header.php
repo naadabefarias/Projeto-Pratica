@@ -41,10 +41,10 @@ session_start();
 			font-style: italic;
 		}
 
-		.btn{
-			/*background-color: #337ab7;*/
+		/*.btn{
+			background-color: #337ab7;
 			color: white;
-		}
+		}*/
 		/*.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
 			background-color: #337ab7;
 		}
@@ -73,7 +73,7 @@ session_start();
 					<li><a href="view_sobre.php">Sobre</a></li>
 			
 					<li style="width: 80%">
-					<form class="pesquisa-ponto form-inline" style="display: inline-block; width: 90%;" action="view_search_ponto.php" >		
+					<form class="pesquisa-ponto form-inline" style="display: inline-block; width: 90%;" action="view_search_ponto.php" method="POST">		
 					<input type="text" name="search" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
 					
 					<button type="submit" class="btn btn-primary pesq">Pesquisar</button>
@@ -130,7 +130,7 @@ session_start();
 							<div class="form-group">
 								 <a class="btn btn-block btn-social btn-facebook" href="returnFB.php">
    								 <span class="fa fa-facebook"></span> Login com Facebook
-  											</a>
+  											</a><br>
 								<label for="login">Usuário:</label>
 								<input type="text" class="form-control" id="login" name="login">
 							</div>
