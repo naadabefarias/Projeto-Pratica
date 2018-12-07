@@ -118,10 +118,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
 }.estrelas  input[type=radio]:checked  ~ label i.fa:before{
   color: #CCC;
 }
-  #map {
-    width: 100%;
-    height: 300px; 
-  }
+ 
 
  
 
@@ -135,7 +132,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     
     <link rel="stylesheet" href="estilos/slider.css">
 
-    <div class="container" style="box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);">
+    <div class="container" style="box-shadow: 0px 0px 5px rgba(0, 0, 0, .3); margin-top: 3.5em;">
     
     <div class="img">
       <img style="height: 400px; width: 100%;" src="upload/<?=$linha['imagem']?>">
@@ -161,7 +158,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         $media = $total_aval / $qnt_avaliacoes;
          ?>
 
-         Média de ( <?=$media?> ) estrelas
+         Média de (<?=number_format($media, 1, '.', ',')?> ) estrelas
 
         <h3>Como chegar</h3>
           API google maps
@@ -232,7 +229,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                 <div class="avaliacoes">
                   <div class="mediaAva ava">
                     <h3>Média de Avaliações</h3>
-                      Média de ( <?=number_format($media, 2, '.', ',')."<br>"?> ) estrelas<br> 
+                      Média de ( <?=number_format($media, 1, '.', ',')?> ) estrelas<br> 
                       Número de avaliações  (<?=$qnt_avaliacoes?>)
 
 
@@ -264,7 +261,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                           <label for="estrela_cinco"><i class="fa"></i></label>
                           <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
                           
-                          <input type="submit" value="Avaliar" class="btn btn-  primary">
+                          <input type="submit" value="Avaliar" class="btn btn-primary">
                           
                         </div>
                       </form>
@@ -276,8 +273,8 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
           <div id="menu2" class="tab-pane fade">
             <h3>Maps</h3>
               <?php include 'geocoder.php';?>
-                    </div>
-            <div id="map"></div><br><br>
+          </div>
+            <!-- <div id=""></div><br><br> -->
       </div>
     </div>
     </div>

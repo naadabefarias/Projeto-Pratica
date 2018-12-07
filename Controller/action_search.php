@@ -1,8 +1,10 @@
-<?php 	
+<?php
+
+ 	
 include('conexao.php');
 
-if (isset($_POST["query"])){
-	$dado = $_POST["query"];
+if (isset($_POST["search"])){
+	$dado = $_POST["search"];
 
 	$output = '';
 
