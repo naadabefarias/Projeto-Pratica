@@ -56,10 +56,31 @@ z-index: 2000;
 
 /*   aki     */
 #locais{
-  background-color: white;
-  color: black;
-  margin-left:5em;  
+  background-color: #337ab7;
+  color: white;
+  width: 72%;
+  margin-left: 8.3%;
  border-radius:4px;
+ text-align: left;
+ position: absolute;
+
+ /*padding: */
+ /*margin-top: 3.5em;*/
+ }
+
+ ul.listas_result{
+   padding-bottom: 7px;
+ }
+
+ li.filtro{
+  padding-top: 6px;
+  /*padding-bottom: px;*/
+  padding-left: 10px;
+
+ }
+
+ #locais a {
+  color: white;
  }
 img.img{
   height: 10em;
@@ -72,18 +93,19 @@ img.logo{
 }
 .carousel{
   margin-top: 3.5em;
+
 }
 /*footer {
  background-image: url('images/confete.gif');   
     }*/
 input.pesq{
-    width: 40em;
-  margin-left: 5em;
+  width: 80% !important;   
 }    
 .pesq{
   margin-top: 7px;
-  margin-left: 7px;
+  /*margin-left: 7px;*/
 }
+
  
  footer{
 background-color: #000000;

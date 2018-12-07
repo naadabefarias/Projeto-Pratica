@@ -42,7 +42,7 @@ session_start();
 		}
 
 		.btn{
-			background-color: #337ab7;
+			/*background-color: #337ab7;*/
 			color: white;
 		}
 		/*.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
@@ -68,18 +68,18 @@ session_start();
 				<a class="navbar-brand" href="maps.php"><span class="glyphicon glyphicon-map-marker"></span></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav" style="width: 80%; text-align: center;">
 					<li class=""><a href="index.php">Home</a></li>
 					<li><a href="view_sobre.php">Sobre</a></li>
-					<li>
 			
-					<form class="pesquisa-ponto" action="view_search_ponto.php" >		
+					<li style="width: 80%">
+					<form class="pesquisa-ponto form-inline" style="display: inline-block; width: 90%;" action="view_search_ponto.php" >		
 					<input type="text" name="search" id="form-controlpesq" class="form-control pesq" placeholder="Pesquise um ponto turístico" autocomplete="off">
-					<p class="locais" id="locais"><a href=""></a></p>
-					</li>
-					<li><button type="submit" class="btn pesq">Pesquisar</button>
-					</li>
+					
+					<button type="submit" class="btn btn-primary pesq">Pesquisar</button>
 						</form>	
+						<p class="locais" id="locais"><a href=""></a></p>
+					</li>
 				</ul>
 							
 				<?php if (!isset($_SESSION['user'])): ?>
@@ -105,6 +105,7 @@ session_start();
 				</div>
 			</div>
 		</nav>	
+		
 
 
 		<!-- MODAL DE LOGIN -->

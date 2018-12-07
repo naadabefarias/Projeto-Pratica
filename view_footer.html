@@ -82,6 +82,11 @@
   </footer>
   <script>//Função de pesquisa, Auto complete Input
 $(document).ready(function(){
+
+  function limpar(){
+    $('#locais').html("");
+  }
+
   $('#form-controlpesq').keyup(function() {
     var query = $(this).val();
     if(query != ''){
@@ -97,7 +102,12 @@ $(document).ready(function(){
         }
       });
     }
+    else{
+      limpar();
+    }
   });
+
+
 });
 $(document).on('click', 'p', function(){
   $('#form-controlpesq').val($(this) .text());
