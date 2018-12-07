@@ -161,6 +161,19 @@ session_start();
 							<div class="form-group">
 								<label for="email">Nome Completo:</label>
 								<input type="text" class="form-control" id="nome" name="nome">
+								<div class="form-group">
+								<label for="email">Idade:</label>
+								<input type="number" class="form-control" name="idade" >
+							</div>
+							<div class="form-group">
+								<label for="email">Pergunta para recuperar conta:</label>
+								<input type="text" class="form-control" name="pergunta">
+							</div>
+							<div class="form-group">
+								<label for="email">Resposta para recuperar conta:</label>
+								<input type="text" class="form-control"  name="resposta">
+							</div>
+
 							</div>
 							<div class="form-group">
 								<label for="email">E-Mail:</label>

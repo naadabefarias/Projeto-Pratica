@@ -2,9 +2,15 @@
 session_start();
 include "conexao.php";
 
-if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null && $_POST['senha2']!=null && $_POST['pass'] == $_POST['senha2']){
+if($_POST['nome'] != null && $_POST['idade'] != null && $_POST['pergunta'] != null && $_POST['resposta'] != null && $_POST['user'] != null && $_POST['pass'] != null && $_POST['senha2']!=null && $_POST['pass'] == $_POST['senha2']){
 
 	$nome = $_POST['nome'];
+	$idade = $_POST['idade'];
+	var_dump($idade);
+	$pergunta = $_POST['pergunta'];
+	var_dump($pergunta);
+	$resposta = $_POST['resposta'];
+	var_dump($resposta);
 	$user = $_POST['user'];
 	$pass = sha1($_POST['pass']);
 
@@ -23,9 +29,12 @@ if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null &&
 
 	} else {
 
-		$sql = "INSERT INTO Users(name, user, password) VALUES (:nome, :user, :pass)";
+		$sql = "INSERT INTO Users(name, idade, pergunta, resposta, user, password) VALUES (:nome, :idade, :user, :pass)";
 		$query = $conn->prepare($sql);
 		$query->bindParam(':nome', $nome);
+		$query->bindParam(':idade', $idade);
+		$query->bindParam(':pergunta', $pergunta);
+		$query->bindParam(':resposta', $resposta);
 		$query->bindParam(':user', $user);
 		$query->bindParam(':pass', $pass);
 		$stmt = $query->execute();

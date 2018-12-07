@@ -7,6 +7,9 @@ drop database if exists ponto;
 	CREATE TABLE `Users` (
 	 `id` int(11) NOT NULL AUTO_INCREMENT,
 	 `name` varchar(255) NOT NULL,
+	 `idade` varchar(255) NOT NULL,
+	 `pergunta` varchar(255) NOT NULL,
+	 `resposta` varchar(255) NOT NULL,
 	 `user` varchar(255) NOT NULL,
 	 `password` varchar(255) NOT NULL,
 	 PRIMARY KEY (`id`)
