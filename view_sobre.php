@@ -1,27 +1,13 @@
 <?php require_once('view_header.php'); ?>
-<style type="text/css">
-
-#descricao {
-
-	margin: 55px;
-	text-align: justify;
-
-}
-
-#des {
-	font-size: 20pt;
-}
-
-</style>
-
+<link rel="stylesheet" type="text/css" href="estilos/sobre-style.css">
 <h1 class="text-center text-uppercase font-weight-bold mt-5 mb-3 mt-5"><a href="index.php"><img src="images/icon-ponto.png" style="width: 300px;
 height:150px; margin-top:0em;"></a></h1>
 <!--Section description-->
 <p class="text-center text-uppercase font-weight-bold"><b>Tudo que você precisa saber</b></p>
 
 <!--Section description-->
-
-<p class="section-description mt-2 pt-4"><center><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong></center><br>
+<div id="descricao">
+<p class="section-description mt-2 pt-4" id="des"><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong><br></br>
 <strong>A importância dos pontos hoje em dia</strong><br>
 Não há importância expressiva e significativa em relação ao turismo; muito mais gastos são
 aplicados em outras zonas da sociedade, como por exemplo: ambientes de lazer. Assim sendo, os
@@ -41,7 +27,7 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 
 </br></br>
 
-<div id="descricao">
+
 	<p id="des" class="section-description mt-2 pt-4">
 		Este é o site <strong>Seuturismo</strong>, que foi desenvolvido para a disciplina de Projeto e Prática do 2º periodo do curso de Informática para Internet. O intuito deste site é facilitar o desenvolvimento turistico das cidades, pricipalmente da cidade de Igarassu que é uma cidade com muita história. Este site surgiu de uma carência que nossa cidade tem de informações na web aos turistas que a visitam, por isso resolvemos criar para dar uma visibiliade melhor para ela. Os alunos e desenvolvedores do site são:<strong>Cleyton Vinicius, Kevin Sousa, Luigi Martins, Naadabe Farias, Jhonny Farias, Rhodolfo Santana e Erickson Ferreira. </strong>
 	</p>
@@ -50,7 +36,7 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 </br></br>
 <!--First row-->
 <p class="text-center text-uppercase font-weight-bold"><b style="font-size:20px;">Conheça nossos Desenvolvedores </b></p>
-<div class="row ml-2 mr-1 pb-2 pt-1" style=" height:57em;  ">
+<div class="row ml-2 mr-1 pb-2 pt-1" style="height:65em; ">
 
 
 	<!--First column-->
@@ -63,57 +49,51 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 
 			<figure class="col-md-3">
 				<a href="https://github.com/naadabefarias/" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-4" onmouseover="this.src='images/dev_naadabe.jpg'" onmouseout="this.src='images/coqueiro.jpg'"	style=" border-radius:6px;">
+					<img src="images/dev_naadabe.jpg" class="img-fluid z-depth-4">
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Naadabe Farias</p>
 			</figure>
 
 			<figure class="col-md-3">
 				<a href="https://www.github.com/rhodolfosantana" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_rodholfo.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+					<img src="images/dev_rodholfo.jpg" class="img-fluid z-depth-1" >
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Rhodolfo Santana</p>
 			</figure>	
 
 			<figure class="col-md-3">
 				<a href="https://www.github.com/CleytonVieira" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_cleiton.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+					<img src="images/dev_cleiton.jpg" class="img-fluid z-depth-1">
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Cleyton Vinicius</p>
 			</figure>
-
+			
 			<figure class="col-md-3">
 				<a href="https://www.github.com/EricksonFerreira" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-2" onmouseover="this.src='images/dev_erikson.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+					<img src="images/dev_erikson.jpg" class="img-fluid z-depth-2" >
 				</a>
-				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Erikson Ferreira</p>
+				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="text-align:center;">Erikson Ferreira</p>
 			</figure>
 		</br>
 
-		<div style="margin-top:29em;">
+		<div style="margin-top:35em;">
 			<figure class="col-md-3">
 				<a href="https://www.github.com/kevinsousa" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_kevin.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+					<img src="images/dev_kevin.jpg" class="img-fluid z-depth-1" >
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Kevin Sousa </p>
-
+				
 			</figure><figure class="col-md-3">
 				<a href="https://www.github.com/luigimartins" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_kevin.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+					<img src="images/dev_luigi.jpg" class="img-fluid z-depth-1" ">
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Luigi Martins</p>
 			</figure><figure class="col-md-3">
 				<a href="https://www.github.com/jhonnyfreitas1" target="_blank">
-					<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_jhonny.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
+					<img src="images/dev_jhonny.jpg" class="img-fluid z-depth-1">
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Jhonny Farias</p>
 			</figure>
-		</figure><figure class="col-md-3">
-			<a href="#">
-				<img src="images/coqueiro.jpg" class="img-fluid z-depth-1" onmouseover="this.src='images/dev_voce.jpg'" onmouseout="this.src='images/coqueiro.jpg'" style=" border-radius:6px;">
-			</a>
-			<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Você</p>
-		</figure>
 	</div>
 </div>
 <!--/Full width lightbox-->
@@ -126,28 +106,6 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 </div>
 
 </div>	
-<style type="text/css">
-
-#geral{
-	min-height: 100%;
-	margin-bottom: -50px;
-}
-
-h1{
-	margin-top: 50px;
-}
-
-html, body {
-	height: 100%;
-}
-
-#foot {
-	position:absolute;
-	bottom:0;
-	width:200%;
-}
-
-</style>
 
 
 <?php require_once('view_footer.html'); ?>

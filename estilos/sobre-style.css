@@ -1,0 +1,35 @@
+#geral{
+	min-height: 80%;
+	margin-bottom: px;
+}
+
+h1{
+	margin-top: 50px;
+}
+
+html, body {
+	height: 100%;
+}
+
+#foot {
+	position:absolute;
+	bottom:0;
+	width:200%;
+	height:120px;
+}
+#descricao {
+	margin: 55px;
+	text-align: justify;
+
+}
+
+#des {
+	font-size: 20pt;
+}
+
+.img-fluid {
+ border-radius:100%; 
+ box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+
+
+}
