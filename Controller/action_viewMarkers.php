@@ -1,5 +1,6 @@
 <?php
 require("conexao.php");
+$id = $_GET['id'];
 
 function parseToXML($htmlStr){
   $xmlStr=str_replace('<','&lt;',$htmlStr);
@@ -11,15 +12,16 @@ function parseToXML($htmlStr){
 }
 
 // Select all the rows in the markers table
-$result_markers = $conn->query("SELECT * FROM pontos_turisticos");
-$resultado_markers = $result_markers->fetchAll();
+$stmt = $conn->prepare("SELECT * FROM pontos_turisticos WHERE id = $id ");
+$stmt->bindParam(1,$id);
+$stmt->execute();
 
 header("Content-type: text/xml");
 
 // Start XML file, echo parent node
 echo '<markers>';
 // Iterate through the rows, printing XML nodes for each
-foreach ($resultado_markers as $row_markers) {
+foreach ($stmt as $row_markers) {
   // Add to XML document node
   echo '<marker ';
   echo 'name="' . parseToXML($row_markers['nome_ponto']) . '" ';

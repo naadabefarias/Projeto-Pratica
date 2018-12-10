@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	
 	// $username = "id7135713_aluno";
 
@@ -8,8 +7,8 @@
 	
 	$username = "root";
 
-	$password = "ifpe";
-	$conn = new PDO('mysql:host=localhost;porta=3306;dbname=ponto',$username,$password);
+	$password = "1995";
+	$conn = new PDO('mysql:host=localhost;porta=3306;dbname=information',$username,$password);
 
 	
 ?>
