@@ -165,8 +165,6 @@ session_start();
 								<label for="email">Nome Completo:</label>
 								<input type="text" class="form-control" id="nome" name="nome">
 								<div class="form-group">
-								<label for="email">Idade:</label>
-								<input type="number" class="form-control" name="idade" >
 							</div>
 
 							</div>
