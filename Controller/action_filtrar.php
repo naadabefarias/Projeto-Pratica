@@ -27,8 +27,10 @@ if (isset($_POST["query"])){
 		
 		
 				for ($i = 0; $i < sizeof($stmt); $i++){
-					$id1 = $stmt[$i]['id'];
-					$output .= "<a href='view_visualizar_pontos.php?id=$id1' class'ack'><li class='filtro'>" .$stmt[$i]['nome_ponto']. "</li></a>";
+					$id = $stmt[$i]['id'];
+					$output .= "<li class='filtro'>
+						<a href='view_visualizar_pontos.php?id=$id'>".$stmt[$i]['nome_ponto']."</a>
+					</li>";
 		
 				}
 			}

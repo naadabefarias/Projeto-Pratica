@@ -25,7 +25,7 @@ if (isset($_POST["search"])){
 		
 		
 		for ($i = 0; $i < sizeof($stmt); $i++){
-			$output .= '<li>' .$stmt[$i]['nome_ponto']. '</li>';
+			$output .= '<li>''<a>'.$stmt[$i]['nome_ponto'].'</a>''</li>';
 		
 		}
 	}

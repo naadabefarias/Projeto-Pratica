@@ -43,9 +43,9 @@ include('conexao.php');
 				
 				for ($i = 0; $i < sizeof($stmt); $i++){
 					$id = $stmt[$i]['id'];
-					$output .= "<a href='view_visualizar_pontos.php?id=$id'>";
+					$output .= "<a href='view_visualizar_pontos.php?id=$id'></a>";
 					$output .= '<div class="container panel panel-default">';
-					$output .= '<h3>' .$stmt[$i]['nome_ponto']." - ". $stmt[$i]['bairro']. '</h3>';
+					$output .= '<h3>'.$stmt[$i]['nome_ponto']." - ". $stmt[$i]['bairro'].'</h3>';
 					$imagem = $stmt[$i]['imagem'];
 					$output .= "<img src='upload/$imagem'></img>";
 					$output .= '</div>';
