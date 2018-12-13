@@ -2,10 +2,11 @@
 session_start();
 include "conexao.php";
 
-if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null && $_POST['senha2']!=null && $_POST['pass'] == $_POST['senha2']){
+if($_POST['nome'] != null && $_POST['user'] != null && $_POST['email'] != null && $_POST['pass'] != null && $_POST['senha2']!=null && $_POST['pass'] == $_POST['senha2']){
 
 	$nome = $_POST['nome'];
 	$user = $_POST['user'];
+	$email = $_POST['email'];
 	$pass = sha1($_POST['pass']);
 
 	$checking=("SELECT * FROM Users WHERE user = ?");
@@ -23,18 +24,19 @@ if($_POST['nome'] != null && $_POST['user'] != null && $_POST['pass'] != null &&
 
 	} else {
 
-		$sql = "INSERT INTO Users(name, user, password) VALUES (:nome, :user, :pass)";
+		$sql = "INSERT INTO Users(name, email, user, password) VALUES (?, ?, ?,?)";
 		$query = $conn->prepare($sql);
-		$query->bindParam(':nome', $nome);
-		$query->bindParam(':user', $user);
-		$query->bindParam(':pass', $pass);
+		$query->bindParam(1, $nome);
+		$query->bindParam(2, $email);
+		$query->bindParam(3, $user);
+		$query->bindParam(4, $pass);
 		$stmt = $query->execute();
 		$_SESSION['emailCadastro'] = $_POST['email'];
 		$_SESSION['nomeCadastro'] = $_POST['nome'];
 
 		$_SESSION['cadastro_sucesso'] = true;
-
-		header('location: email.php');	
+var_dump($stmt);
+	//	header('location: email.php');	
 	}	
 
 }else {

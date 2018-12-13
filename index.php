@@ -58,14 +58,28 @@
 				</a>
 			</div>		
 		</div>
+
+		<!-- Melhores Pontos Turisticos -->
+
+			<center>
+				<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3>
+			</center>
+			<br>
+				
+		<!-- Praias -->
+<?php 
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
+			//if($consultei != 1):
+			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				var_dump($linha1);
+			endwhile;
+				?>
 		<div class="container text-center" id="listagem_pontos">    
-			<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3><br>
 			<div class="page-header">
 				<h2>Praias</h2>
 			</div>	
 			<?php $v = 0;
 			$praia = 'praia';
-			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
 			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
 				if ($v <= 2 ):?>
 					<div class="grande">
@@ -79,7 +93,8 @@
 					</div>    
 					<?php  $v++;
 				endif; 
-			endwhile
+			endwhile;
+				// endif
 			?>   
 
 		</div><br>
