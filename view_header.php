@@ -90,7 +90,7 @@ require_once('toninho/toninho_login.php');
 					
 					<button type="submit" class="btn btn-primary pesq">Pesquisar</button>
 						</form>	
-						<p class="locais" id="locais"><a href=""></a></p>
+						<div class="locais" id="locais"><a href=""></a></div>
 					</li>
 				</ul>
 							
