@@ -294,7 +294,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(-7.833909, -34.907374),
-          zoom: 9
+          zoom: 7
         });
         var infoWindow = new google.maps.InfoWindow;
 
