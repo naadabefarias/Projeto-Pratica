@@ -49,9 +49,54 @@ body {
             <input type="text" class="form-control" name="logradouro">
         </div>
        
-        <div class="form-group">
+<!--         <div class="form-group">
             <label for="text">Bairro:</label>
             <input type="text" class="form-control" name="bairro">
+        </div> -->
+        <div class="form-group">    
+            <label for="sel1">Selecione o bairro:</label>
+            <select class="form-control" name="bairro">
+                <option value="AgamenonMagalhaes">      Agamenon Magalhães</option>
+                <option value="aguaMineral">            Água Mineral</option>
+                <option value="altodoCeu">              Alto do Céu</option>
+                <option value="anadeAlbuquerque">       Ana de ALbuquerque</option>
+                <option value="arcanjo">                Arcanjo</option>
+                <option value="areiaBranca">            Areia Branca</option>
+                <option value="barradoCeara">           Barra do Ceára</option>
+                <option value="belaVista">              Bela Vista</option>
+                <option value="belaVista">              Boa Vista</option>
+                <option value="bomfim">                 Bomfim</option>
+                <option value="campinadeFeira">         Campina de Feira</option>
+                <option value="centro">                 Centro</option>
+                <option value="cohab">                  Cohab</option>
+                <option value="cortegada">              Cortegada</option>
+                <option value="cruzdeReboucas">         Cruz de Rebouças</option>
+                <option value="duarteCoelho">           Duarte Coelho</option>
+                <option value="encantodeIgarassu">      Encanto de Igarassu</option>
+                <option value="inhama">                 Inhamã</option>
+                <option value="jabaco">                 Jabacó</option>
+                <option value="jardimBoaSorte">         Jardim Boa Sorte</option>
+                <option value="jardimParaiso">          Jardim Paraíso</option>
+                <option value="jardimSumare">           Jardim Sumaré</option>
+                <option value="marcodePedra">           Marco de Pedra</option>
+                <option value="meninoJesusdaPraga">     Menino Jesus da Praga</option>
+                <option value="monjope">                Monjope</option>
+                <option value="nossaSenhoradaConceicao">Nossa Senhora da Conceição</option>
+                <option value="panco">                  Panco</option>
+                <option value="postodeMonta">           Posto de Monta</option>
+                <option value="rubina">                 Rubina</option>
+                <option value="santoAntonio">           Santo Antônio</option>
+                <option value="sitiodosMarcos">         Sítio dos Marcos</option>
+                <option value="saoJose">                São José</option>
+                <option value="santaMaria">             Santa Maria</option>
+                <option value="santaRita">              Santa Rita</option>
+                <option value="tabatinga">              Tabatinga</option>
+                <option value="triunfo">                Triunfo</option>
+                <option value="trupical">               Trupical</option>
+                <option value="umbura">                 Umbura</option>
+                <option value="vilaRural">              Vila Rural</option>
+                <option value="vilaSaramandaia">        Vila Saramandaia</option>
+            </select>
         </div>
 
         <div class="form-group">
