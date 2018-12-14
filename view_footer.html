@@ -1,56 +1,81 @@
 <footer class="container-fluid text-center" title="" style=" background-image: url(images/Icon_azul.png); background-repeat:">
   
-    <div class="col-md-2 mb-md-8 mb-5" >
+  <div class="col-md-2 mb-md-8 mb-5" >
 
-            <!-- Links -->
-            <h5 class="text-uppercase">Links Relacionados</h5>
+    <!-- Links -->
+    <h5 class="text-uppercase">Links Relacionados</h5>
 
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Obter ajuda</a>
-              </li>
-              <li>
-                <a href="#!">Relate um problema</a>
-              </li>
-              <li>
-                <a href="#!">Fale conosco</a>
-              </li>
-              <li>
-                <a href="#!">Cadastre um ponto turístico</a>
-              </li>
-            </ul>
+    <ul class="list-unstyled">
+      <li>
+        <a href="#!">Obter ajuda</a>
+      </li>
+      <li>
+        <a href="#!">Relate um problema</a>
+      </li>
+      <li>
+        <a href="#!">Fale conosco</a>
+      </li>
+      <li>
+        <a href="#!">Cadastre um ponto turístico</a>
+      </li>
+    </ul>
 
-          </div>
-   
+  </div>
+  
   <div class="col-md-3 mb-md-0 mb-3">
 
-            <!-- Links -->
-            <h5 class="text-uppercase">Links Relacionados</h5>
+    <!-- Links -->
+    <h5 class="text-uppercase">Links Relacionados</h5>
 
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Termos de uso</a>
-              </li>
-              <li>
-                <a href="#!">Esqueci minha senha</a>
-              </li>
-              <li>
-                <a href="#!">Crie uma conta</a>
-              </li>
-              <li>
-                <a href="#!">Veja os principais pontos</a>
-              </li>
-            </ul>
+    <ul class="list-unstyled">
+      <li>
+        <a href="#!">Termos de uso</a>
+      </li>
+      <li>
+        <a href="#!">Esqueci minha senha</a>
+      </li>
+      <li>
+        <a href="#!">Crie uma conta</a>
+      </li>
+      <li>
+        <a href="#!">Veja os principais pontos</a>
+      </li>
+    </ul>
 
-          </div>
+  </div>
   
-    <ul class="links_footer" style=" ">
-       
+  <ul class="links_footer" style=" ">
+   
 
-        <!-- Grid column -->
-        <div class="col-md-12 py-5">
-          <div class="mb-50 flex-center">
-
+<<<<<<< HEAD
+    <!-- Grid column -->
+    <div class="col-md-12 py-5">
+      <div class="mb-50 flex-center">
+        
+        <!-- Facebook -->
+      </br>
+      <a href="https://github.com/naadabefarias/Projeto-Pratica" target="_blank"><i class="fab fa-github-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i></a>
+      <a src="fb-ic" href="https://fb.me" target="_blank" style=" text-decoration: none;">
+        <i class="fa fa-facebook black  fa-lg white-text mr-md-3   mr-5 fa-2x"> </i>
+      </a>
+      <!-- Twitter -->
+      <a class="tw-ic" href="https://www.twitter.com" target="_blank" style=" text-decoration: none;">
+        <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+      </a>
+      <!-- Google +-->
+      <a class="gplus-ic" href="https://plus.google.com" target="_blank" style=" text-decoration: none;">
+        <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+      </a>
+      <!--Instagram-->
+      <a class="ins-ic" href="https://www.instagram.com" target="_blank" style=" text-decoration: none;">
+        <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+      </a>
+      
+    </a>
+  </div>
+</div>
+</ul>
+=======
             <!-- Facebook -->
             </br>
             <a src="fb-ic" href="https://www.facebook.com/Seu-Ponto-Tur%C3%ADstico-372781029937475/" style=" text-decoration: none;">
@@ -70,48 +95,49 @@
           </div>
         </div>
     </ul>
+>>>>>>> 1c46d4e90b715c8cdd17887fc81f1f4ddfc4e023
 
-    <div class="footer-copyright text-center py-5 ">
+<div class="footer-copyright text-center py-5 ">
         <!--<b class="copy" style="">© 2018 Copyright:IFPE </b>
-          +-->
-     </div>
-  </footer>
+        +-->
+      </div>
+    </footer>
   <script>//Função de pesquisa, Auto complete Input
-$(document).ready(function(){
+    $(document).ready(function(){
 
-  function limpar(){
-    $('#locais').html("");
-  }
+      function limpar(){
+        $('#locais').html("");
+      }
 
-  $('#form-controlpesq').keyup(function() {
-    var query = $(this).val();
-    if(query != ''){
-      
-      
-      $.ajax({
-        url:"Controller/action_filtrar.php",
-        method:"POST",
-        data:{query:query},
-        success:function(data)
-        {
-          $('#locais').fadeIn();
-          $('#locais').html(data);
+      $('#form-controlpesq').keyup(function() {
+        var query = $(this).val();
+        if(query != ''){
+          
+          
+          $.ajax({
+            url:"Controller/action_filtrar.php",
+            method:"POST",
+            data:{query:query},
+            success:function(data)
+            {
+              $('#locais').fadeIn();
+              $('#locais').html(data);
+            }
+          });
+        }
+        else{
+          limpar();
         }
       });
-    }
-    else{
-      limpar();
-    }
-  });
 
-  $('.ack').on('click', function(e){
-    e.preventDefault();
-    console.log("ok");
-  })
+      $('.ack').on('click', function(e){
+        e.preventDefault();
+        console.log("ok");
+      })
 
-});
+    });
 
 
-</script>
+  </script>
 </body>
 </html>
