@@ -24,7 +24,7 @@
 		$numero = $_POST['numero'];
 		$categoria = $_POST['categoria'];
 		$descricao = $_POST['descricao'];
-sa
+
 
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
