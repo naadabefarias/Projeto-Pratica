@@ -40,6 +40,7 @@ require_once('toninho/toninho_login.php');
 			margin-top: 30px;
 			font-family: 'Ubuntu', cursive;
 			font-size: 30pt;
+            text-shadow: 1.5px 1.5px 1.5px;
 		}
 
 		#listagem_pontos {
@@ -49,6 +50,10 @@ require_once('toninho/toninho_login.php');
 			border: 1px solid black;
 			color: black;
 		}
+
+        #icones {
+            margin-bottom: 10px;
+        }
 
 		/*.btn{
 			background-color: #337ab7;
