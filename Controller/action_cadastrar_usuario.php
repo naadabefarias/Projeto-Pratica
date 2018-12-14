@@ -36,7 +36,7 @@ if($_POST['nome'] != null && $_POST['user'] != null && $_POST['email'] != null &
 
 		$_SESSION['cadastro_sucesso'] = true;
 var_dump($stmt);
-	//	header('location: email.php');	
+		header('location: email.php');	
 	}	
 
 }else {
