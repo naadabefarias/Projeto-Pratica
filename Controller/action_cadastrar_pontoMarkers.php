@@ -4,8 +4,9 @@
  	require_once('conexao.php');
 
  
- 	if(isset($_POST['nome_ponto']) && isset($_POST['lat']) && isset($_POST['lng']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
+ 	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
  		
+
  		$nome = htmlspecialchars($_POST['nome_ponto'], ENT_QUOTES);
  		$lat =filter_var($_POST['lat']);
  		$lng = filter_var($_POST['lng']);
@@ -14,6 +15,16 @@
 		$numero =filter_var($_POST['numero']);
 		$categoria =filter_var($_POST['categoria']);
 		$descricao = htmlspecialchars($_POST['descricao'], ENT_QUOTES);
+
+ 		$nome = $_POST['nome_ponto'];
+ 		// $lat = $_POST['lat'];
+ 		// $lng = $_POST['lng'];
+		$logradouro = $_POST['logradouro'];
+		$bairro = $_POST['bairro'];
+		$numero = $_POST['numero'];
+		$categoria = $_POST['categoria'];
+		$descricao = $_POST['descricao'];
+sa
 
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
@@ -26,19 +37,17 @@
 		}	
 
  		
- 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, lat, lng, logradouro, bairro, numero_ponto, imagem, categoria, descricao) 
-						VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+ 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem, categoria, descricao) 
+						VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
  		$query = $conn->prepare($sql);
 		$query->bindParam(1, $id);
  		$query->bindParam(2, $nome);
- 		$query->bindParam(3, $lat);
- 		$query->bindParam(4, $lng);
-		$query->bindParam(5, $logradouro);
-		$query->bindParam(6, $bairro);
-		$query->bindParam(7, $numero);
-		$query->bindParam(8, $novo_nome);
-		$query->bindParam(9, $categoria);
-		$query->bindParam(10, $descricao);
+		$query->bindParam(3, $logradouro);
+		$query->bindParam(4, $bairro);
+		$query->bindParam(5, $numero);
+		$query->bindParam(6, $novo_nome);
+		$query->bindParam(7, $categoria);
+		$query->bindParam(8, $descricao);
  		$stmt = $query->execute();
 		header('Location: ../index.php');
 	} else {
