@@ -149,6 +149,8 @@
 
 
 		<!-- Footer -->
-		<?php require_once('view_footer.html');
+		<?php 
+		toninho_login("   Bem vindo<b> " .$_SESSION['user']."</b></br> para onde vamos hoje?");
+		require_once('view_footer.html');
 		
 		?>	

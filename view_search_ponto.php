@@ -69,4 +69,4 @@ include('conexao.php');
 
 
 <?php include 'view_footer.html';?>
-?>
+

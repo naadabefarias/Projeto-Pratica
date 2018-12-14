@@ -1,6 +1,7 @@
 <?php
 require_once('view_header.php');
-$id = $_GET['id'];//id do ponto
+$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
+//id do ponto
 // $pesquisa = $_POST['search'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
@@ -11,7 +12,7 @@ $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
 $user_id = $_SESSION['id'];
 $avaliacao = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = '$id' and user_id = '$user_id'");
 $avaliacoes = $avaliacao->fetchAll();
-$mediaOne = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = $id");   
+$mediaOne = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = $id") ;   
 $mediaAna = $mediaOne->fetchAll();
 ?>
 <script>
@@ -151,7 +152,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         <h3><?= $linha['bairro']?></h3>
         <h3>Avaliações</h3>
         <?php
-        $media = 0;
+        $media = 0;   
         $qnt_avaliacoes = $mediaOne->rowCount();
 
         foreach ($avaliacoes as $aval ) {
@@ -431,6 +432,7 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
 </style>
 <div id="teste">
 <?php 
+require_once('view_apagar_ponto.php');
   require_once('view_footer.html');
 ?>
 </div>
@@ -460,6 +462,8 @@ function showDivs(n) {
     btn.style.display = 'none';
 });
 </script>
-    
+
+
+   
 </body>
 </html>

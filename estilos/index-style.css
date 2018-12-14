@@ -11,10 +11,13 @@ padding: 0;
 
 }
 :target ~ #toninho{
-margin-top:4em;
+margin-right:0px;
+margin-left:0px;
+margin-top:11em;
 top:0;
-transition: all .3s;
+transition: all 1s;
 transition-delay:  .2s;
+
 }
 
 #texto {
@@ -50,7 +53,7 @@ p:active {
 display:none;
 }
 .fechar:hover{
-opacity:.1; 
+opacity:; 
 z-index: 2000;
 }
 
