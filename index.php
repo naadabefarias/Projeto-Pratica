@@ -152,7 +152,7 @@
 					<div class="col-md-4 col-sm-6">
 			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
 			              <div class='thumbnail'>
-			                <a href="#"><img src="upload/<?=$linha1['imagem'];?>"></a>
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>"><img src="upload/<?=$linha1['imagem'];?>"></a>
 			              </div>
 			              <div class='post-content'>
 			                <div class='category'><?=$linha1['bairro']?></div>

@@ -27,7 +27,7 @@ drop database if exists ponto;
 		 `descricao` varchar(200) NOT NULL,
 		 `categoria` enum('praia', 'rio', 'praca', 'museu', 'monumento', 'igreja','naturezaparques') NOT NULL,
 		 PRIMARY KEY (`id`),
-		 CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+		 CONSTRAINT `pk_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`)
 		);
 
 			CREATE TABLE `avaliacoes` (
@@ -37,7 +37,7 @@ drop database if exists ponto;
 			  `modified` datetime DEFAULT NULL,
 			   PRIMARY KEY (user_id,ponto_id),
 			   CONSTRAINT `pk_av_ponto` FOREIGN KEY (`ponto_id`) REFERENCES `pontos_turisticos` (`id`),
-			   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+			   CONSTRAINT `pk_av_users` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) 
 		);
 
 		CREATE TABLE imagens(

@@ -48,15 +48,7 @@ body {
             <label for="text">Logradouro:</label>
             <input type="text" class="form-control" name="logradouro">
         </div>
-        <div class="form-group">
-            <label for="text">Latidtude:</label>
-            <input type="text" class="form-control" name="lat">
-        </div>
-        <div class="form-group">
-            <label for="text">Longitude:</label>
-            <input type="text" class="form-control" name="lng">
-        </div>
-
+       
         <div class="form-group">
             <label for="text">Bairro:</label>
             <input type="text" class="form-control" name="bairro">
