@@ -68,83 +68,111 @@
 				
 		<!-- Praias -->
 <?php 
-			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
 			//if($consultei != 1):
-			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
-				var_dump($linha1);
-			endwhile;
 				?>
-		<div class="container text-center" id="listagem_pontos">    
+
+	 	<div class="container" id="listagem_pontos" >    			
 			<div class="page-header">
 				<h2>Praias</h2>
-			</div>	
-			<?php $v = 0;
+			</div>
+			<div class="row">
+		<?php $v = 0;
 			$praia = 'praia';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
 			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
-				if ($v <= 2 ):?>
-					<div class="grande">
-						<div class="col-sm-4">
-							<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">  
-								<img src="upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
-								<h4><?=$linha1['nome_ponto']?> - <?=$linha1['bairro']?></h4>
-								
-							</a>
-						</div>
-					</div>    
-					<?php  $v++;
-				endif; 
-			endwhile;
-				// endif
-			?>   
+				if ($v <= 2 ):?>				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail'>
+			                <a href="#"><img src="upload/<?=$linha1['imagem'];?>"></a>
+			              </div>
+			              <div class='post-content'>
+			                <div class='category'><?=$linha1['bairro']?></div>
+			                <h1 class='title'><?=$linha1['nome_ponto']?></h1>
+			                <p class='description'><?=$linha1['descricao']?></p>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php endif;
+			endwhile ?>
+			</div>	
+		</div>
 
-		</div><br>
-		<div class="container text-center" id="listagem_pontos">    
+	 	<div class="container" id="listagem_pontos" >    			
 			<div class="page-header">
 				<h2>Igrejas</h2>
-			</div>	
-			<?php $v = 0;
+			</div>
+			<div class="row">
+		<?php $v = 0;
 			$igreja = 'igreja';
 			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
 			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
 				if ($v <= 2 ):?>
-					<div class="grande">
-						<div class="col-sm-4">
-							<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">  
-								<img src="upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
-								<h4><?=$linha1['nome_ponto']?> - <?=$linha1['bairro']?></h4>
-							</a>
-						</div>
-					</div>    
-					<?php  $v++;
-				endif; 
-			endwhile
-			?>   
+				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail'>
+			                <a href="#"><img src="upload/<?=$linha1['imagem'];?>"></a>
+			              </div>
+			              <div class='post-content'>
+			                <div class='category'><?=$linha1['bairro']?></div>
+			                <h1 class='title'><?=$linha1['nome_ponto']?></h1>
+			                <p class='description'><?=$linha1['descricao']?></p>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php endif;
+			endwhile ?>
+			</div>	
+		</div>
 
-		</div><br>
-
-		<div class="container text-center" id="listagem_pontos">    
+		<div class="container" id="listagem_pontos" >    			
 			<div class="page-header">
 				<h2>Praças</h2>
 			</div>
+			<div class="row">
 			<?php $v = 0;
 			$igreja = 'praca';
 			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
 			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
 				if ($v <= 2 ):?>
-					<div class="grande">
-						<div class="col-sm-4">
-							<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">  
-								<img src="upload/<?=$linha1['imagem'];?>" class="img-responsive" style="width: 25em;  height: 15em;" alt="Image">
-								<h4><?=$linha1['nome_ponto']?> - <?=$linha1['bairro']?></h4>
-							</a>
-						</div>
-					</div>    
-					<?php  $v++;
-				endif; 
-			endwhile
-			?>   
+				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail'>
+			                <a href="#"><img src="upload/<?=$linha1['imagem'];?>"></a>
+			              </div>
+			              <div class='post-content'>
+			                <div class='category'><?=$linha1['bairro']?></div>
+			                <h1 class='title'><?=$linha1['nome_ponto']?></h1>
+			                <p class='description'><?=$linha1['descricao']?></p>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php endif;
+			endwhile ?>
+			</div>	
+		</div>	<br>
 
-			</div><br>
+		
 			
 
 
