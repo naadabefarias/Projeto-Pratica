@@ -141,7 +141,7 @@ $bairro = [
 					            <?php 	endif;
 				        		endforeach ?>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
-			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
 			                  <span class='comments'>
 			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
@@ -188,7 +188,7 @@ $bairro = [
 					            <?php 	endif;
 				        		endforeach ?>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
-			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
 			                  <span class='comments'>
 			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
@@ -236,7 +236,7 @@ $bairro = [
 					            <?php 	endif;
 				        		endforeach ?>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
-			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>>
 			                <div class='post-meta'>
 			                  <span class='comments'>
 			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
@@ -284,11 +284,11 @@ $bairro = [
 					            <?php 	endif;
 				        		endforeach ?>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
-			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
-			                  <span class='comments'>
-			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
-			                  </span>
+				                <span class='comments'>
+				                	<a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+				                </span>
 			                </div>
 			              </div>
 			            </div>
@@ -303,10 +303,6 @@ $bairro = [
 <br>			
 
 				<!-- Praias -->
-
-<?php 
-			//if($consultei != 1):
-				?>
 
 		<?php $v = 0;
 			$praia = 'praia';
@@ -324,7 +320,9 @@ $bairro = [
 					<div class="col-md-4 col-sm-6">
 			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
 			              <div class='thumbnail'>
-			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>"><img src="upload/<?=$linha1['imagem'];?>"></a>
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+			                	<img style="height: 11em;" src="upload/<?=$linha1['imagem'];?>">
+			                </a>
 			              </div>
 			              <div class='post-content'>
 			            	<?php foreach ($bairro as $key => $value):
@@ -335,7 +333,7 @@ $bairro = [
 				            <?php 	endif;
 				        		endforeach ?>
 				        	<h1 class='title'><?=$linha1['nome_ponto']?></h1>
-			                <p class='description'><?=$linha1['descricao']?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
 			                  <span class='comments'>
 			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
@@ -371,7 +369,7 @@ $bairro = [
 			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
 			             	<div class='thumbnail'>
 			                	<a  href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
-			                		<img class="rounded mx-auto d-block" src="upload/<?=$linha1['imagem'];?>">
+			                		<img class="rounded mx-auto d-block" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
 			                	</a>
 			             	</div>
 			            	<div class='post-content'>
@@ -384,7 +382,7 @@ $bairro = [
 				        		endforeach ?>
 			                
 			                <h1 class='title'><?=$linha1['nome_ponto']?></h1>
-			                <p class='description'><?=$linha1['descricao']?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 				                <div class='post-meta'>
 				                  <span class='comments'>
 				                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
