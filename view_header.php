@@ -55,6 +55,10 @@ require_once('toninho/toninho_login.php');
             margin-bottom: 10px;
         }
 
+        #titulo_sobre {
+            font-family: 'Ubuntu', cursive;
+        }
+
 		/*.btn{
 			background-color: #337ab7;
 			color: white;
@@ -146,11 +150,11 @@ require_once('toninho/toninho_login.php');
     									<span class="fa fa-facebook"></span> Login com Facebook
     								</a><br>
     								<label for="login">Usuário:</label>
-    								<input type="text" class="form-control" id="login" name="login">
+    								<input type="text" class="form-control" id="login" name="login" placeholder="Digite seu USUÁRIO cadastrado">
     							</div>
     							<div class="form-group">
     								<label for="pwd">Senha:</label>
-    								<input type="password" class="form-control" id="pwd" name="senha" minlength="6">
+    								<input type="password" class="form-control" id="pwd" name="senha" minlength="6" placeholder="Digite sua senha">
     							</div>
     							<div class="checkbox">
     								<label><input type="checkbox"> Lembrar de mim</label>
@@ -175,26 +179,26 @@ require_once('toninho/toninho_login.php');
     						<form action="Controller/action_cadastrar_usuario.php" method="POST">
     							<div class="form-group">
     								<label for="email">Nome Completo:</label>
-    								<input type="text" class="form-control" id="nome" name="nome">
+    								<input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo">
     								<div class="form-group">
     								</div>
 
     							</div>
     							<div class="form-group">
     								<label for="email">E-Mail:</label>
-    								<input type="email" class="form-control" id="email" name="email" required="E-mail inválido">
+    								<input type="email" class="form-control" id="email" name="email" required="E-mail inválido" placeholder="Digite seu e-mail">
     							</div>
     							<div class="form-group">
     								<label for="login">Usuário:</label>
-    								<input type="text" class="form-control" id="login" name="user">
+    								<input type="text" class="form-control" id="login" name="user" placeholder="Digite um nome de usuário">
     							</div>
     							<div class="form-group">
     								<label for="pwd">Senha:</label>
-    								<input type="password" class="form-control" id="pwd" name="pass" minlength="6">
+    								<input type="password" class="form-control" id="pwd" name="pass" minlength="6" placeholder="Insira uma senha">
     							</div>
     							<div class="form-group">
     								<label for="pwd">Confirme a Senha:</label>
-    								<input type="password" class="form-control" id="pwd2" name="senha2" minlength="6">
+    								<input type="password" class="form-control" id="pwd2" name="senha2" minlength="6" placeholder="Repita a senha">
     							</div>
 
     							<button type="submit" class="btn btn-primary btn-block">Cadastrar-se</button>

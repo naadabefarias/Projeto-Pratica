@@ -107,7 +107,7 @@ $bairro = [
 		<!-- Melhores Pontos Turisticos -->
 
 			<center>
-				<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3>
+				<h3 id="titulo_pontos">Melhores Pontos Turísticos da Região</h3>
 			</center>
 			<br>
 				
