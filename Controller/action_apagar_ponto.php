@@ -5,15 +5,15 @@ if(isset($_GET['id_user_ponto']) && isset($_GET['ponto_id'])){
 $id_user_ponto = htmlspecialchars($_GET['id_user_ponto'], ENT_QUOTES);
 $id_ponto = htmlspecialchars($_GET['ponto_id'], ENT_QUOTES);
 
-if ($id_user_ponto== $_SESSION['id']){
+if ($id_user_ponto == $_SESSION['id']){
 
-$apagar = $conn ->prepare("delete from pontos_turisticos where id = ? and user_id =?");
-$apagar -> bindValue(1,$id_ponto);
-$apagar -> bindValue(2,$id_user_ponto);
-$apagar -> execute();
+	$delete = $conn->prepare("DELETE FROM pontos_turisticos WHERE id = ?");
+	$delete->bindParam(1,$id_ponto);
+	$delete->execute();
 
-echo "<script>alert('deletado com sucesso')</script>";
-header('location:../index.php');
+
+
+header('location:../view_my_pontos.php');
 
 }
 }

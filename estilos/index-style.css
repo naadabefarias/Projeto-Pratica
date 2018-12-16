@@ -49,9 +49,7 @@ margin-right: 30em;
   left: 0;
   cursor:pointer;
 }
-p:active {
-display:none;
-}
+
 .fechar:hover{
 opacity:; 
 z-index: 2000;

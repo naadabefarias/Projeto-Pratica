@@ -108,7 +108,7 @@ require_once('toninho/toninho_login.php');
     							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta <span class="caret"></span></a>
     							<ul class="dropdown-menu">
     								<li><a href="view_perfil.php">Perfil</a></li>
-    								<li><a href="#">Configurações</a></li>
+    								<li><a href="view_my_pontos.php">Meus Pontos</a></li>
     								<li><a href="#">Administrar contas</a></li>
     								<li role="separator" class="divider"></li>
     								<li><a href="Controller/action_logout.php">Logout</a></li>

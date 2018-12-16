@@ -232,6 +232,18 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     </div>
     <script type="text/javascript">jssor_1_slider_init();</script>
     </div>
+    
+    <?php if ( $linha['user_id'] == $user_id): ?>
+    <div class="add_foto">
+      <button id=btn_form class="btn btn-success">Adicionar Fotos</button>
+      <form id="my_form" method="POST" action="Controller/action_add_imagem.php?ponto_id=<?=$id?>" enctype="multipart/form-data">
+        <input type="file" name="imagem" required=""><br>
+        <input type="submit" class="btn btn-success" value="Adicionar">
+      </form>
+    </div>
+      <?php endif ?>
+
+
           </div>
           <div id="menu1" class="tab-pane fade">
                 <div class="avaliacoes">
@@ -432,7 +444,6 @@ $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem F
 </style>
 <div id="teste">
 <?php 
-require_once('view_apagar_ponto.php');
   require_once('view_footer.html');
 ?>
 </div>
