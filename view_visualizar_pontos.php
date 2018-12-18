@@ -190,6 +190,8 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
 
         <h3>Como chegar</h3>
           API google maps
+          <h3>Descrição:</h3>
+          <h5><?=$linha['descricao'];?></h5>
       </div>  
     </div>
     <div style="padding-top: 20px;">
@@ -386,34 +388,52 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
       
 
       
-      <!-- /.row -->
+      <! /.row -->
 
       <!-- Related Projects Row -->
-      <div class="container" style="box-sizing: border-box; margin-top: 10px;
-       border-radius: 4px; box-shadow: 3px; box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);">
-        <div class="page-header" style="padding-top: 0px;">
+      <div class="container" id="listagem_pontos">
+        <div class="page-header">
           <h2 class="my-4">Outros pontos turisticos:</h2>
         </div>  
-<div class="row">
- <?php   $ativoCarr = 0;
-$consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, imagem FROM pontos_turisticos
-  WHERE id!= $id;");   
-     while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
-            if ($ativoCarr <= 3):?>
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="view_visualizar_pontos.php?id=<?=$linha['id'];?>">
-            <img class="img-fluid img2" src="upload/<?=$linha['imagem'];?>" alt="">
-                <br><h3><?=$linha['nome_ponto'];?></h3>    
-          </a>
-        </div>
-<?php       $ativoCarr++;
-            endif;
-          endwhile?>
-      </div>
-      <!-- /.row -->
+      <div class="row" style="width: 100%;">
+       <?php   $ativoCarr = 0;
+        $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, descricao ,imagem FROM pontos_turisticos
+        WHERE id!= $id;");   
+           while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
+                  if ($ativoCarr <= 3):?>
+              <a href="view_visualizar_pontos.php?id=<?=$linha['id']?>">
+                <div class="col-md-4 col-sm-6">
+                        <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+                          <div class='thumbnail' >
+                            <a href="view_visualizar_pontos.php?id=<?=$linha['id']?>">
+                              <img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha['imagem'];?>">
+                            </a>
+                          </div>
+                          <div class='post-content'>
+                           <?php foreach ($bairro as $key => $value):
+                                if ($key == $linha['bairro']):?>
 
-    </div>
-    <!-- /.container -->
+                            <div class='category'><?=$value;?></div>  
+
+                            <?php   endif;
+                          endforeach ?>
+                            <h1 class='title' style="height: 1.5em;"><?=$linha['nome_ponto']?></h1>
+                            <p class='description' style="height: 2em;"><?= substr($linha['descricao'],0 , 100); ?></p>
+                            <div class='post-meta'>
+                              <span class='comments'>
+                                <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha['id']?>">Visualizar ponto</a>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+              </a>
+            <?php $ativoCarr++;;
+              endif;
+            endwhile ?>
+            </div>  
+          </div>
+<!-- ///xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
 
 <!-- RODAPÉ -->
