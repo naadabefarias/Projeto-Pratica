@@ -41,8 +41,6 @@
   <body>
      <?php
       foreach ($resultado_markers as $row) {
-        $lat = $row['lat'];
-        $lng = $row['lng'];
 
       }
      ?>

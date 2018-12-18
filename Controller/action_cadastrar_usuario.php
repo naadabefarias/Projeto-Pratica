@@ -3,10 +3,11 @@ session_start();
 include "conexao.php";
 
 if($_POST['nome'] != null && $_POST['user'] != null && $_POST['email'] != null && $_POST['pass'] != null && $_POST['senha2']!=null && $_POST['pass'] == $_POST['senha2']){
-
-	$nome = $_POST['nome'];
-	$user = $_POST['user'];
-	$email = $_POST['email'];
+	
+	
+	$nome = htmlspecialchars($_POST['nome'],ENT_QUOTES);
+	$user = htmlspecialchars($_POST['user'],ENT_QUOTES);
+	$email = htmlspecialchars($_POST['email'],ENT_QUOTES);
 	$pass = sha1($_POST['pass']);
 
 	$checking=("SELECT * FROM Users WHERE user = ?");

@@ -7,6 +7,7 @@ height:150px; margin-top:0em;"></a></h1>
 
 <!--Section description-->
 <div id="descricao">
+	<strong><h1 id="titulo_sobre" align="center" style="margin: 50px;"> SOBRE </h1></strong>
 <p class="section-description mt-2 pt-4" id="des"><strong>Objetivos pelos quais desencandeou o nosso projeto:</strong><br></br>
 <strong>A importância dos pontos hoje em dia</strong><br>
 Não há importância expressiva e significativa em relação ao turismo; muito mais gastos são

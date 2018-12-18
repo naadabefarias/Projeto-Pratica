@@ -1,17 +1,21 @@
 <?php
 require_once('view_header.php');
-$id = $_GET['id'];//id do ponto
+$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
+//id do ponto
 // $pesquisa = $_POST['search'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";
 $consulta = $conn -> query("SELECT * FROM pontos_turisticos WHERE id='$id'"); 
   $linha = $consulta -> fetch(PDO::FETCH_ASSOC); 
 $stmt = $conn -> query("SELECT * FROM imagens WHERE ponto_id= '$id'");
 
+$result_markers = $conn->query("SELECT * FROM pontos_turisticos WHERE id = $id");
+$resultado_markers = $result_markers->fetchAll();
+
 
 $user_id = $_SESSION['id'];
 $avaliacao = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = '$id' and user_id = '$user_id'");
 $avaliacoes = $avaliacao->fetchAll();
-$mediaOne = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = $id");   
+$mediaOne = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = $id") ;   
 $mediaAna = $mediaOne->fetchAll();
 ?>
 <script>
@@ -120,11 +124,28 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
 }
  
       
-      #map {
-        width: 100%;
-    height: 330px; 
+ #map {
+        height:340px;
       }
-
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top:533px;
+        left: 280px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
  
 
 }
@@ -151,7 +172,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         <h3><?= $linha['bairro']?></h3>
         <h3>Avaliações</h3>
         <?php
-        $media = 0;
+        $media = 0;   
         $qnt_avaliacoes = $mediaOne->rowCount();
 
         foreach ($avaliacoes as $aval ) {
@@ -231,6 +252,18 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     </div>
     <script type="text/javascript">jssor_1_slider_init();</script>
     </div>
+    
+    <?php if ( $linha['user_id'] == $user_id): ?>
+    <div class="add_foto">
+      <button id=btn_form class="btn btn-success">Adicionar Fotos</button>
+      <form id="my_form" method="POST" action="Controller/action_add_imagem.php?ponto_id=<?=$id?>" enctype="multipart/form-data">
+        <input type="file" name="imagem" required=""><br>
+        <input type="submit" class="btn btn-success" value="Adicionar">
+      </form>
+    </div>
+      <?php endif ?>
+
+
           </div>
           <div id="menu1" class="tab-pane fade">
                 <div class="avaliacoes">
@@ -278,82 +311,43 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                   </div>
               </div>    
           <div id="menu2" class="tab-pane fade">
-            <h3>Maps</h3>
-             <div id="map"></div><br><br>
+            <?php
+      foreach ($resultado_markers as $row) {
 
+      }
+     ?>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="<?= $row['nome_ponto'].', '.$row['bairro'] ;?>" >
+      <input id="submit" type="button" value="Encontrar">
+    </div>
+    <div id="map"></div>
     <script>
-      var customLabel = {
-        restaurant: {
-          label: 'R'
-        },
-        bar: {
-          label: 'B'
-        }
-      };
-
-        function initMap() {
+      function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-7.833909, -34.907374),
-          zoom: 7
+          zoom: 14,
+          center: {lat: -7.833909 , lng: -34.907374 }
         });
-        var infoWindow = new google.maps.InfoWindow;
+        var geocoder = new google.maps.Geocoder();
 
-          // Change this depending on the name of your PHP or XML file
-          downloadUrl('Controller/action_viewMarkers.php?id=<?=$id?>', function(data) {
-            var xml = data.responseXML;
-            var markers = xml.documentElement.getElementsByTagName('marker');
-            Array.prototype.forEach.call(markers, function(markerElem) {
-              var name = markerElem.getAttribute('name');
-              var address = markerElem.getAttribute('address');
-              var type = markerElem.getAttribute('type');
-              var point = new google.maps.LatLng(
-                  parseFloat(markerElem.getAttribute('lat')),
-                  parseFloat(markerElem.getAttribute('lng')));
-
-
-              var infowincontent = document.createElement('div');
-              var strong = document.createElement('strong');
-              strong.textContent = name
-              infowincontent.appendChild(strong);
-              infowincontent.appendChild(document.createElement('br'));
-
-              var text = document.createElement('text');
-              text.textContent = address
-              infowincontent.appendChild(text);
-              var icon = customLabel[type] || {};
-              var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                label: icon.label
-              });
-              marker.addListener('click', function() {
-                infoWindow.setContent(infowincontent);
-                infoWindow.open(map, marker);
-              });
-            });
-          });
-        }
-        
-
-
-
-      function downloadUrl(url, callback) {
-        var request = window.ActiveXObject ?
-            new ActiveXObject('Microsoft.XMLHTTP') :
-            new XMLHttpRequest;
-
-        request.onreadystatechange = function() {
-          if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request, request.status);
-          }
-        };
-
-        request.open('GET', url, true);
-        request.send(null);
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
       }
 
-      function doNothing() {}
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXU9M6LguD4AXAmyallPd9_-p212i9xsg&callback=initMap">
@@ -460,6 +454,8 @@ function showDivs(n) {
     btn.style.display = 'none';
 });
 </script>
-    
+
+
+   
 </body>
 </html>

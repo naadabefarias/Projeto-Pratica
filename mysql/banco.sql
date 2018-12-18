@@ -47,6 +47,7 @@ drop database if exists ponto;
 
 			PRIMARY KEY (imagens_id),
 			CONSTRAINT fk_ponto FOREIGN KEY (ponto_id) REFERENCES pontos_turisticos (id)
+			ON DELETE CASCADE
 		);	
 
 

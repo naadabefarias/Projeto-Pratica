@@ -6,6 +6,16 @@
  
  	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
  		
+
+ 		$nome = htmlspecialchars($_POST['nome_ponto'], ENT_QUOTES);
+ 		$lat =filter_var($_POST['lat']);
+ 		$lng = filter_var($_POST['lng']);
+		$logradouro =filter_var( $_POST['logradouro']);
+		$bairro = htmlspecialchars($_POST['bairro'], ENT_QUOTES);
+		$numero =filter_var($_POST['numero']);
+		$categoria =filter_var($_POST['categoria']);
+		$descricao = htmlspecialchars($_POST['descricao'], ENT_QUOTES);
+
  		$nome = $_POST['nome_ponto'];
  		// $lat = $_POST['lat'];
  		// $lng = $_POST['lng'];
@@ -14,6 +24,7 @@
 		$numero = $_POST['numero'];
 		$categoria = $_POST['categoria'];
 		$descricao = $_POST['descricao'];
+
 
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado

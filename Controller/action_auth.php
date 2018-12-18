@@ -2,7 +2,7 @@
 
 	include'conexao.php';
 
-	$login = $_POST['login'];
+	$login = htmlspecialchars($_POST['login'], ENT_QUOTES);
 	$senha = $_POST['senha'];
 	$private = sha1($senha);
 

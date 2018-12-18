@@ -65,7 +65,8 @@ $bairro = [
 
 			</ol>
 
-			<!-- Slides do Carousel -->
+		<div class="container">
+			
 			<div class="carousel-inner" role="listbox">
 
 				<?php 	$ativoCarr = 0;
@@ -90,6 +91,7 @@ $bairro = [
 				endwhile; ?>
 
 				<!-- Controles de Direita e Esquerda -->
+			
 				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left"></span>
 					<span class="sr-only">Anterior</span>
@@ -100,75 +102,34 @@ $bairro = [
 				</a>
 			</div>		
 		</div>
+		</div>	<!-- Slides do Carousel -->
 
 		<!-- Melhores Pontos Turisticos -->
 
 			<center>
-				<h3 id="titulo_pontos">Melhores Pontos Turisticos da Região</h3>
+				<h3 id="titulo_pontos">Melhores Pontos Turísticos da Região</h3>
 			</center>
 			<br>
 				
-		<!-- Praias -->
-<?php 
-			//if($consultei != 1):
-				?>
-
-	 	<div class="container" id="listagem_pontos" >    			
-			<div class="page-header">
-				<h2>Praias</h2>
-			</div>
-			<div class="row">
-		<?php $v = 0;
-			$praia = 'praia';
-			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
-			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
-				if ($v <= 2 ):?>				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
-					<div class="col-md-4 col-sm-6">
-			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
-			              <div class='thumbnail'>
-			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>"><img src="upload/<?=$linha1['imagem'];?>"></a>
-			              </div>
-			              <div class='post-content'>
-			            	<?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-				           
-				            <?php 	endif;
-				        		endforeach ?>
-				        	<h1 class='title'><?=$linha1['nome_ponto']?></h1>
-			                <p class='description'><?=$linha1['descricao']?></p>
-			                <div class='post-meta'>
-			                  <span class='comments'>
-			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
-			                  </span>
-			                </div>
-			              </div>
-			            </div>
-			        </div>
-				</a>
-		  <?php $v++;
-				endif;
-			endwhile ?>
-			</div>	
-		</div>
-
-	 	<div class="container" id="listagem_pontos" >    			
-			<div class="page-header">
-				<h2>Igrejas</h2>
-			</div>
-			<div class="row" style="width: 100%;">
+				<!-- Igrejas -->
+						
 		<?php $v = 0;
 			$igreja = 'igreja';
 			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY id DESC;");
-			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				if ($consultei->rowCount() >= 1): ?>
+	 	<div class="container" id="listagem_pontos" >    			
+			<div class="page-header">
+				<h2>Igrejas Históricas</h2>
+			</div>
+			<div class="row" style="width: 100%;">
+		<?php	while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
 				if ($v <= 2 ):?>
 				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
 					<div class="col-md-4 col-sm-6">
 			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
 			              <div class='thumbnail' >
 			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
-			                	<img class="card-img-top" src="upload/<?=$linha1['imagem'];?>">
+			                	<img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
 			                </a>
 			              </div>
 			              <div class='post-content'>
@@ -179,8 +140,8 @@ $bairro = [
 
 					            <?php 	endif;
 				        		endforeach ?>
-			                <h1 class='title' style="height: 3em;"><?=$linha1['nome_ponto']?></h1>
-			                <p class='description' style="height: 5em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
+			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
 			                  <span class='comments'>
 			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
@@ -195,23 +156,220 @@ $bairro = [
 			endwhile ?>
 			</div>	
 		</div>
+<?php endif ?>
+
+		<!-- Monumento -->
+
+			<?php $v = 0;
+			$monumento = 'monumento';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$monumento' ORDER BY id DESC;");
+				if ($consultei->rowCount() >= 1): ?>
+	 	<div class="container" id="listagem_pontos" >    			
+			<div class="page-header">
+				<h2>Monumentos Antigos</h2>
+			</div>
+			<div class="row" style="width: 100%;">
+		<?php	while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				if ($v <= 2 ):?>
+				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail' >
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+			                	<img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
+			                </a>
+			              </div>
+			              <div class='post-content'>
+			               <?php foreach ($bairro as $key => $value):
+			              			if ($key == $linha1['bairro']):?>
+
+			                <div class='category'><?=$value;?></div>	
+
+					            <?php 	endif;
+				        		endforeach ?>
+			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php $v++;
+				endif;
+			endwhile ?>
+			</div>	
+		</div>
+<?php endif ?>
+<br>			
+	
+				<!-- Museu -->
+
+<?php $v = 0;
+			$museu = 'museu';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$museu' ORDER BY id DESC;");
+				if ($consultei->rowCount() >= 1): ?>
+	 	<div class="container" id="listagem_pontos" >    			
+			<div class="page-header">
+				<h2>Museu Histórico</h2>
+			</div>
+			<div class="row" style="width: 100%;">
+		<?php	while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				if ($v <= 2 ):?>
+				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail' >
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+			                	<img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
+			                </a>
+			              </div>
+			              <div class='post-content'>
+			               <?php foreach ($bairro as $key => $value):
+			              			if ($key == $linha1['bairro']):?>
+
+			                <div class='category'><?=$value;?></div>	
+
+					            <?php 	endif;
+				        		endforeach ?>
+			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php $v++;
+				endif;
+			endwhile ?>
+			</div>	
+		</div>
+<?php endif ?>
+<br>
+
+		<!-- Natureza e Parques -->
+
+			<?php $v = 0;
+			$natureza = 'naturezaparques';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$natureza' ORDER BY id DESC;");
+				if ($consultei->rowCount() >= 1): ?>
+	 	<div class="container" id="listagem_pontos" >    			
+			<div class="page-header">
+				<h2>Natureza e Parques</h2>
+			</div>
+			<div class="row" style="width: 100%;">
+		<?php	while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				if ($v <= 2 ):?>
+				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail' >
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+			                	<img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
+			                </a>
+			              </div>
+			              <div class='post-content'>
+			               <?php foreach ($bairro as $key => $value):
+			              			if ($key == $linha1['bairro']):?>
+
+			                <div class='category'><?=$value;?></div>	
+
+					            <?php 	endif;
+				        		endforeach ?>
+			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
+			                <div class='post-meta'>
+				                <span class='comments'>
+				                	<a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+				                </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php $v++;
+				endif;
+			endwhile ?>
+			</div>	
+		</div>
+<?php endif ?>
+<br>			
+
+				<!-- Praias -->
+
+		<?php $v = 0;
+			$praia = 'praia';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$praia' ORDER BY categoria ASC;");
+				if ($consultei->rowCount() >= 1): ?>
+					
+	 	<div class="container" id="listagem_pontos" >    			
+			<div class="page-header">
+				<h2>Praias</h2>
+			</div>
+			<div class="row">
+	<?php while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+					if ($v <= 2 ):?>
+					<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail'>
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+			                	<img style="height: 11em;" src="upload/<?=$linha1['imagem'];?>">
+			                </a>
+			              </div>
+			              <div class='post-content'>
+			            	<?php foreach ($bairro as $key => $value):
+			              			if ($key == $linha1['bairro']):?>
+
+			                <div class='category'><?=$value;?></div>	
+				           
+				            <?php 	endif;
+				        		endforeach ?>
+				        	<h1 class='title'><?=$linha1['nome_ponto']?></h1>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php $v++;
+				endif;
+			endwhile ?>
+			</div>	
+		</div>
+<?php endif ?>
+						
+						<!-- Praça -->
+
+			<?php $v = 0;
+			$igreja = 'praca';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
+				if ($consultei->rowCount() >= 1): ?>
 
 		<div class="container" id="listagem_pontos" >    			
 			<div class="page-header">
 				<h2>Praças</h2>
 			</div>
 			<div class="row">
-			<?php $v = 0;
-			$igreja = 'praca';
-			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$igreja' ORDER BY categoria ASC;");
-			while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+	<?php	while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
 				if ($v <= 2 ):?>
 				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
 					<div class="col-md-4 col-sm-6">
 			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
 			             	<div class='thumbnail'>
 			                	<a  href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
-			                		<img class="rounded mx-auto d-block" src="upload/<?=$linha1['imagem'];?>">
+			                		<img class="rounded mx-auto d-block" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
 			                	</a>
 			             	</div>
 			            	<div class='post-content'>
@@ -224,7 +382,7 @@ $bairro = [
 				        		endforeach ?>
 			                
 			                <h1 class='title'><?=$linha1['nome_ponto']?></h1>
-			                <p class='description'><?=$linha1['descricao']?></p>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 				                <div class='post-meta'>
 				                  <span class='comments'>
 				                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
@@ -238,13 +396,62 @@ $bairro = [
 				endif;
 			endwhile ?>
 			</div>	
-		</div>	<br>
+		</div>	
+<?php endif ?>
+		<br> 
+	
+				<!-- Rio -->
 
-		
-			
+<?php $v = 0;
+			$rio = 'rio';
+			$consultei = $conn -> query("SELECT * FROM pontos_turisticos WHERE categoria= '$rio' ORDER BY id DESC;");
+				if ($consultei->rowCount() >= 1): ?>
+	 	<div class="container" id="listagem_pontos" >    			
+			<div class="page-header">
+				<h2>Rio</h2>
+			</div>
+			<div class="row" style="width: 100%;">
+		<?php	while($linha1 = $consultei -> fetch(PDO::FETCH_ASSOC)):
+				if ($v <= 2 ):?>
+				<a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+					<div class="col-md-4 col-sm-6">
+			            <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">
+			              <div class='thumbnail' >
+			                <a href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">
+			                	<img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
+			                </a>
+			              </div>
+			              <div class='post-content'>
+			               <?php foreach ($bairro as $key => $value):
+			              			if ($key == $linha1['bairro']):?>
+
+			                <div class='category'><?=$value;?></div>	
+
+					            <?php 	endif;
+				        		endforeach ?>
+			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
+			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
+			                <div class='post-meta'>
+			                  <span class='comments'>
+			                    <a class="btn btn-primary  btn-block" id="but" style="border:1px solid black;" href="view_visualizar_pontos.php?id=<?=$linha1['id']?>">Visualizar ponto</a>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			        </div>
+				</a>
+		  <?php $v++;
+				endif;
+			endwhile ?>
+			</div>	
+		</div>
+<?php endif ?>
+<br>
 
 
 		<!-- Footer -->
-		<?php require_once('view_footer.html');
+		<?php 
+		toninho_login("   Bem vindo<b> " .$_SESSION['user']."</b></br> para onde vamos hoje?");
+		require_once('view_footer.html');
 		
 		?>	
