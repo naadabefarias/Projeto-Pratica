@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
 
 ?>
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Mali');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body {
 
 	margin-top: 25px;
@@ -23,7 +23,7 @@ body {
 }
 
 #titulo_cadastro {
-	font-family: 'Mali', cursive;
+	font-family: 'Ubuntu', cursive;
 }
 
 .cad{
@@ -56,46 +56,46 @@ body {
         <div class="form-group">    
             <label for="sel1">Selecione o bairro:</label>
             <select class="form-control" name="bairro">
-                <option value="AgamenonMagalhaes">      Agamenon Magalhães</option>
-                <option value="aguaMineral">            Água Mineral</option>
-                <option value="altodoCeu">              Alto do Céu</option>
-                <option value="anadeAlbuquerque">       Ana de ALbuquerque</option>
-                <option value="arcanjo">                Arcanjo</option>
-                <option value="areiaBranca">            Areia Branca</option>
-                <option value="barradoCeara">           Barra do Ceára</option>
-                <option value="belaVista">              Bela Vista</option>
-                <option value="belaVista">              Boa Vista</option>
-                <option value="bomfim">                 Bomfim</option>
-                <option value="campinadeFeira">         Campina de Feira</option>
-                <option value="centro">                 Centro</option>
-                <option value="cohab">                  Cohab</option>
-                <option value="cortegada">              Cortegada</option>
-                <option value="cruzdeReboucas">         Cruz de Rebouças</option>
-                <option value="duarteCoelho">           Duarte Coelho</option>
-                <option value="encantodeIgarassu">      Encanto de Igarassu</option>
-                <option value="inhama">                 Inhamã</option>
-                <option value="jabaco">                 Jabacó</option>
-                <option value="jardimBoaSorte">         Jardim Boa Sorte</option>
-                <option value="jardimParaiso">          Jardim Paraíso</option>
-                <option value="jardimSumare">           Jardim Sumaré</option>
-                <option value="marcodePedra">           Marco de Pedra</option>
-                <option value="meninoJesusdaPraga">     Menino Jesus da Praga</option>
-                <option value="monjope">                Monjope</option>
-                <option value="nossaSenhoradaConceicao">Nossa Senhora da Conceição</option>
-                <option value="panco">                  Panco</option>
-                <option value="postodeMonta">           Posto de Monta</option>
-                <option value="rubina">                 Rubina</option>
-                <option value="santoAntonio">           Santo Antônio</option>
-                <option value="sitiodosMarcos">         Sítio dos Marcos</option>
-                <option value="saoJose">                São José</option>
-                <option value="santaMaria">             Santa Maria</option>
-                <option value="santaRita">              Santa Rita</option>
-                <option value="tabatinga">              Tabatinga</option>
-                <option value="triunfo">                Triunfo</option>
-                <option value="trupical">               Trupical</option>
-                <option value="umbura">                 Umbura</option>
-                <option value="vilaRural">              Vila Rural</option>
-                <option value="vilaSaramandaia">        Vila Saramandaia</option>
+                <option value="Agamenon Magalhães">      Agamenon Magalhães</option>
+                <option value="Água Mineral">            Água Mineral</option>
+                <option value="Alto do Ceu">              Alto do Céu</option>
+                <option value="Ana de Albuquerque">       Ana de ALbuquerque</option>
+                <option value="Arcanjo">                Arcanjo</option>
+                <option value="Areia Branca">            Areia Branca</option>
+                <option value="Barra do Ceara">           Barra do Ceára</option>
+                <option value="Bela Vista">              Bela Vista</option>
+                <option value="Boa Vista">              Boa Vista</option>
+                <option value="Bomfim">                 Bomfim</option>
+                <option value="Campina de Feira">         Campina de Feira</option>
+                <option value="Centro">                 Centro</option>
+                <option value="Cohab">                  Cohab</option>
+                <option value="Cortegada">              Cortegada</option>
+                <option value="Cruz de Rebouças">         Cruz de Rebouças</option>
+                <option value="Duarte Coelho">           Duarte Coelho</option>
+                <option value="Encanto de Igarassu">      Encanto de Igarassu</option>
+                <option value="Inhamã">                 Inhamã</option>
+                <option value="Jabacó">                 Jabacó</option>
+                <option value="Jardim Boa Sorte">         Jardim Boa Sorte</option>
+                <option value="Jardim Paraíso">          Jardim Paraíso</option>
+                <option value="Jardim Sumaré">           Jardim Sumaré</option>
+                <option value="Marcode Pedra">           Marco de Pedra</option>
+                <option value="Menino Jesus da Praga">     Menino Jesus da Praga</option>
+                <option value="Monjope">                Monjope</option>
+                <option value="Nossa Senhora da Conceicao">Nossa Senhora da Conceição</option>
+                <option value="Panco">                  Panco</option>
+                <option value="Posto de Monta">           Posto de Monta</option>
+                <option value="Rubina">                 Rubina</option>
+                <option value="Santo Antônio">           Santo Antônio</option>
+                <option value="Sítio dos Marcos">         Sítio dos Marcos</option>
+                <option value="São José">                São José</option>
+                <option value="Santa Maria">             Santa Maria</option>
+                <option value="Santa Rita">              Santa Rita</option>
+                <option value="Tabatinga">              Tabatinga</option>
+                <option value="Triunfo">                Triunfo</option>
+                <option value="Trupical">               Trupical</option>
+                <option value="Umbura">                 Umbura</option>
+                <option value="Vila Rural">              Vila Rural</option>
+                <option value="Saramandaia">    		Saramandaia</option>
             </select>
         </div>
 

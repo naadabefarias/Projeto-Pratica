@@ -133,13 +133,7 @@ $bairro = [
 			                </a>
 			              </div>
 			              <div class='post-content'>
-			               <?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-
-					            <?php 	endif;
-				        		endforeach ?>
+			               <div class='category'><?=$linha1['bairro']?></div>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
@@ -180,13 +174,7 @@ $bairro = [
 			                </a>
 			              </div>
 			              <div class='post-content'>
-			               <?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-
-					            <?php 	endif;
-				        		endforeach ?>
+			               <div class='category'><?=$linha1['bairro']?></div>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
@@ -227,14 +215,9 @@ $bairro = [
 			                	<img class="card-img-top" style="max-height: 11em;" src="upload/<?=$linha1['imagem'];?>">
 			                </a>
 			              </div>
-			              <div class='post-content'>
-			               <?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-
-					            <?php 	endif;
-				        		endforeach ?>
+			              <div class='post-content'>		
+			                <div class='category'><?=$linha1['bairro']?></div>	
+			                
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>>
 			                <div class='post-meta'>
@@ -276,13 +259,7 @@ $bairro = [
 			                </a>
 			              </div>
 			              <div class='post-content'>
-			               <?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-
-					            <?php 	endif;
-				        		endforeach ?>
+			               <div class='category'><?=$linha1['bairro']?></div>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
@@ -325,13 +302,7 @@ $bairro = [
 			                </a>
 			              </div>
 			              <div class='post-content'>
-			            	<?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-				           
-				            <?php 	endif;
-				        		endforeach ?>
+			            	<div class='category'><?=$linha1['bairro']?></div>
 				        	<h1 class='title'><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
 			                <div class='post-meta'>
@@ -373,13 +344,7 @@ $bairro = [
 			                	</a>
 			             	</div>
 			            	<div class='post-content'>
-			            	<?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-
-				            <?php 	endif;
-				        		endforeach ?>
+			            	<div class='category'><?=$linha1['bairro']?></div>
 			                
 			                <h1 class='title'><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 100); ?></p>
@@ -422,13 +387,7 @@ $bairro = [
 			                </a>
 			              </div>
 			              <div class='post-content'>
-			               <?php foreach ($bairro as $key => $value):
-			              			if ($key == $linha1['bairro']):?>
-
-			                <div class='category'><?=$value;?></div>	
-
-					            <?php 	endif;
-				        		endforeach ?>
+			               <div class='category'><?=$linha1['bairro']?></div>
 			                <h1 class='title' style="height: 1.5em;"><?=$linha1['nome_ponto']?></h1>
 			                <p class='description' style="height: 2em;"><?= substr($linha1['descricao'],0 , 78); ?></p>
 			                <div class='post-meta'>

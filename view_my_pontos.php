@@ -36,6 +36,8 @@
 					$id_ponto = $ponto['id'];
 				 ?>
 				<a href="Controller/action_apagar_ponto.php?id_user_ponto=<?= $id_user_ponto?>&ponto_id=<?= $id_ponto?>"><button class="btn btn-danger">Deletar</button></a>
+				<br>
+				<br>
 			</div>
 		<?php endforeach?>	
 	</div>
