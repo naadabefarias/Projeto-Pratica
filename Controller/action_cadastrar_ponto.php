@@ -6,7 +6,7 @@
  
  	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
  		
- 		$nome = $_POST['nome_ponto'];
+ 		$nome = htmlspecialchars($_POST['nome_ponto'], ENT_QUOTES);
 		$logradouro = $_POST['logradouro'];
 		$bairro = $_POST['bairro'];
 		$numero = $_POST['numero'];

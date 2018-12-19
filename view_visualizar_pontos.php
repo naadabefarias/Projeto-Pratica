@@ -1,6 +1,6 @@
 <?php
 require_once('view_header.php');
-$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
+	$id = htmlspecialchars($_GET['id'], ENT_QUOTES);
 //id do ponto
 // $pesquisa = $_POST['search'];
   // $sql = "SELECT nome_ponto, logradouro, bairro FROM pontos_turisticos";

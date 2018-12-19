@@ -7,7 +7,7 @@
 	
 	$username = "root";
 
-	$password = "ifpe";
+	$password = "522";
 	$conn = new PDO('mysql:host=localhost;porta=3306;dbname=ponto',$username,$password);
 
 

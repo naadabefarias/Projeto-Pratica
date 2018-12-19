@@ -5,13 +5,11 @@ if(isset($_GET['id_user_ponto']) && isset($_GET['ponto_id'])){
 $id_user_ponto = htmlspecialchars($_GET['id_user_ponto'], ENT_QUOTES);
 $id_ponto = htmlspecialchars($_GET['ponto_id'], ENT_QUOTES);
 
-if ($id_user_ponto == $_SESSION['id']){
+if (intval($id_user_ponto) == $_SESSION['id']){
 
 	$delete = $conn->prepare("DELETE FROM pontos_turisticos WHERE id = ?");
-	$delete->bindParam(1,$id_ponto);
+	$delete->bindParam(1,intval($id_ponto));
 	$delete->execute();
-
-
 
 header('location:../view_my_pontos.php');
 
@@ -19,7 +17,6 @@ header('location:../view_my_pontos.php');
 }
 else {
 
-
-echo "<script>alert('errou')</script>";	
+echo "<script>alert('erro')</script>";	
 }
 ?>

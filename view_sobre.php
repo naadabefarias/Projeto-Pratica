@@ -3,7 +3,6 @@
 <h1 class="text-center text-uppercase font-weight-bold mt-5 mb-3 mt-5"><a href="index.php"><img src="images/icon-ponto.png" style="width: 300px;
 height:150px; margin-top:0em;"></a></h1>
 <!--Section description-->
-<p class="text-center text-uppercase font-weight-bold"><b>Tudo que você precisa saber</b></p>
 
 <!--Section description-->
 <div id="descricao">
@@ -41,20 +40,20 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 
 
 	<!--First column-->
-	<div class="col-md-12" ">
+	<div class="col-md-12" >
 
 		<div id="mdb-lightbox-ui" ></div>
 
 		<!--Full width lightbox-->
 		<div class="mdb-lightbox" >
-
+		<div class="naadabe">
 			<figure class="col-md-3">
 				<a href="https://github.com/naadabefarias/" target="_blank">
 					<img src="images/dev_naadabe.jpg" class="img-fluid z-depth-4">
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Naadabe Farias</p>
 			</figure>
-
+			</div>
 			<figure class="col-md-3">
 				<a href="https://www.github.com/rhodolfosantana" target="_blank">
 					<img src="images/dev_rodholfo.jpg" class="img-fluid z-depth-1" >
@@ -75,9 +74,9 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 				</a>
 				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="text-align:center;">Erikson Ferreira</p>
 			</figure>
-		</br>
 
-		<div style="margin-top:35em;">
+
+		<div class="div_baixo" style="margin-top:auto;">
 			<figure class="col-md-3">
 				<a href="https://www.github.com/kevinsousa" target="_blank">
 					<img src="images/dev_kevin.jpg" class="img-fluid z-depth-1" >
@@ -93,7 +92,7 @@ peíodos de procura e a objetividade dessas procuras no tocante ao que realmente
 				<a href="https://www.github.com/jhonnyfreitas1" target="_blank">
 					<img src="images/dev_jhonny.jpg" class="img-fluid z-depth-1">
 				</a>
-				<p class="text-uppercase font-weight-bold blue-grey-text mt-4" style="">Jhonny Farias</p>
+				<p class="	text-uppercase font-weight-bold blue-grey-text mt-4" class="" style="	">Jhonny Farias</p>
 			</figure>
 	</div>
 </div>
