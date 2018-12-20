@@ -17,6 +17,10 @@ $avaliacao = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = '$id' and u
 $avaliacoes = $avaliacao->fetchAll();
 $mediaOne = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = $id") ;   
 $mediaAna = $mediaOne->fetchAll();
+
+
+$recenteAval = $conn->query("SELECT * FROM avaliacoes WHERE ponto_id = '$id' ORDER BY id DESC;");
+$recentesAval = $recenteAval->fetchAll();
 ?>
 <script>
 document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
@@ -122,6 +126,10 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
 }.estrelas  input[type=radio]:checked  ~ label i.fa:before{
   color: #CCC;
 }
+
+.checked{
+  color: #FC0;
+}
  
       
  #map {
@@ -134,20 +142,14 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         padding: 0;
       }
       #floating-panel {
-        position: absolute;
-        top:533px;
-        left: 280px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
+        display: none;
       }
  
 
+}
+
+.recentes{
+  margin-left: 20px;
 }
 </style>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -169,7 +171,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
     <div class="descricoes" >
       <div class="desk">
         <h1><?= $linha['nome_ponto']?></h1>
-        <h3><?= $linha['bairro']?></h3>
+        <h3><?= $linha['bairro']?> - Igarassu/PE</h3>
         <h3>Avaliações</h3>
         <?php
         $media = 0;   
@@ -181,15 +183,17 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         }
         foreach ($mediaAna as $todas_aval) {
           $total_aval += $todas_aval['qnt_estrela'];
-          
+       
         }
         $media = $total_aval / $qnt_avaliacoes;
+          if (is_nan($media)){
+            $media = 0;
+          }
          ?>
+        
 
-         Média de (<?=number_format($media, 1, '.', ',')?> ) estrelas
+         Média de (<?=number_format($media, 1, '.', ',')?>) estrelas
 
-        <h3>Como chegar</h3>
-          API google maps
           <h3>Descrição:</h3>
           <h5><?=$linha['descricao'];?></h5>
       </div>  
@@ -198,7 +202,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#home">Fotos</a></li>
           <li><a data-toggle="tab" href="#menu1">Avaliações</a></li>
-          <li><a data-toggle="tab" href="#menu2">Localização</a></li>
+          <li><a id="locate" data-toggle="tab" href="#menu2">Localização</a></li>
         </ul>
 
         <div class="tab-content">
@@ -271,23 +275,46 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                 <div class="avaliacoes">
                   <div class="mediaAva ava">
                     <h3>Média de Avaliações</h3>
-                      Média de ( <?=number_format($media, 1, '.', ',')?> ) estrelas<br> 
+                      Média de ( <?=number_format($media, 1, '.', ',')?>) estrelas<br> 
                       Número de avaliações  (<?=$qnt_avaliacoes?>)
 
 
                   </div>                
                   <div class="recenteAva ava">
                     <h3>Avaliações Recentes</h3>
+                    <?php foreach ($recentesAval as $key => $avali):
+                      $idUser = $avali['user_id'];
+                      $user = $conn->query("SELECT name FROM Users WHERE id = $idUser");
+                      $userNome = $user->fetch();
 
-                  </div>
-  
+                    ?>  
+                    <div class="recentes">  
+
+                      <?php 
+                        for ($strs = 1; $strs <= 5; $strs++){
+                          if ($strs<= $avali['qnt_estrela']){
+                            echo "<span class='fa fa-star checked'></span>";
+                          }
+                          else{
+                            echo "<span class='fa fa-star'></span>";
+                          }
+                        }
+
+
+                       ?>
+                       <br>                   
+                       <label><?= $userNome['name']?></label>
+                       <br><br>
+                    </div>
+                    <?php endforeach ?>
+                    </div>
                   <div class="fazerAva ava">
                       <h3 >Faça sua avaliação</h3>
                       <form method="POST" action="/Controller/action_avaliar.php?id=<?=$linha['id']?>" enctype="multipart/form-data">
                         <div class="estrelas">
                           <input type="radio" id="vazio" name="estrela" value="" checked>
                           
-                          <label for="estrela_um"><i class="fa"></i></label>
+                          <label for="a"><i class="fa"></i></label>
                           <input type="radio" id="estrela_um" name="estrela" value="1"<?php if ($aval['qnt_estrela'] == 1) :?> checked <?php endif;?> 
                           >
                           
@@ -301,7 +328,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
                           <input type="radio" id="estrela_quatro" name="estrela" value="4"<?php if ($aval['qnt_estrela'] ==4) :?> checked <?php endif;?>>
                           
                           <label for="estrela_cinco"><i class="fa"></i></label>
-                          <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?><br><br>
+                          <input type="radio" id="estrela_cinco" name="estrela" value="5"<?php if ($aval['qnt_estrela'] ==5) :?> checked <?php endif;?> <br><br>
                           
                           <input type="submit" value="Avaliar" class="btn btn-primary">
                           
@@ -320,7 +347,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
      ?>
     <div id="floating-panel">
       <input id="address" type="textbox" value="<?= $row['nome_ponto'].', '.$row['bairro'] ;?>" >
-      <input id="submit" type="button" value="Encontrar">
+      <input id="submit" class="encontrarLocate" type="button" value="Encontrar">
     </div>
     <div id="map"></div>
     <script>
@@ -400,7 +427,7 @@ document.title= "Ponto | "+ "<?php echo $linha['nome_ponto']; ?>";
         $consultei = $conn -> query("SELECT id, nome_ponto, logradouro, bairro, descricao ,imagem FROM pontos_turisticos
         WHERE id!= $id;");   
            while($linha = $consultei -> fetch(PDO::FETCH_ASSOC)):
-                  if ($ativoCarr <= 3):?>
+                  if ($ativoCarr < 3):?>
               <a href="view_visualizar_pontos.php?id=<?=$linha['id']?>">
                 <div class="col-md-4 col-sm-6">
                         <div class='report-module' style="border-style: ridge;border-radius:0.4em;padding: 1em; background-color: rgba(214, 224, 226, 0.3)">

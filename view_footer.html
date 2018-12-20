@@ -114,7 +114,11 @@
       $('.ack').on('click', function(e){
         e.preventDefault();
         console.log("ok");
-      })
+      });
+
+      $('#locate').on('click', function(e){
+        $('.encontrarLocate').trigger('click');
+      });
 
     });
 

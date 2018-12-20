@@ -4,7 +4,7 @@
  	require_once('conexao.php');
 
  
- 	if(isset($_POST['nome_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
+ 	if(isset($_POST['nome_ponto']) && isset($_POST['id_ponto']) && isset($_POST['logradouro']) && isset($_POST['bairro']) && isset($_POST['descricao']) && isset($_FILES['imagem'])){
  		
 
  		$nome = htmlspecialchars($_POST['nome_ponto'], ENT_QUOTES);
@@ -13,6 +13,7 @@
 		$numero =filter_var($_POST['numero']);
 		$categoria =filter_var($_POST['categoria']);
 		$descricao = htmlspecialchars($_POST['descricao'], ENT_QUOTES);
+		$id_ponto = $_POST['id_ponto'];
 
  		$nome = $_POST['nome_ponto'];
  		// $lat = $_POST['lat'];
@@ -35,8 +36,7 @@
 		}	
 
  		
- 		$sql = "INSERT INTO pontos_turisticos (user_id, nome_ponto, logradouro, bairro, numero_ponto, imagem, categoria, descricao) 
-						VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+ 		$sql = "UPDATE pontos_turisticos SET user_id=?, nome_ponto=?, logradouro=?, bairro=?, numero_ponto=?, imagem=?, categoria=?, descricao=? WHERE id = ?";
  		$query = $conn->prepare($sql);
 		$query->bindParam(1, $id);
  		$query->bindParam(2, $nome);
@@ -46,6 +46,8 @@
 		$query->bindParam(6, $novo_nome);
 		$query->bindParam(7, $categoria);
 		$query->bindParam(8, $descricao);
+		$query->bindParam(9, $id_ponto);
+
  		$stmt = $query->execute();
 		header('Location: ../index.php');
 	} else {

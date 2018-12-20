@@ -35,6 +35,7 @@
 					$id_user_ponto = $ponto['user_id'];
 					$id_ponto = $ponto['id'];
 				 ?>
+				 <a href="view_atualizar_ponto.php?id=<?=$ponto['id']?>" class="btn btn-primary">Atualizar</a>
 				<a href="Controller/action_apagar_ponto.php?id_user_ponto=<?= $id_user_ponto?>&ponto_id=<?= $id_ponto?>"><button class="btn btn-danger">Deletar</button></a>
 				<br>
 				<br>

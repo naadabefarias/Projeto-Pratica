@@ -102,8 +102,8 @@ require_once('toninho/toninho_login.php');
 
     				<?php if (!isset($_SESSION['user'])): ?>
     					<ul class="nav navbar-nav navbar-right">
-    						<li><a href="#" data-toggle="modal" data-target="#myCadastro" id="cadastro"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-    						<li><a href="#" data-toggle="modal" data-target="#myModal"  id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    						<li><a href="#" data-toggle="modal" data-target="#myCadastro" id="cadastro"><span class="glyphicon glyphicon-user"></span> Cadastro</a></li>
+    						<li><a href="#" data-toggle="modal" data-target="#myModal"  id="login"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
     					</ul>
     				<?php else: ?>
     					<ul class="nav navbar-nav navbar-right">
@@ -113,7 +113,7 @@ require_once('toninho/toninho_login.php');
     							<ul class="dropdown-menu">
     								<li><a href="view_perfil.php">Perfil</a></li>
     								<li><a href="view_my_pontos.php">Meus Pontos</a></li>
-    								<li><a href="#">Administrar contas</a></li>
+    								
     								<li role="separator" class="divider"></li>
     								<li><a href="Controller/action_logout.php">Logout</a></li>
     							</ul>
