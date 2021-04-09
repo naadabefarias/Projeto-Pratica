@@ -104,10 +104,9 @@ $bairro = [
 		</div>
 		</div>	<!-- Slides do Carousel -->
 
-		<!-- Melhores Pontos Turisticos -->
 
 			<center>
-				<h3 id="titulo_pontos">Melhores Pontos Turísticos da Região</h3>
+				<h3 id="titulo_pontos">Aqui tem trabalho</h3>
 			</center>
 			<br>
 				

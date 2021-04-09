@@ -13,10 +13,10 @@
 	if ($consulta->rowCount() >= 1){
 		session_start();
 		$_SESSION['user'] = $login;
-		header('Location: ../template/index.php');
+		header('Location: ../index.php');
 
 	} else {
-		header('Location: ../template/index.php?error');
+		header('Location: ../index.php?error');
 	}
 
 

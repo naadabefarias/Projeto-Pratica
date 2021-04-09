@@ -10,7 +10,7 @@ require_once('toninho/toninho_login.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seu Ponto turistico</title>
+	<title>Application</title>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css"> -->
 	<link rel="stylesheet" type="text/css" href="estilos/index-style.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

@@ -1,6 +1,4 @@
 <?php 
-	require_once 'view_header.php';
-	session_start(); 
 	if (!isset($_SESSION['user'])){
 		header('Location: index.php');
 		exit();

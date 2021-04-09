@@ -23,7 +23,8 @@
 		$categoria = $_POST['categoria'];
 		$descricao = $_POST['descricao'];
 
-
+		var_dump($imagem);
+		exit();
 		//Cadastrar imagem
 		$imagem = $_FILES['imagem']; //arquivo enviado
 		if(isset($imagem)){
